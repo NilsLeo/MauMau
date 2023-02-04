@@ -2,17 +2,18 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import java.util.ArrayList;
 import java.util.List;
 
 public class App {
 
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-
+        Injector injector = Guice.createInjector(new MauMauModule());
+        EntityManagerFactory entityManagerFactory = injector.getInstance(EntityManagerFactory.class);
+        EntityManager entityManager = injector.getInstance(EntityManager.class);
+        EntityTransaction transaction = injector.getInstance(EntityTransaction.class);
         try {
             transaction.begin();
 
