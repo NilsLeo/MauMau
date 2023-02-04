@@ -1,5 +1,3 @@
-package inter;
-
 import jakarta.persistence.*;
 
 @Entity
