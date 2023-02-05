@@ -1,4 +1,7 @@
-package inter;
+package impl;
+
+import inter.Card;
+import inter.CardService;
 
 import java.util.ArrayList;
 import java.util.List;
