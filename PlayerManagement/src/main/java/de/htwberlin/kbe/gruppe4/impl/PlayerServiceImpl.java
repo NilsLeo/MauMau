@@ -1,8 +1,10 @@
-package impl;
+package de.htwberlin.kbe.gruppe4.impl;
 
 import com.google.inject.Inject;
-import entity.*;
-import export.*;
+import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.entity.Deck;
+import de.htwberlin.kbe.gruppe4.export.DeckService;
+import de.htwberlin.kbe.gruppe4.export.PlayerService;
 
 public class PlayerServiceImpl implements PlayerService {
 

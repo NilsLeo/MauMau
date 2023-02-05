@@ -1,11 +1,11 @@
-package impl;
+package de.htwberlin.kbe.gruppe4.impl;
 
 
-import entity.Card;
-import entity.Rules;
-import entity.Suit;
-import entity.Value;
-import export.*;
+import de.htwberlin.kbe.gruppe4.entity.Card;
+import de.htwberlin.kbe.gruppe4.entity.Rules;
+import de.htwberlin.kbe.gruppe4.entity.Suit;
+import de.htwberlin.kbe.gruppe4.entity.Value;
+import de.htwberlin.kbe.gruppe4.export.RulesService;
 
 public class RulesServiceImpl implements RulesService {
 

@@ -18,7 +18,7 @@ create database maumau;
 
 use maumau;
 
-CREATE TABLE Card (
+CREATE TABLE entity.Card (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 suit ENUM('CLUBS', 'DIAMONDS', 'HEARTS', 'SPADES'),
 value ENUM('SEVEN', 'EIGHT', 'NINE', 'TEN', 'QUEEN', 'JACK', 'KING', 'ACE')
@@ -33,21 +33,21 @@ CREATE TABLE CardPlayer (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 card_id INT NOT NULL,
 player_id INT NOT NULL,
-FOREIGN KEY (card_id) REFERENCES Card(id),
+FOREIGN KEY (card_id) REFERENCES entity.Card(id),
 FOREIGN KEY (player_id) REFERENCES Player(id)
 );
 
 CREATE TABLE Deck (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 card_id INT NOT NULL,
-FOREIGN KEY (card_id) REFERENCES Card(id)
+FOREIGN KEY (card_id) REFERENCES entity.Card(id)
 );
 
 CREATE TABLE CardDeck (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 card_id INT NOT NULL,
 deck_id INT NOT NULL,
-FOREIGN KEY (card_id) REFERENCES Card(id),
+FOREIGN KEY (card_id) REFERENCES entity.Card(id),
 FOREIGN KEY (deck_id) REFERENCES Deck(id)
 );
 
@@ -74,5 +74,5 @@ FOREIGN KEY (rules) REFERENCES Rules(ID)
 "
 ``````
 3. Führen Sie den Befehl `mvn clean install` aus, um das Projekt zu bauen. 
-4. Führen Sie die [export.App](MauMauManagement\src\main\java\de\htwberlin\kbe\gruppe4\inter.App.java) aus um das Spiel zu starten. 
+4. Führen Sie die [export.de.htwberlin.kbe.gruppe4.App](MauMauManagement\src\main\java\de\htwberlin\kbe\gruppe4\inter.de.htwberlin.kbe.gruppe4.App.java) aus um das Spiel zu starten. 
 5. Sehen sie sich bei Bedarf die Datensätze in mysql mit den Zugangsdaten in der [pom.xml](pom.xml) an.

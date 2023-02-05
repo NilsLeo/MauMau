@@ -1,4 +1,4 @@
-package entity;
+package de.htwberlin.kbe.gruppe4.entity;
 
 import jakarta.persistence.*;
 import java.util.List;

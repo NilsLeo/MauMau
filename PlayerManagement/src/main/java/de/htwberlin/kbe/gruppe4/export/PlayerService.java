@@ -1,6 +1,7 @@
-package export;
+package de.htwberlin.kbe.gruppe4.export;
 
-import entity.*;
+import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.entity.Deck;
 
 public interface PlayerService {
     void dealHand(Player player, Deck deck);

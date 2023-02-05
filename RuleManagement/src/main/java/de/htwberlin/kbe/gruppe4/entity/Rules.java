@@ -1,6 +1,5 @@
-package entity;
+package de.htwberlin.kbe.gruppe4.entity;
 
-import entity.Suit;
 import jakarta.persistence.*;
 
 @Entity
