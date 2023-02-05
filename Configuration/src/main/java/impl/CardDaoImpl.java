@@ -1,6 +1,7 @@
 package impl;
 
 
+import com.google.inject.Inject;
 import entity.Card;
 import export.CardDao;
 import export.DataAccessException;
@@ -13,7 +14,7 @@ public class CardDaoImpl implements CardDao {
 
 
     private EntityManager entityManager;
-
+@Inject
     public CardDaoImpl(EntityManager entityManager) {
         super();
         this.entityManager = entityManager;

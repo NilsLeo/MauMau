@@ -1,27 +1,38 @@
 package impl;
 
+import com.google.inject.Inject;
 import entity.Card;
+import export.CardDao;
 import export.CardService;
-
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.EntityTransaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CardServiceImpl implements CardService {
-    public List<Card> createDeck() {
-        return new ArrayList<>();
+
+
+    static final private Logger LOGGER = LogManager.getLogger(CardService.class);
+
+    private CardDao cardDao;
+
+    private EntityTransaction entityTransaction;
+
+    public CardServiceImpl() {
+        super();
+    }
+    @Inject
+    public CardServiceImpl(CardDao cardDao, EntityTransaction entityTransaction) {
+        this();
+        this.cardDao = cardDao;
+        this.entityTransaction = entityTransaction;
     }
 
-/*    private CardDAO cardDao;
     @Override
-    public List<Card> createDeck() {
-        List<Card> deck = new ArrayList<>();
-        for (Card.Suit suit : Card.Suit.values()) {
-            for (Card.Rank rank : Card.Rank.values()) {
-                Card card = new Card(suit, rank);
-                cardDao.create(card);
-                deck.add(card);
-            }
-        }
-        return deck;
-    }*/
+    public void createCard(){
+        entityTransaction.begin();
+        Card category = new Card();
+        cardDao.create(category);
+        entityTransaction.commit();
+    }
+
 }
