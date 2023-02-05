@@ -1,7 +1,10 @@
 package impl;
 
 import com.google.inject.Inject;
-import inter.*;
+import entity.Card;
+import entity.Suit;
+import entity.Value;
+import export.*;
 
 import java.util.List;
 import java.util.regex.Matcher;

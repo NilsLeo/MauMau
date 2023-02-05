@@ -1,4 +1,8 @@
-package inter;
+package export;
+
+import entity.Card;
+import entity.Suit;
+import entity.Value;
 
 public interface PlayerService {
     void dealHand(Player player, Deck deck);

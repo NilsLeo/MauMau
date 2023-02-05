@@ -74,5 +74,5 @@ FOREIGN KEY (rules) REFERENCES Rules(ID)
 "
 ``````
 3. Führen Sie den Befehl `mvn clean install` aus, um das Projekt zu bauen. 
-4. Führen Sie die [inter.App](MauMauManagement\src\main\java\de\htwberlin\kbe\gruppe4\inter.App.java) aus um das Spiel zu starten. 
+4. Führen Sie die [export.App](MauMauManagement\src\main\java\de\htwberlin\kbe\gruppe4\inter.App.java) aus um das Spiel zu starten. 
 5. Sehen sie sich bei Bedarf die Datensätze in mysql mit den Zugangsdaten in der [pom.xml](pom.xml) an.

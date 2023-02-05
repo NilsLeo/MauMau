@@ -1,7 +1,7 @@
 package impl;
 
-import inter.Card;
-import inter.CardService;
+import entity.Card;
+import export.CardService;
 
 import java.util.ArrayList;
 import java.util.List;

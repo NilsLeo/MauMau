@@ -1,7 +1,10 @@
 package impl;
 
 
-import inter.*;
+import entity.Card;
+import entity.Suit;
+import entity.Value;
+import export.*;
 
 public class RulesServiceImpl implements RulesService {
 

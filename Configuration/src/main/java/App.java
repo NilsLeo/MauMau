@@ -1,8 +1,8 @@
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import inter.Card;
-import inter.Suit;
-import inter.Value;
+import entity.Card;
+import entity.Suit;
+import entity.Value;
 import jakarta.persistence.*;
 public class App {
 

@@ -1,5 +1,9 @@
-package inter;
+package export;
 
+
+import entity.Card;
+import entity.Suit;
+import entity.Value;
 
 import java.util.List;
 

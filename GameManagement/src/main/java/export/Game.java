@@ -1,5 +1,6 @@
-package inter;
+package export;
 
+import entity.Card;
 import jakarta.persistence.*;
 import java.util.List;
 

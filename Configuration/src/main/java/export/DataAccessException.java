@@ -1,4 +1,4 @@
-package inter;
+package export;
 
 public class DataAccessException extends RuntimeException {
 

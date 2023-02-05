@@ -1,9 +1,9 @@
 package impl;
 
 
-import inter.Card;
-import inter.CardDao;
-import inter.DataAccessException;
+import entity.Card;
+import export.CardDao;
+import export.DataAccessException;
 import jakarta.persistence.*;
 
 import java.util.List;

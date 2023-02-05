@@ -1,4 +1,4 @@
-package inter;
+package entity;
 
 public enum Value {
     SEVEN,

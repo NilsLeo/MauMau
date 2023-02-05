@@ -1,5 +1,6 @@
-package inter;
+package export;
 
+import entity.Suit;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,4 +1,6 @@
-package inter;
+package export;
+
+import entity.Card;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package impl;
 
-import inter.Card;
-import inter.Deck;
-import inter.DeckService;
+import entity.Card;
+import export.Deck;
+import export.DeckService;
 
 import java.util.ArrayList;
 import java.util.Collections;

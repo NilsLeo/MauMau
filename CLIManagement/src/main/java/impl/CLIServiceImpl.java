@@ -1,9 +1,9 @@
 package impl;
 
-import inter.CLIService;
-import inter.Card;
-import inter.Suit;
-import inter.Value;
+import export.CLIService;
+import entity.Card;
+import entity.Suit;
+import entity.Value;
 
 import java.util.ArrayList;
 import java.util.List;
