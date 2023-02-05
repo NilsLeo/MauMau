@@ -19,8 +19,6 @@ public class App {
 
         CardDao cardDao = new CardDaoImpl(entityManager);
         CardService cardService = new CardServiceImpl(cardDao, transaction);
-        CLIController controller = injector.getInstance(CLIController.class);
-        controller.startGame();
 
         try {
             cardService.createCard();
