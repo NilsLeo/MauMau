@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/GameManagement/pom.xml" />
         <option value="$PROJECT_DIR$/PlayerManagement/pom.xml" />
         <option value="$PROJECT_DIR$/RuleManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/CardManagement/pom.xml" />
       </list>
     </option>
   </component>

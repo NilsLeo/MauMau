@@ -31,7 +31,7 @@
     </dependencies>
     <parent>
         <groupId>de.htwberlin.kbe.gruppe4</groupId>
-        <artifactId>MauMau</artifactId>
+        <artifactId>MauMauUebungsblatt4</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <build>
