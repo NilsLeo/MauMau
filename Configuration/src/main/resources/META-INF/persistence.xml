@@ -5,12 +5,13 @@
              version="3.0">
     <persistence-unit name="default">
 
-        <class>Card</class>
+        <class>inter.Card</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/maumau"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value="admin_123"/>
+
         </properties>
     </persistence-unit>
 </persistence>

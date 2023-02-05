@@ -1,5 +1,4 @@
 import com.google.inject.AbstractModule;
-
 import jakarta.persistence.*;
 
 public class MauMauModule extends AbstractModule {

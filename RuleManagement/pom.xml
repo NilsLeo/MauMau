@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.htwberlin.kbe.gruppe4</groupId>
-    <artifactId>Configuration</artifactId>
+    <artifactId>RuleManagement</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Configuration</name>
+    <name>RuleManagement</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,22 +39,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>5.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.22</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.4.25.Final</version>
-        </dependency>
-
     </dependencies>
 
     <build>
