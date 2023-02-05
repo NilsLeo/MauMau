@@ -7,6 +7,16 @@
     <groupId>de.htwberlin.kbe.gruppe4</groupId>
     <artifactId>MauMauUebungsblatt4</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>CardManagement</module>
+        <module>CLIManagement</module>
+        <module>DeckManagement</module>
+        <module>GameManagement</module>
+        <module>PlayerManagement</module>
+        <module>RuleManagement</module>
+        <module>Configuration</module>
+    </modules>
     <name>MauMau</name>
 
     <properties>
