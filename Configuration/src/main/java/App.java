@@ -1,6 +1,5 @@
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-
 import inter.Card;
 import inter.Suit;
 import inter.Value;

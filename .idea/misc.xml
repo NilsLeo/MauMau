@@ -9,7 +9,6 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Configuration/pom.xml" />
-        <option value="$PROJECT_DIR$/CardManagement/pom.xml" />
         <option value="$PROJECT_DIR$/DeckManagement/pom.xml" />
         <option value="$PROJECT_DIR$/CLIManagement/pom.xml" />
         <option value="$PROJECT_DIR$/GameManagement/pom.xml" />
