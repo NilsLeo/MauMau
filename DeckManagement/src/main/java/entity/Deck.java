@@ -1,4 +1,4 @@
-package export;
+package entity;
 
 import entity.Card;
 import jakarta.persistence.*;

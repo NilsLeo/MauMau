@@ -1,6 +1,7 @@
 package export;
 
 import entity.Card;
+import entity.Deck;
 
 import java.util.ArrayList;
 

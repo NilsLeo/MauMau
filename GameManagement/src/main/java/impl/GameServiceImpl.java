@@ -2,9 +2,7 @@ package impl;
 
 
 import com.google.inject.Inject;
-import entity.Card;
-import entity.Suit;
-import entity.Value;
+import entity.*;
 import export.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

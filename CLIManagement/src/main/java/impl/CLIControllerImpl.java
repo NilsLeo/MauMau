@@ -2,6 +2,7 @@ package impl;
 
 import com.google.inject.Inject;
 import entity.Card;
+import entity.Player;
 import entity.Suit;
 import entity.Value;
 import export.*;

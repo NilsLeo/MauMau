@@ -1,6 +1,7 @@
 package export;
 
 import entity.Card;
+import entity.Rules;
 import entity.Suit;
 import entity.Value;
 

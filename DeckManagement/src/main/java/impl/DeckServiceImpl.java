@@ -1,7 +1,7 @@
 package impl;
 
 import entity.Card;
-import export.Deck;
+import entity.Deck;
 import export.DeckService;
 
 import java.util.ArrayList;

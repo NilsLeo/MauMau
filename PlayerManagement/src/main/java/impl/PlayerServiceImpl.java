@@ -1,9 +1,7 @@
 package impl;
 
 import com.google.inject.Inject;
-import entity.Card;
-import entity.Suit;
-import entity.Value;
+import entity.*;
 import export.*;
 
 public class PlayerServiceImpl implements PlayerService {
