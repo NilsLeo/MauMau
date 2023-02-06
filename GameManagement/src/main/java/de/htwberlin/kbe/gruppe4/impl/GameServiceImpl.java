@@ -35,9 +35,6 @@ public class GameServiceImpl implements GameService {
         for (String name : names) {
             this.game.getPlayers().add(new Player(name));
         }
-        for(Player player : this.game.getPlayers()){
-            System.out.println(player.getName());
-        }
     }
 
     @Override
@@ -150,25 +147,9 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void setCurrentPlayer(int noOfTurns) {
-        // check if game is in reverse order
-        if (isReversed()) {
-            // decrement current player by noOfTurns
-            game.setCurrentPlayer(noOfTurns-1);
-        } else {
-            // increment current player by noOfTurns
-            game.setCurrentPlayer(noOfTurns+1);
-
-
-        }
-
-        // check if current player is less than 0
-        if (game.getCurrentPlayer() < 0) {
-            // set current player to last player in the list
-            game.setCurrentPlayer(game.getPlayers().size() - 1);
-
-        } else if (game.getCurrentPlayer() == game.getPlayers().size()) {
-            // set current player to first player in the list
+    public void setCurrentPlayer(int currentPlayer) {
+        game.setCurrentPlayer(game.getCurrentPlayer()+1);
+        if(game.getCurrentPlayer()==game.getPlayers().size()){
             game.setCurrentPlayer(0);
         }
     }

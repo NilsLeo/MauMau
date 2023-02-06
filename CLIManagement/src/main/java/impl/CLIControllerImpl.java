@@ -119,6 +119,7 @@ public class CLIControllerImpl implements CLIController {
         }
     }
 
+
     public String getPlayOrDraw() {
         cli.displayPlayOrDraw();
         return cli.getPlayOrDraw();
