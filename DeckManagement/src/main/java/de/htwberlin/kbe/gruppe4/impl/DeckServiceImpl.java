@@ -2,6 +2,8 @@ package de.htwberlin.kbe.gruppe4.impl;
 
 import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Deck;
+import de.htwberlin.kbe.gruppe4.entity.Suit;
+import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.DeckService;
 
 import java.util.ArrayList;
@@ -10,15 +12,8 @@ import java.util.List;
 
 public class DeckServiceImpl implements DeckService {
 
-
-
-    @Override
-    public void shuffle(Deck deck) {
-        List<Card> cards = deck.getCards();
-        Collections.shuffle(cards);
-        deck.setCards(cards);
+    public DeckServiceImpl(){
     }
-
     @Override
     public ArrayList<Card> dealHand(Deck deck) {
         ArrayList<Card> hand = new ArrayList<>();
@@ -39,4 +34,19 @@ public class DeckServiceImpl implements DeckService {
         deck.setCards(cards);
         return card;
     }
+
+    @Override
+    public Deck createDeck() {
+        List<Card> cards = new ArrayList<>();
+
+        for (Suit suit : Suit.values()) {
+            for (Value value : Value.values()) {
+                cards.add(new Card(suit, value));
+            }
+        }
+        Deck deck  = new Deck();
+        deck.setCards(cards);
+        return deck;
+    }
+
 }

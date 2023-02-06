@@ -11,15 +11,12 @@ import de.htwberlin.kbe.gruppe4.export.RulesService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GameServiceImpl implements GameService {
     private static final Logger logger = LogManager.getLogger(CardDaoImpl.class);
 
-    private DeckService deckService;
+    DeckService deckService;
     RulesService rulesService;
     PlayerService playerService;
     private Game game;
@@ -38,6 +35,9 @@ public class GameServiceImpl implements GameService {
         for (String name : names) {
             this.game.getPlayers().add(new Player(name));
         }
+        for(Player player : this.game.getPlayers()){
+            System.out.println(player.getName());
+        }
     }
 
     @Override
@@ -52,7 +52,8 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public void startGame() {
-        deckService.shuffle(game.getDeck());
+        game.setDeck(deckService.createDeck());
+        Collections.shuffle(game.getDeck().getCards());
         game.getTable().add(deckService.deal(game.getDeck()));
         for (Player player : game.getPlayers()) {
             playerService.dealHand(player, game.getDeck());
@@ -123,7 +124,7 @@ public class GameServiceImpl implements GameService {
             // clear the table
             game.getTable().clear();
             //shuffles the deck
-            deckService.shuffle(game.getDeck());
+            Collections.shuffle(game.getDeck().getCards());
         }
     }
 

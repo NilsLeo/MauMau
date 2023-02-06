@@ -1,28 +1,21 @@
 package de.htwberlin.kbe.gruppe4.entity;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 public class Game {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "id")
     private int id;
-    @Basic
-    @Column(name = "player")
-    private int player;
-    @OneToOne(mappedBy = "rules")
     private Rules rules;
-    @Basic
-    @Column(name = "current_player")
     private int currentPlayer;
 
-    @OneToOne(mappedBy = "deck")
     private Deck deck;
 
-    @OneToOne(mappedBy = "players")
     private List<Player> players;
+    private List<Card> table;
+
 
     public List<Player> getPlayers() {
         return players;
@@ -32,7 +25,14 @@ public class Game {
         this.players = players;
     }
 
-    private List<Card> table;
+    public Game(){
+        this.rules = new Rules();
+        this.currentPlayer=0;
+        this.deck = new Deck();
+        this.players = new ArrayList<>();
+        this.table = new ArrayList<>();
+    }
+
 
     public List<Card> getTable() {
         return table;
@@ -49,15 +49,6 @@ public class Game {
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getPlayerId() {
-        return player;
-    }
-
-    public void setPlayerId(int player) {
-        this.player = player;
-    }
-
     public Deck getDeck() {
         return deck;
     }
@@ -82,21 +73,6 @@ public class Game {
         this.currentPlayer = currentPlayer;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Game game = (Game) o;
-
-        if (id != game.id) return false;
-        if (player != game.player) return false;
-        if (deck != game.deck) return false;
-        if (rules != game.rules) return false;
-        if (currentPlayer != game.currentPlayer) return false;
-
-        return true;
-    }
 
     public Deck getDeckByDeck() {
         return deck;

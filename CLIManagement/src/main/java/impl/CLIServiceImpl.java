@@ -40,7 +40,7 @@ public class CLIServiceImpl implements CLIService {
     public void displayHand(String name, List<Card> hand) {
         System.out.println(name + "'s hand:");
         for (int i = 0; i < hand.size(); i++) {
-            System.out.println(i+1 + ": " + hand.get(i));
+            System.out.println(i+1 + ": " + hand.get(i).getValue() + " of " + hand.get(i).getSuit());
         }
     }
 

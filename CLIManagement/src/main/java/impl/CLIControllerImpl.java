@@ -6,6 +6,7 @@ import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.GameService;
+import de.htwberlin.kbe.gruppe4.impl.DeckServiceImpl;
 import export.CLIController;
 import export.CLIService;
 
