@@ -26,7 +26,7 @@ public class CLIControllerImpl implements CLIController {
         this.gameService = gameService;
     }
 
-    public List<String> setNames() {
+    private List<String> setNames() {
         return cli.getPlayerNames();
     }
 
@@ -37,7 +37,7 @@ public class CLIControllerImpl implements CLIController {
         runGame();
     }
 
-    public void runGame(){
+    private void runGame(){
         while (!gameService.isGameOver()) {
             cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
             Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
@@ -56,7 +56,7 @@ public class CLIControllerImpl implements CLIController {
         cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
     }
 
-    public void playTurn(Player player, Card lead, String input, int turns) {
+    private void playTurn(Player player, Card lead, String input, int turns) {
         // cli.displayLead(lead.getSuit(), lead.getValue());
         int noOfTurns = 1;
         try {
@@ -72,7 +72,7 @@ public class CLIControllerImpl implements CLIController {
         gameService.refillDeckwithExcessCardsOnTable();
     }
 
-    void confirmOrDenyMauMau(Player player, int index, String input){
+    private void confirmOrDenyMauMau(Player player, int index, String input){
         if ((player.getHand().size() == 2)) {
             cli.announceMauMau();
             rememberedToSayMauMau = true;
@@ -84,7 +84,7 @@ public class CLIControllerImpl implements CLIController {
         }
     }
 
-    void applySpecialRules(Card played){
+    private void applySpecialRules(Card played){
         if (gameService.isDrawTwoOnSeven() && played.getValue() == Value.SEVEN) {
             nextPlayerDraws += 2;
         }
@@ -102,7 +102,7 @@ public class CLIControllerImpl implements CLIController {
         }
     }
 
-    void playCard(String input, Player player, Card lead, int turns, int noOfTurns){
+    private void playCard(String input, Player player, Card lead, int turns, int noOfTurns){
         int index = 0;
         if (input.contains("m")) {
             confirmOrDenyMauMau(player, index, input);
@@ -129,19 +129,19 @@ public class CLIControllerImpl implements CLIController {
         }
     }
 
-    public String getPlayOrDraw() {
+    private String getPlayOrDraw() {
         cli.displayPlayOrDraw();
         return cli.getPlayOrDraw();
     }
 
-    public void penaltyDraw(Player player){
+    private void penaltyDraw(Player player){
         cli.announceForgotToSayMauMau();
         drawCard(player);
 
         drawCard(player);
     }
 
-    public void drawCard(Player player){
+    private void drawCard(Player player){
         if(!gameService.hasCardsLeft()){
             cli.announceNoCardsLeft();
         }
