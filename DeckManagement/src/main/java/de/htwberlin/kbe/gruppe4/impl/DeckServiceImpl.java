@@ -20,6 +20,7 @@ public class DeckServiceImpl implements DeckService {
         for (int i = 0; i < 5; i++) {
             hand.add(deal(deck));
         }
+        
         return hand;
     }
 
@@ -47,6 +48,11 @@ public class DeckServiceImpl implements DeckService {
         Deck deck  = new Deck();
         deck.setCards(cards);
         return deck;
+    }
+
+    @Override
+    public void setDeck(Deck deck) {
+
     }
 
 }

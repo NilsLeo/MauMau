@@ -54,6 +54,7 @@ public class GameServiceImpl implements GameService {
         game.getTable().add(deckService.deal(game.getDeck()));
         for (Player player : game.getPlayers()) {
             playerService.dealHand(player, game.getDeck());
+            playerService.sortHand(player);
         }
         logger.info("Game started");
     }
@@ -61,7 +62,18 @@ public class GameServiceImpl implements GameService {
     @Override
     public Card getLeadCard() {
         return game.getTable().get(game.getTable().size() - 1);
-
+    }
+    @Override
+    public void refillDeckwithExcessCardsOnTable(){
+        if(game.getTable().size()>1){
+            Deck deck = game.getDeck();
+            for(int i = 0; i<game.getTable().size()-2;i++){
+                deck.getCards().add(game.getTable().get(i));
+                game.getTable().remove(game.getTable().get(i));
+            }
+            game.setDeck(deck);
+            Collections.shuffle(game.getDeck().getCards());
+        }
     }
 
     @Override
@@ -103,26 +115,6 @@ public class GameServiceImpl implements GameService {
         game.getTable().add(card);
         logger.info(card.getValue() + " of " + card.getSuit() + " was placed on table.");
         logger.debug("Top card is the " + getLeadValue() + " of " + getLeadSuit());
-        // Check if the deck has less than 4 cards remaining
-        if(game.getDeck().getCards().size() <= 3){
-            // create a list of cards to remove
-            List<Card> cardsToRemove = new ArrayList<>();
-            //iterate over the cards in the table
-            for (Card tableCard : game.getTable()) {
-                //if the card is not the lead card, add it to the list of cards to remove
-                if(!tableCard.equals(getLeadCard())){
-                    cardsToRemove.add(tableCard);
-                }
-            }
-            // remove the list of cards to remove from the table
-            game.getTable().removeAll(cardsToRemove);
-            // adds them back to deck
-            game.getDeck().addAll(cardsToRemove);
-            // clear the table
-            game.getTable().clear();
-            //shuffles the deck
-            Collections.shuffle(game.getDeck().getCards());
-        }
     }
 
 
@@ -130,6 +122,7 @@ public class GameServiceImpl implements GameService {
     public Card drawCard(Player player) {
         Card card = deckService.deal(game.getDeck());
         playerService.draw(player, card);
+        player.setHand(playerService.sortHand(player));
 
         logger.info(player + " drew a " + card.getValue() + " of " + card.getSuit());
 

@@ -34,7 +34,6 @@ public class CLIControllerImpl implements CLIController {
         gameService.setPlayers(cli.getPlayerNames());
         gameService.setRules(cli.getRule("draw two on seven"), cli.getRule("choose suit on jack"), cli.getRule("reverse on ace"));
         gameService.startGame();
-        gameService.addCardToTable(gameService.getLeadCard());
         while (!gameService.isGameOver()) {
             cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
             Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
@@ -117,6 +116,7 @@ public class CLIControllerImpl implements CLIController {
         } catch (Exception e) {
             cli.announceInvalid();
         }
+        gameService.refillDeckwithExcessCardsOnTable();
     }
 
 

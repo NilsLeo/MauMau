@@ -12,4 +12,6 @@ public interface DeckService {
     Card deal(Deck deck);
 
     Deck createDeck();
+
+    void setDeck(Deck deck);
 }

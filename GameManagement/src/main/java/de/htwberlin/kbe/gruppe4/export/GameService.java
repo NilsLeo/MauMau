@@ -11,6 +11,7 @@ public interface GameService {
     Card getLeadCard();
     void addCardToTable(Card card);
     Card drawCard(Player player);
+    void refillDeckwithExcessCardsOnTable();
     Card playCard(Player player, int index);
     boolean isCardValid(Card card);
     void setCurrentPlayer(int noOfTurns);
