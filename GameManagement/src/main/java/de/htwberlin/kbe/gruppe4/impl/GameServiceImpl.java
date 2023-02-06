@@ -19,7 +19,7 @@ public class GameServiceImpl implements GameService {
     DeckService deckService;
     RulesService rulesService;
     PlayerService playerService;
-    private Game game;
+    Game game;
 
     @Inject
     public GameServiceImpl(DeckService deckService, RulesService rulesService,
@@ -82,34 +82,6 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public boolean hasDuplicateCards() {
-        // list to store all the cards in the game
-        List<Card> allCards = new ArrayList<>();
-        // add all cards in the deck to the list
-        allCards.addAll(game.getDeck().getCards());
-        // add all cards on the table to the list
-        allCards.addAll(game.getTable());
-        // check all players' hands for duplicates
-        for (Player player : game.getPlayers()) {
-            // add all cards in the player's hand to the list
-            allCards.addAll(player.getHand());
-        }
-        // check the combined list for duplicates
-        return hasDuplicates(allCards);
-    }
-    @Override
-    public boolean hasDuplicates(List<Card> cards) {
-        // use a set to check for duplicates
-        Set<Card> set = new HashSet<>();
-        for (Card card : cards) {
-            if (!set.add(card)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public void addCardToTable(Card card) {
         // adding a card to the table
         game.getTable().add(card);
@@ -134,10 +106,7 @@ public class GameServiceImpl implements GameService {
         return playerService.play(player, index, getLeadSuit(), getLeadValue());
     }
 
-    @Override
-    public boolean isCardValid(Card card) {
-        return rulesService.isCardValid(card, getLeadSuit(), getLeadValue(), game.getRules());
-    }
+
 
     @Override
     public void setCurrentPlayer(int currentPlayer) {
@@ -206,30 +175,9 @@ public class GameServiceImpl implements GameService {
     @Override
     public void setReversed(boolean reversed) {
         game.getRules().setReversed(reversed);
-        ;
-    }
-
-    @Override
-    public Deck getDeck() {
-        return game.getDeck();
-    }
-
-    @Override
-    public Rules getRules() {
-        return game.getRules();
-    }
-
-    @Override
-    public void setDeckService(DeckService deckService) {
-        this.deckService = deckService;
 
     }
 
-    @Override
-    public List<Card> getTable() {
-
-        return game.getTable();
-    }
 
     @Override
     public void setSuitChoice(Suit suit) {

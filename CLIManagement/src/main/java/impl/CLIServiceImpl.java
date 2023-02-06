@@ -18,18 +18,6 @@ public class CLIServiceImpl implements CLIService {
     }
 
     @Override
-    public void displayRules() {
-        System.out.println("Welcome to MauMau!");
-        System.out.println("Here are the rules you can choose from:");
-        System.out.println(
-                "1. Draw two on seven: Whenever a player plays a seven, the next player has to draw two cards and forfeit their turn.");
-        System.out.println(
-                "2. Choose suit on jack: Whenever a player plays a jack, they get to choose the suit that the next player has to follow.");
-        System.out.println("3. Play again on ace: Whenever a player plays an ace, they get to play again.");
-        System.out.println("Enter 'y' to enable a rule or 'n' to disable it:");
-    }
-
-    @Override
     public boolean getRule(String name) {
         System.out.print("Enable " + name + "? (y/n): ");
         String input = scanner.nextLine();
@@ -70,24 +58,10 @@ public class CLIServiceImpl implements CLIService {
     }
 
     @Override
-    public void announceError(){
-        System.out.println("Errorr");
-    }
-
-    @Override
     public void announceInvalid() {
         System.out.println("Invalid input. Try again.");
     }
 
-    @Override
-    public void announcePlay(String name, Card card) {
-        System.out.println(name + " played " + card);
-    }
-
-    @Override
-    public void announcePlayAgainOnAce(String name, Card card) {
-        System.out.println(name + " played " + card + ". They get to play again.");
-    }
 
     @Override
     public void announceWinner(String name) {
@@ -106,11 +80,6 @@ public class CLIServiceImpl implements CLIService {
         return names;
     }
 
-    @Override
-    public void announceDrawTwoCards() {
-        System.out.println("The next player must draw 2 Cards.");
-
-    }
 
     @Override
     public void displaySuits() {
@@ -174,10 +143,4 @@ public class CLIServiceImpl implements CLIService {
 
     }
 
-    @Override
-    public void announceDuplicateCardError() {
-        System.out.println("Error. There are duplicate Cards");
-
-
-    }
 }

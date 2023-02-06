@@ -13,7 +13,6 @@ public interface GameService {
     Card drawCard(Player player);
     void refillDeckwithExcessCardsOnTable();
     Card playCard(Player player, int index);
-    boolean isCardValid(Card card);
     void setCurrentPlayer(int noOfTurns);
     List<Player> getPlayers();
     int getCurrentPlayer();
@@ -25,14 +24,8 @@ public interface GameService {
     boolean isChooseSuitOnJack();
     boolean isReverseOnAce();
     void setPlayers(List<String> names);
-    void setDeckService(DeckService deckService);
-    Deck getDeck();
-    Rules getRules();
-    List<Card> getTable();
     void setReversed(boolean reversed);
     boolean isReversed();
     void setSuitChoice(Suit suit);
-    boolean hasDuplicates(List<Card> cards);
-    boolean hasDuplicateCards();
     boolean hasCardsLeft();
 }
