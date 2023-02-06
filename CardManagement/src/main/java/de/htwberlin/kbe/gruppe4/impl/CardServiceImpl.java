@@ -10,9 +10,6 @@ import org.apache.logging.log4j.Logger;
 
 public class CardServiceImpl implements CardService {
 
-
-    static final private Logger LOGGER = LogManager.getLogger(CardService.class);
-
     private CardDao cardDao;
 
     private EntityTransaction entityTransaction;

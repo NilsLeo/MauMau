@@ -3,6 +3,7 @@ package de.htwberlin.kbe.gruppe4.impl;
 
 import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.entity.Game;
 import de.htwberlin.kbe.gruppe4.export.DeckService;
 import de.htwberlin.kbe.gruppe4.export.GameService;
 import de.htwberlin.kbe.gruppe4.export.PlayerService;

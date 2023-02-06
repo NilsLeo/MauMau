@@ -18,7 +18,7 @@ public class App {
 
         CardDao cardDao = new CardDaoImpl(entityManager);
         CardService cardService = new CardServiceImpl(cardDao, transaction);
-
+        CLIController controller = injector.getInstance(CLIController.class);
 
         try {
             cardService.createCard();
@@ -34,6 +34,8 @@ public class App {
         } finally {
             entityManager.close();
             entityManagerFactory.close();
+            controller.startGame();
+
         }
     }
 }
