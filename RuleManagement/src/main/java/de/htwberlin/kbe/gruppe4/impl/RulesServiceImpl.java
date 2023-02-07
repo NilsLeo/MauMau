@@ -11,17 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RulesServiceImpl implements RulesService {
-
+    private boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
+        return card.getSuit() == leadSuit || card.getValue() == leadValue;
+    }
     @Override
     public boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) {
-
-        Suit suit = card.getSuit();
-        Value value = card.getValue();
         boolean valid = false;
         if (rules.isChooseSuitOnJackEnabled()) {
             if (rules.getSuit() != null) {
 
-                if(rules.getSuit() == suit){
+                if(rules.getSuit() == card.getSuit()){
                     valid = true;
                     rules.setSuit(null);
                 }
@@ -29,17 +28,16 @@ public class RulesServiceImpl implements RulesService {
                     valid = false;
                 }
             } else {
-
-
-                valid = (leadSuit == suit || leadValue == value) ? (true) : (false);
+               valid =  isValidBasedOnLead(card, leadSuit, leadValue);
             }
         } else {
 
-            valid = (leadSuit == suit || leadValue == value) ? (true) : (false);
+            valid =  isValidBasedOnLead(card, leadSuit, leadValue);
         }
         return valid;
 
     }
+
 
     @Override
     public Map<String, Object> getSpecialRules(Rules rules) {
@@ -109,30 +107,32 @@ public class RulesServiceImpl implements RulesService {
         return rules;
     }
 
-    @Override
     public int setCurrentPlayer(Rules rules, int currentPlayer, int maxPlayer) {
         int nextPlayer = currentPlayer;
-        // in case of Clockwise direction
-        if(rules.isDirectionClockwise()){
-
-            nextPlayer++;
-            // sets next player to first if current is last player in the order
-            if(nextPlayer>maxPlayer){
-                nextPlayer=0;
-            }
+        if (rules.isDirectionClockwise()) {
+            nextPlayer = getNextClockwisePlayer(currentPlayer, maxPlayer);
+        } else {
+            nextPlayer = getNextCounterClockwisePlayer(currentPlayer, maxPlayer);
         }
-
-        // in case of Counter Clockwise direction
-        
-        if(!rules.isDirectionClockwise()){
-
-            nextPlayer--;
-            // sets next player to first if current is last player in the order
-            if(nextPlayer<0){
-                nextPlayer=maxPlayer;
-            }
-        }
-
         return nextPlayer;
     }
+
+    private int getNextClockwisePlayer(int currentPlayer, int maxPlayer) {
+        int nextPlayer = currentPlayer + 1;
+        if (nextPlayer > maxPlayer) {
+            nextPlayer = 0;
+        }
+        return nextPlayer;
+    }
+
+    private int getNextCounterClockwisePlayer(int currentPlayer, int maxPlayer) {
+        int nextPlayer = currentPlayer - 1;
+        if (nextPlayer < 0) {
+            nextPlayer = maxPlayer;
+        }
+        return nextPlayer;
+    }
+
+
+
 }
