@@ -98,16 +98,18 @@ gameService.setNextPlayerDraws(0);
             gameService.setSuitChoice(choice);
             cli.announceChosenSuit(choice);
         }
-
-        if (specialRules.get("direction")=="clockwise") {
-            gameService.setDirectionClockwise(true);
-
+            if (specialRules.get("direction")=="clockwise") {
+                gameService.setDirectionClockwise(true);
+            }
+            if (specialRules.get("direction")=="counterclockwise") {
+                gameService.setDirectionClockwise(false);
+            }
+        if(played.getValue()==Value.ACE){
             cli.announceReversal();
+
         }
-        if (specialRules.get("direction")=="counterclockwise") {
-            gameService.setDirectionClockwise(false);
-            cli.announceReversal();
-        }
+
+
 
     }
 

@@ -109,7 +109,6 @@ public class RulesServiceImpl implements RulesService {
         // in case of Counter Clockwise direction
         
         if(!rules.isDirectionClockwise()){
-            System.out.println("counterclockwise");
 
             nextPlayer--;
             // sets next player to first if current is last player in the order
