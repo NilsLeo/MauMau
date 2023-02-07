@@ -22,12 +22,4 @@ public class CardServiceImpl implements CardService {
         this.entityTransaction = entityTransaction;
     }
 
-    @Override
-    public void createCard(){
-        entityTransaction.begin();
-        Card category = new Card();
-        cardDao.create(category);
-        entityTransaction.commit();
-    }
-
 }

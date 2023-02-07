@@ -20,7 +20,6 @@ public class App {
         CLIController controller = injector.getInstance(CLIController.class);
 
         try {
-            cardService.createCard();
 //            transaction.begin();
 //            entity.Card card = new entity.Card(entity.Suit.CLUBS, entity.Value.EIGHT);
 //            entityManager.persist(card);
