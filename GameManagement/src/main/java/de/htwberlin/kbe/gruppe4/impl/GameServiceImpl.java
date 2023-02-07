@@ -8,13 +8,11 @@ import de.htwberlin.kbe.gruppe4.export.DeckService;
 import de.htwberlin.kbe.gruppe4.export.GameService;
 import de.htwberlin.kbe.gruppe4.export.PlayerService;
 import de.htwberlin.kbe.gruppe4.export.RulesService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import org.apache.log4j.Logger;
 import java.util.*;
 
 public class GameServiceImpl implements GameService {
-    private static final Logger logger = LogManager.getLogger(CardDaoImpl.class);
+    private static final Logger logger =  Logger.getLogger(CardDaoImpl.class);
 
     DeckService deckService;
     RulesService rulesService;

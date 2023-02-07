@@ -5,8 +5,6 @@ import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.export.CardDao;
 import de.htwberlin.kbe.gruppe4.export.CardService;
 import jakarta.persistence.EntityTransaction;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class CardServiceImpl implements CardService {
 

@@ -10,7 +10,6 @@ import de.htwberlin.kbe.gruppe4.impl.CardServiceImpl;
 import jakarta.persistence.*;
 public class App {
     public static void main(String[] args) {
-
         Injector injector = Guice.createInjector(new MauMauModule());
         EntityManagerFactory entityManagerFactory = injector.getInstance(EntityManagerFactory.class);
         EntityManager entityManager = injector.getInstance(EntityManager.class);
