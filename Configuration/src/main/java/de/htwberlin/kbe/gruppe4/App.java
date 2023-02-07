@@ -25,6 +25,7 @@ public class App {
 //            entity.Card card = new entity.Card(entity.Suit.CLUBS, entity.Value.EIGHT);
 //            entityManager.persist(card);
 //            transaction.commit();
+
         } catch (Exception e) {
             e.printStackTrace();
             if (transaction.isActive()) {
