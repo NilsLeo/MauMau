@@ -4,6 +4,7 @@ package de.htwberlin.kbe.gruppe4.export;
 import de.htwberlin.kbe.gruppe4.entity.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GameService {
     void setRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce);
@@ -20,12 +21,22 @@ public interface GameService {
     Value getLeadValue();
     boolean isGameOver();
     boolean isCardValid(Card card, Card lead);
-    boolean isDrawTwoOnSeven();
-    boolean isChooseSuitOnJack();
-    boolean isReverseOnAce();
+    Map<String, Object> getSpecialRules();
     void setPlayers(List<String> names);
-    void setReversed(boolean reversed);
-    boolean isReversed();
-    void setSuitChoice(Suit suit);
     boolean hasCardsLeft();
+
+    int getNextPlayerDraws();
+
+    void setNextPlayerDraws(int nextPlayerDraws);
+    void applySpecialRules(Card played);
+
+    void setSuitChoice(Suit choice);
+
+    void setDirectionClockwise(boolean directionClockwise);
+
+    boolean isDirectionClockwise();
+
+    void setRememberedToSayMauMau(boolean b);
+
+    boolean getRememberedToSayMauMau();
 }

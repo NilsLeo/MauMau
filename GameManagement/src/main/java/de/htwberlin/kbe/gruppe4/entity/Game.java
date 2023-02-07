@@ -11,7 +11,16 @@ public class Game {
     private Rules rules;
     private int currentPlayer;
 
+    private int nextPlayerDraws;
     private Deck deck;
+
+    public int getNextPlayerDraws() {
+        return nextPlayerDraws;
+    }
+
+    public void setNextPlayerDraws(int nextPlayerDraws) {
+        this.nextPlayerDraws = nextPlayerDraws;
+    }
 
     private List<Player> players;
     private List<Card> table;
@@ -31,6 +40,7 @@ public class Game {
         this.deck = new Deck();
         this.players = new ArrayList<>();
         this.table = new ArrayList<>();
+        this.nextPlayerDraws = 0;
     }
 
 

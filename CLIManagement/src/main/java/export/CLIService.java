@@ -1,5 +1,6 @@
 package export;
 import de.htwberlin.kbe.gruppe4.entity.Card;
+import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 
@@ -22,11 +23,14 @@ public interface CLIService {
     Suit getSuitChoice();
     void announceChosenSuit(Suit suit);
     void displayPlayOrDraw();
-    void displayDraw(Suit suit, Value value);
+    void displayDraw(Player player, Suit suit, Value value);
     void displaySuitChoice();
     void displayPlay(Suit suit, Value value);
     void announceInvalidMauMauCall();
     void announceMauMau();
     void announceForgotToSayMauMau();
 
+    void displayNextPlayer2Draws();
+
+    void announceReversal();
 }

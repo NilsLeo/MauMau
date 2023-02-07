@@ -2,85 +2,79 @@ package de.htwberlin.kbe.gruppe4.entity;
 
 import jakarta.persistence.*;
 
-@Entity
 public class Rules {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "id")
-    private int id;
-    @Basic
-    @Column(name = "draw_two_on_seven")
-    private boolean drawTwoOnSeven;
-    @Basic
-    @Column(name = "choose_suit_on_jack")
-    private boolean chooseSuitOnJack;
-    @Basic
-    @Column(name = "reverse_on_ace")
-    private boolean reverseOnAce;
-    @Basic
-    @Column(name = "reversed")
-    private boolean reversed;
-    @Basic
-    @Column(name = "suit")
+    private boolean drawTwoOnSevenToggled;
+    private boolean chooseSuitOnJackToggled;
+
+    private boolean directionClockwise;
+
+    public boolean isDirectionClockwise() {
+        return directionClockwise;
+    }
+
+    public void setDirectionClockwise(boolean directionClockwise) {
+        this.directionClockwise = directionClockwise;
+    }
+
+    public Rules() {
+        this.directionClockwise = true;
+    }
+
+    private boolean drawTwoOnSevenEnabled;
+    private boolean chooseSuitOnJackEnabled;
+    private boolean reverseOnAceEnabled;
+    private boolean rememberedToSayMauMau;
+
+    public boolean isRememberedToSayMauMau() {
+        return rememberedToSayMauMau;
+    }
+
+    public void setRememberedToSayMauMau(boolean rememberedToSayMauMau) {
+        this.rememberedToSayMauMau = rememberedToSayMauMau;
+    }
+
     private Suit suit;
-//    @OneToMany(mappedBy = "rulesByRulesId")
-//    private Collection<Game> gamesById;
 
-    public boolean isDrawTwoOnSeven() {
-        return drawTwoOnSeven;
+    public boolean isDrawTwoOnSevenEnabled() {
+        return drawTwoOnSevenEnabled;
     }
 
-    public boolean isChooseSuitOnJack() {
-        return chooseSuitOnJack;
+    public void setDrawTwoOnSevenEnabled(boolean drawTwoOnSevenEnabled) {
+        this.drawTwoOnSevenEnabled = drawTwoOnSevenEnabled;
     }
 
-    public boolean isReverseOnAce() {
-        return reverseOnAce;
+    public boolean isChooseSuitOnJackEnabled() {
+        return chooseSuitOnJackEnabled;
     }
 
-    public boolean isReversed() {
-        return reversed;
+    public void setChooseSuitOnJackEnabled(boolean chooseSuitOnJackEnabled) {
+        this.chooseSuitOnJackEnabled = chooseSuitOnJackEnabled;
     }
 
-    public int getId() {
-        return id;
+    public boolean isReverseOnAceEnabled() {
+        return reverseOnAceEnabled;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setReverseOnAceEnabled(boolean reverseOnAceEnabled) {
+        this.reverseOnAceEnabled = reverseOnAceEnabled;
     }
 
-    public boolean getDrawTwoOnSeven() {
-        return drawTwoOnSeven;
+    public boolean isDrawTwoOnSevenToggled() {
+        return drawTwoOnSevenToggled;
     }
 
-    public void setDrawTwoOnSeven(boolean drawTwoOnSeven) {
-        this.drawTwoOnSeven = drawTwoOnSeven;
+    public void setDrawTwoOnSevenToggled(boolean drawTwoOnSevenToggled) {
+        this.drawTwoOnSevenToggled = drawTwoOnSevenToggled;
     }
 
-    public boolean getChooseSuitOnJack() {
-        return chooseSuitOnJack;
+    public boolean getChooseSuitOnJackToggled() {
+        return chooseSuitOnJackToggled;
     }
 
-    public void setChooseSuitOnJack(boolean chooseSuitOnJack) {
-        this.chooseSuitOnJack = chooseSuitOnJack;
+    public void setChooseSuitOnJackToggled(boolean chooseSuitOnJackToggled) {
+        this.chooseSuitOnJackToggled = chooseSuitOnJackToggled;
     }
-
-    public boolean getReverseOnAce() {
-        return reverseOnAce;
-    }
-
-    public void setReverseOnAce(boolean reverseOnAce) {
-        this.reverseOnAce = reverseOnAce;
-    }
-
-    public boolean getReversed() {
-        return reversed;
-    }
-
-    public void setReversed(boolean reversed) {
-        this.reversed = reversed;
-    }
+    
 
     public Suit getSuit() {
         return suit;
@@ -89,11 +83,4 @@ public class Rules {
     public void setSuit(Suit suit) {
         this.suit = suit;
     }
-//    public Collection<Game> getGamesById() {
-//        return gamesById;
-//    }
-//
-//    public void setGamesById(Collection<Game> gamesById) {
-//        this.gamesById = gamesById;
-//    }
 }

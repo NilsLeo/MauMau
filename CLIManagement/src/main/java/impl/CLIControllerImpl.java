@@ -11,15 +11,13 @@ import export.CLIController;
 import export.CLIService;
 
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CLIControllerImpl implements CLIController {
     private final CLIService cli;
     private final GameService gameService;
-    int nextPlayerDraws = 0;
-    boolean rememberedToSayMauMau = false;
-
     @Inject
     public CLIControllerImpl(CLIService cli, GameService gameService) {
         this.cli = cli;
@@ -41,12 +39,12 @@ public class CLIControllerImpl implements CLIController {
         while (!gameService.isGameOver()) {
             cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
             Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
-            if (nextPlayerDraws != 0) {
-                for (int i = 0; i < nextPlayerDraws; i++) {
+            if (gameService.getNextPlayerDraws() != 0) {
+                for (int i = 0; i < gameService.getNextPlayerDraws(); i++) {
                     drawCard(player);
 
                 }
-                nextPlayerDraws = 0;
+gameService.setNextPlayerDraws(0);
             }
             cli.displayHand(player.getName(), player.getHand());
             cli.displayPlayOrDraw();
@@ -75,7 +73,7 @@ public class CLIControllerImpl implements CLIController {
     private void confirmOrDenyMauMau(Player player, int index, String input){
         if ((player.getHand().size() == 2)) {
             cli.announceMauMau();
-            rememberedToSayMauMau = true;
+            gameService.setRememberedToSayMauMau(true);
             Matcher matcher = Pattern.compile("\\d+").matcher(input);
             matcher.find();
             index = Integer.valueOf(matcher.group())-1;
@@ -85,11 +83,15 @@ public class CLIControllerImpl implements CLIController {
     }
 
     private void applySpecialRules(Card played){
-        if (gameService.isDrawTwoOnSeven() && played.getValue() == Value.SEVEN) {
-            nextPlayerDraws += 2;
+        gameService.applySpecialRules(played);
+        Map<String, Object> specialRules = gameService.getSpecialRules();
+
+        if (Boolean.TRUE.equals(specialRules.get("drawTwoOnSeven"))) {
+            gameService.setNextPlayerDraws(gameService.getNextPlayerDraws()+2);
+            cli.displayNextPlayer2Draws();
         }
 
-        if (gameService.isChooseSuitOnJack() && played.getValue() == Value.JACK) {
+        if (specialRules.get("chosenSuit")!=null) {
             cli.displaySuitChoice();
             cli.displaySuits();
             Suit choice = cli.getSuitChoice();
@@ -97,10 +99,19 @@ public class CLIControllerImpl implements CLIController {
             cli.announceChosenSuit(choice);
         }
 
-        if (gameService.isReverseOnAce() && played.getValue() == Value.ACE) {
-            gameService.setReversed(!gameService.isReversed());
+        if (specialRules.get("direction")=="clockwise") {
+            gameService.setDirectionClockwise(true);
+
+            cli.announceReversal();
         }
+        if (specialRules.get("direction")=="counterclockwise") {
+            gameService.setDirectionClockwise(false);
+            cli.announceReversal();
+        }
+
     }
+
+
 
     private void playCard(String input, Player player, Card lead, int turns, int noOfTurns){
         int index = 0;
@@ -119,7 +130,7 @@ public class CLIControllerImpl implements CLIController {
             gameService.addCardToTable(played);
             applySpecialRules(played);
             // 2 Karten Strafziehen
-            if (player.getHand().size() == 1 && !rememberedToSayMauMau) {
+            if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
                 penaltyDraw(player);
             }
             if (player.getHand().size() == 1) {
@@ -148,7 +159,7 @@ public class CLIControllerImpl implements CLIController {
         else{
 
             Card drawnCard = gameService.drawCard(player);
-            cli.displayDraw(drawnCard.getSuit(), drawnCard.getValue());
+            cli.displayDraw(player, drawnCard.getSuit(), drawnCard.getValue());
         }
     }
 }

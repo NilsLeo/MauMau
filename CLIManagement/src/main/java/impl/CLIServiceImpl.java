@@ -1,6 +1,7 @@
 package impl;
 
 import de.htwberlin.kbe.gruppe4.entity.Card;
+import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import export.CLIService;
@@ -34,12 +35,12 @@ public class CLIServiceImpl implements CLIService {
 
     @Override
     public void displayPlayOrDraw() {
-        System.out.println("Enter a number to play a card, 'd' to draw a card or '#m' to place a number and say Mau:");
+        System.out.println("Enter a number to play a card, 'd' to draw a card or '#m'(number of your card followed by the letter m)  to place a number and say Mau:");
     }
 
     @Override
-    public void displayDraw(Suit suit, Value value) {
-        System.out.println("You drew the " + value + " of " + suit + ".");
+    public void displayDraw(Player player, Suit suit, Value value) {
+        System.out.println(player.getName() + " drew the " + value + " of " + suit + ".");
     }
 
 
@@ -129,11 +130,20 @@ public class CLIServiceImpl implements CLIService {
         System.out.println("MauMau!");
 
     }
-
+@Override
     public void announceForgotToSayMauMau(){
-        System.out.println("You forgot to say MauMau when playing your Last Card. You must now draws2 Cards a s a penalty");
+        System.out.println("You forgot to say MauMau when playing your Last Card. You must now draw 2 Cards as a penalty");
 
+    }
 
+    @Override
+    public void displayNextPlayer2Draws() {
+        System.out.println("You played a SEVEN! The next player must draw 2 Cards!");
+    }
+
+    @Override
+    public void announceReversal() {
+        System.out.println("You played an ACE! The Direction will be reversed!");
     }
 
     @Override

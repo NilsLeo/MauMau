@@ -37,12 +37,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public void setRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce) {
-        game.getRules().setDrawTwoOnSeven(drawTwoOnSeven);
-        game.getRules().setChooseSuitOnJack(chooseSuitOnJack);
-        game.getRules().setReverseOnAce(reverseOnAce);
-        logger.info("Rules for the game have been set: draw two on seven = " + drawTwoOnSeven +
-                ", choose suit on jack = " + chooseSuitOnJack +
-                ", reverse on ace = " + reverseOnAce);
+        game.setRules(rulesService.setupRules(drawTwoOnSeven, chooseSuitOnJack, reverseOnAce, game.getRules()));
     }
 
     @Override
@@ -80,6 +75,52 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
+    public int getNextPlayerDraws() {
+        return game.getNextPlayerDraws();
+    }
+
+    @Override
+    public void setNextPlayerDraws(int nextPlayerDraws) {
+       game.setNextPlayerDraws(nextPlayerDraws);
+    }
+
+    @Override
+public Map<String, Object> getSpecialRules(){
+        return rulesService.getSpecialRules(game.getRules());
+    }
+
+    @Override
+    public void applySpecialRules(Card played) {
+        rulesService.applySpecialRules(played, game.getRules());
+    }
+
+    @Override
+    public void setSuitChoice(Suit choice) {
+        game.getRules().setSuit(choice);
+    }
+
+    @Override
+    public void setDirectionClockwise(boolean directionClockwise) {
+        game.getRules().setDirectionClockwise(directionClockwise);
+    }
+
+    @Override
+    public boolean isDirectionClockwise() {
+        return game.getRules().isDirectionClockwise();
+    }
+
+    @Override
+    public void setRememberedToSayMauMau(boolean rememberedToSayMauMau) {
+        game.getRules().setRememberedToSayMauMau(rememberedToSayMauMau);
+    }
+
+    @Override
+    public boolean getRememberedToSayMauMau() {
+        return game.getRules().isRememberedToSayMauMau();
+    }
+
+
+    @Override
     public void addCardToTable(Card card) {
         // adding a card to the table
         game.getTable().add(card);
@@ -108,10 +149,8 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public void setCurrentPlayer(int currentPlayer) {
-        game.setCurrentPlayer(game.getCurrentPlayer()+1);
-        if(game.getCurrentPlayer()==game.getPlayers().size()){
-            game.setCurrentPlayer(0);
-        }
+        game.setCurrentPlayer(rulesService.setCurrentPlayer(game.getRules(), game.getCurrentPlayer(), game.getPlayers().size()-1));
+
     }
 
     @Override
@@ -148,37 +187,5 @@ public class GameServiceImpl implements GameService {
     @Override
     public boolean isCardValid(Card card, Card lead) {
         return rulesService.isCardValid(card, getLeadSuit(), getLeadValue(), game.getRules());
-    }
-
-    @Override
-    public boolean isDrawTwoOnSeven() {
-        return game.getRules().isDrawTwoOnSeven();
-    }
-
-    @Override
-    public boolean isChooseSuitOnJack() {
-        return game.getRules().isChooseSuitOnJack();
-    }
-
-    @Override
-    public boolean isReverseOnAce() {
-        return game.getRules().isReverseOnAce();
-    }
-
-    @Override
-    public boolean isReversed() {
-        return game.getRules().isReversed();
-    }
-
-    @Override
-    public void setReversed(boolean reversed) {
-        game.getRules().setReversed(reversed);
-
-    }
-
-
-    @Override
-    public void setSuitChoice(Suit suit) {
-        game.getRules().setSuit(suit);
     }
 }
