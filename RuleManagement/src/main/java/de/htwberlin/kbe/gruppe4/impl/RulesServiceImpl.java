@@ -14,14 +14,22 @@ public class RulesServiceImpl implements RulesService {
 
     @Override
     public boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) {
+
         Suit suit = card.getSuit();
         Value value = card.getValue();
         boolean valid = false;
         if (rules.isChooseSuitOnJackEnabled()) {
             if (rules.getSuit() != null) {
-                valid = (rules.getSuit() == suit) ? (true) : (false);
-                rules.setSuit(null);
+
+                if(rules.getSuit() == suit){
+                    valid = true;
+                    rules.setSuit(null);
+                }
+                else {
+                    valid = false;
+                }
             } else {
+
 
                 valid = (leadSuit == suit || leadValue == value) ? (true) : (false);
             }
@@ -37,10 +45,18 @@ public class RulesServiceImpl implements RulesService {
     public Map<String, Object> getSpecialRules(Rules rules) {
         Map<String, Object> specialRules = new HashMap<>();
         if (rules.getChooseSuitOnJackToggled()) {
-            specialRules.put("chosenSuit", rules.getSuit());
+            specialRules.put("chooseSuit", true);
+
         }
         else{
-            specialRules.put("chosenSuit", null);
+            specialRules.put("chooseSuit", false);
+        }
+        if (rules.isReverseOnAceEnabled()) {
+            specialRules.put("reverseOnAce", true);
+
+        }
+        else{
+            specialRules.put("reverseOnAce", false);
         }
         if (rules.isDrawTwoOnSevenToggled()) {
             specialRules.put("drawTwoOnSeven", true);

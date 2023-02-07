@@ -39,4 +39,6 @@ public interface GameService {
     void setRememberedToSayMauMau(boolean b);
 
     boolean getRememberedToSayMauMau();
+
+    Card cardToPlay(Player player, int index);
 }

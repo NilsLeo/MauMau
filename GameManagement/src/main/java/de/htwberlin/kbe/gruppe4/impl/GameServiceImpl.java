@@ -119,6 +119,11 @@ public Map<String, Object> getSpecialRules(){
         return game.getRules().isRememberedToSayMauMau();
     }
 
+    @Override
+    public Card cardToPlay(Player player, int index) {
+        return playerService.cardToPlay(player, index, getLeadSuit(), getLeadValue());
+    }
+
 
     @Override
     public void addCardToTable(Card card) {

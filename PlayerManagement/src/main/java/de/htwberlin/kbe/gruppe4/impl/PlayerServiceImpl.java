@@ -32,14 +32,13 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Card play(Player player, int index, Suit leadSuit, Value leadValue) {
-        if (index < 0 || index >= player.getHand().size()) {
-            return null;
-        }
         Card card = player.getHand().get(index);
-        if (card.getSuit() != leadSuit && card.getValue() != leadValue) {
-            return null;
-        }
         player.getHand().remove(index);
+        return card;
+    }
+    @Override
+    public Card cardToPlay(Player player, int index, Suit leadSuit, Value leadValue){
+        Card card = player.getHand().get(index);
         return card;
     }
 

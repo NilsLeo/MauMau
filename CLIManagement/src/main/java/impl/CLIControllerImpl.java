@@ -57,16 +57,12 @@ gameService.setNextPlayerDraws(0);
     private void playTurn(Player player, Card lead, String input, int turns) {
         // cli.displayLead(lead.getSuit(), lead.getValue());
         int noOfTurns = 1;
-        try {
             if (input.equals("d")) {
                 drawCard(player);
                 gameService.setCurrentPlayer(noOfTurns);
             } else {
                 playCard(input, player, lead, turns, noOfTurns);
             }
-        } catch (Exception e) {
-            cli.announceInvalid();
-        }
         gameService.refillDeckwithExcessCardsOnTable();
     }
 
@@ -91,7 +87,7 @@ gameService.setNextPlayerDraws(0);
             cli.displayNextPlayer2Draws();
         }
 
-        if (specialRules.get("chosenSuit")!=null) {
+        if (Boolean.TRUE.equals(specialRules.get("chooseSuit"))) {
             cli.displaySuitChoice();
             cli.displaySuits();
             Suit choice = cli.getSuitChoice();
@@ -104,7 +100,8 @@ gameService.setNextPlayerDraws(0);
             if (specialRules.get("direction")=="counterclockwise") {
                 gameService.setDirectionClockwise(false);
             }
-        if(played.getValue()==Value.ACE){
+
+        if(played.getValue()==Value.ACE && Boolean.TRUE.equals(specialRules.get("reverseOnAce"))){
             cli.announceReversal();
 
         }
@@ -117,29 +114,45 @@ gameService.setNextPlayerDraws(0);
 
     private void playCard(String input, Player player, Card lead, int turns, int noOfTurns){
         int index = 0;
-        if (input.contains("m")) {
-            confirmOrDenyMauMau(player, index, input);
-        } else {
+        try {
+            if (input.contains("m")) {
+                confirmOrDenyMauMau(player, index, input);
+            } else {
 
-            index = Integer.parseInt(input)-1;
+                index = Integer.parseInt(input) - 1;
+            }
+            Card cardToBePlayed = gameService.cardToPlay(player, index);
+
+
+            if (cardToBePlayed == null) {
+                System.out.println("Played=null");
+            } else {
+                if (gameService.isCardValid(cardToBePlayed, lead)) {
+                    Card played = gameService.playCard(player, index);
+
+
+                    cli.displayPlay(played.getSuit(), played.getValue());
+                    gameService.addCardToTable(played);
+                    applySpecialRules(played);
+                    // 2 Karten Strafziehen
+                    if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
+                        penaltyDraw(player);
+                    }
+                    if (player.getHand().size() == 1) {
+                        noOfTurns = -1;
+                    }
+                    gameService.setCurrentPlayer(noOfTurns);
+
+                } else {
+                    cli.announceInvalid();
+                }
+            }
         }
-        Card played = gameService.playCard(player, index);
-        if (played == null || !gameService.isCardValid(played, lead)) {
+        catch (NumberFormatException e){
             cli.announceInvalid();
-            playTurn(player, lead, getPlayOrDraw(), turns + 1);
-        } else if(gameService.isCardValid(played, lead)) {
-            cli.displayPlay(played.getSuit(), played.getValue());
-            gameService.addCardToTable(played);
-            applySpecialRules(played);
-            // 2 Karten Strafziehen
-            if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
-                penaltyDraw(player);
-            }
-            if (player.getHand().size() == 1) {
-                noOfTurns = -1;
-            }
-            gameService.setCurrentPlayer(noOfTurns);
+
         }
+
     }
 
     private String getPlayOrDraw() {

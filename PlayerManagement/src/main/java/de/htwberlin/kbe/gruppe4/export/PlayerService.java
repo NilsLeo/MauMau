@@ -12,5 +12,7 @@ public interface PlayerService {
 
     Card play(Player player, int index, Suit leadSuit, Value leadValue);
 
+    Card cardToPlay(Player player, int index, Suit leadSuit, Value leadValue);
+
     List<Card> sortHand(Player player);
 }
