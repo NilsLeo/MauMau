@@ -12,13 +12,21 @@ import org.apache.log4j.Logger;
 import java.util.*;
 
 public class GameServiceImpl implements GameService {
-    private static final Logger logger =  Logger.getLogger(CardDaoImpl.class);
+    private static final Logger logger =  Logger.getLogger(GameServiceImpl.class);
 
-    DeckService deckService;
-    RulesService rulesService;
-    PlayerService playerService;
-    Game game;
+    private DeckService deckService;
+    private RulesService rulesService;
+    private PlayerService playerService;
+    private Game game;
 
+
+    /**
+     * Constructor for {@link GameServiceImpl}
+     *
+     * @param deckService - instance of {@link DeckService}
+     * @param rulesService - instance of {@link RulesService}
+     * @param playerService - instance of {@link PlayerService}
+     */
     @Inject
     public GameServiceImpl(DeckService deckService, RulesService rulesService,
                            PlayerService playerService) {
@@ -28,30 +36,41 @@ public class GameServiceImpl implements GameService {
         this.game = new Game();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setPlayers(List<String> names) {
         for (String name : names) {
             this.game.getPlayers().add(new Player(name));
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce) {
         game.setRules(rulesService.setupRules(drawTwoOnSeven, chooseSuitOnJack, reverseOnAce, game.getRules()));
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void startGame() {
-        game.setDeck(deckService.createDeck());
-        Collections.shuffle(game.getDeck().getCards());
-        game.getTable().add(deckService.deal(game.getDeck()));
-        for (Player player : game.getPlayers()) {
-            playerService.dealHand(player, game.getDeck());
-            playerService.sortHand(player);
+        try {
+            game.setDeck(deckService.createDeck());
+            Collections.shuffle(game.getDeck().getCards());
+            game.getTable().add(deckService.deal(game.getDeck()));
+            for (Player player : game.getPlayers()) {
+                playerService.dealHand(player, game.getDeck());
+                playerService.sortHand(player);
+            }
+            logger.info("Game started");
+        } catch (Exception e) {
+            logger.error("Error starting the game: " + e.getMessage());
         }
-        logger.info("Game started");
     }
-
     @Override
     public Card getLeadCard() {
         return game.getTable().get(game.getTable().size() - 1);
