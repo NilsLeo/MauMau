@@ -22,8 +22,6 @@ public class MauMauModule extends AbstractModule {
         bind(EntityManagerFactory.class).toInstance(emf);
         bind(EntityManager.class).toInstance(em);
         bind(EntityTransaction.class).toInstance(et);
-
-        bind(CardService.class).to(CardServiceImpl.class);
         bind(CLIService.class).to(CLIServiceImpl.class);
         bind(DeckService.class).to(DeckServiceImpl.class);
         bind(GameService.class).to(GameServiceImpl.class);
@@ -31,9 +29,6 @@ public class MauMauModule extends AbstractModule {
         bind(RulesService.class).to(RulesServiceImpl.class);
 
         bind(CardDao.class).to(CardDaoImpl.class);
-//        bind(DeckDao.class).to(DeckDaoImpl.class);
-//        bind(PlayerDao.class).to(PlayerDaoImpl.class);
-//        bind(RulesDao.class).to(RulesDaoImpl.class);
 
 
         bind(CLIController.class).to(CLIControllerImpl.class);

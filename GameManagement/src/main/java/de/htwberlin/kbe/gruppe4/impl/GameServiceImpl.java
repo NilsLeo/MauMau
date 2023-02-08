@@ -71,10 +71,16 @@ public class GameServiceImpl implements GameService {
             logger.error("Error starting the game: " + e.getMessage());
         }
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card getLeadCard() {
         return game.getTable().get(game.getTable().size() - 1);
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void refillDeckwithExcessCardsOnTable(){
         if(game.getTable().size()>1){
@@ -87,63 +93,87 @@ public class GameServiceImpl implements GameService {
             Collections.shuffle(game.getDeck().getCards());
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean hasCardsLeft() {
         return !game.getDeck().getCards().isEmpty();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getNextPlayerDraws() {
         return game.getNextPlayerDraws();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setNextPlayerDraws(int nextPlayerDraws) {
        game.setNextPlayerDraws(nextPlayerDraws);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
 public Map<String, Object> getSpecialRules(){
         return rulesService.getSpecialRules(game.getRules());
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void applySpecialRules(Card played) {
         rulesService.applySpecialRules(played, game.getRules());
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setSuitChoice(Suit choice) {
         game.getRules().setSuit(choice);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setDirectionClockwise(boolean directionClockwise) {
         game.getRules().setDirectionClockwise(directionClockwise);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isDirectionClockwise() {
         return game.getRules().isDirectionClockwise();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setRememberedToSayMauMau(boolean rememberedToSayMauMau) {
         game.getRules().setRememberedToSayMauMau(rememberedToSayMauMau);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean getRememberedToSayMauMau() {
         return game.getRules().isRememberedToSayMauMau();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card cardToPlay(Player player, int index) {
         return playerService.cardToPlay(player, index, getLeadSuit(), getLeadValue());
     }
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addCardToTable(Card card) {
         // adding a card to the table
@@ -151,7 +181,9 @@ public Map<String, Object> getSpecialRules(){
         logger.info(card.getValue() + " of " + card.getSuit() + " was placed on table.");
         logger.debug("Top card is the " + getLeadValue() + " of " + getLeadSuit());
     }
-
+    /**
+     * {@inheritDoc}
+     */
 
     @Override
     public Card drawCard(Player player) {
@@ -163,41 +195,55 @@ public Map<String, Object> getSpecialRules(){
 
         return card;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card playCard(Player player, int index) {
         return playerService.play(player, index, getLeadSuit(), getLeadValue());
     }
 
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setCurrentPlayer(int currentPlayer) {
         game.setCurrentPlayer(rulesService.setCurrentPlayer(game.getRules(), game.getCurrentPlayer(), game.getPlayers().size()-1));
 
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Player> getPlayers() {
         return game.getPlayers();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getCurrentPlayer() {
 
         return game.getCurrentPlayer();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Suit getLeadSuit() {
         return game.getTable().get(game.getTable().size() - 1).getSuit();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Value getLeadValue() {
         return game.getTable().get(game.getTable().size() - 1).getValue();
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isGameOver() {
         for (Player player : game.getPlayers()) {
@@ -207,7 +253,9 @@ public Map<String, Object> getSpecialRules(){
         }
         return false;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isCardValid(Card card, Card lead) {
         return rulesService.isCardValid(card, getLeadSuit(), getLeadValue(), game.getRules());

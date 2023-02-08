@@ -14,6 +14,9 @@ public class RulesServiceImpl implements RulesService {
     private boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
         return card.getSuit() == leadSuit || card.getValue() == leadValue;
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) {
         boolean valid = false;
@@ -39,6 +42,9 @@ public class RulesServiceImpl implements RulesService {
     }
 
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Map<String, Object> getSpecialRules(Rules rules) {
         Map<String, Object> specialRules = new HashMap<>();
@@ -71,6 +77,9 @@ public class RulesServiceImpl implements RulesService {
         return specialRules;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Rules applySpecialRules(Card played, Rules rules) {
         if (rules.isDrawTwoOnSevenEnabled() && played.getValue() == Value.SEVEN) {
@@ -98,6 +107,9 @@ public class RulesServiceImpl implements RulesService {
         return rules;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Rules setupRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce, Rules rules) {
         rules.setDrawTwoOnSevenEnabled(drawTwoOnSeven);
@@ -106,7 +118,10 @@ public class RulesServiceImpl implements RulesService {
 
         return rules;
     }
-
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public int setCurrentPlayer(Rules rules, int currentPlayer, int maxPlayer) {
         int nextPlayer = currentPlayer;
         if (rules.isDirectionClockwise()) {
@@ -116,16 +131,22 @@ public class RulesServiceImpl implements RulesService {
         }
         return nextPlayer;
     }
-
-    private int getNextClockwisePlayer(int currentPlayer, int maxPlayer) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getNextClockwisePlayer(int currentPlayer, int maxPlayer) {
         int nextPlayer = currentPlayer + 1;
         if (nextPlayer > maxPlayer) {
             nextPlayer = 0;
         }
         return nextPlayer;
     }
-
-    private int getNextCounterClockwisePlayer(int currentPlayer, int maxPlayer) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getNextCounterClockwisePlayer(int currentPlayer, int maxPlayer) {
         int nextPlayer = currentPlayer - 1;
         if (nextPlayer < 0) {
             nextPlayer = maxPlayer;

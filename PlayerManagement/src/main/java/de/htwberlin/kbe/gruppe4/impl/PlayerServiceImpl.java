@@ -14,34 +14,47 @@ import java.util.List;
 public class PlayerServiceImpl implements PlayerService {
 
     private DeckService deckService;
-
+    /**
+     * {@inheritDoc}
+     */
     @Inject
     public PlayerServiceImpl(DeckService deckService){
         this.deckService = deckService;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void dealHand(Player player, Deck deck) {
         player.setHand(deckService.dealHand(deck));
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void draw(Player player, Card card) {
         player.getHand().add(card);
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card play(Player player, int index, Suit leadSuit, Value leadValue) {
         Card card = player.getHand().get(index);
         player.getHand().remove(index);
         return card;
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card cardToPlay(Player player, int index, Suit leadSuit, Value leadValue){
         Card card = player.getHand().get(index);
         return card;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Card> sortHand(Player currentPlayer) {
         List<Card> cards = currentPlayer.getHand();

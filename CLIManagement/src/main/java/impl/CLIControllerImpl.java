@@ -6,7 +6,6 @@ import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.GameService;
-import de.htwberlin.kbe.gruppe4.impl.DeckServiceImpl;
 import export.CLIController;
 import export.CLIService;
 
@@ -23,19 +22,21 @@ public class CLIControllerImpl implements CLIController {
         this.cli = cli;
         this.gameService = gameService;
     }
-
-    private List<String> setNames() {
-        return cli.getPlayerNames();
-    }
-
+    /**
+     * {@inheritDoc}
+     */
+@Override
     public void startGame() {
         gameService.setPlayers(cli.getPlayerNames());
         gameService.setRules(cli.getRule("draw two on seven"), cli.getRule("choose suit on jack"), cli.getRule("reverse on ace"));
         gameService.startGame();
         runGame();
     }
-
-    private void runGame(){
+    /**
+     * {@inheritDoc}
+     */
+@Override
+public void runGame(){
         while (!gameService.isGameOver()) {
             cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
             Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
@@ -51,8 +52,11 @@ public class CLIControllerImpl implements CLIController {
         }
         cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
     }
-
-    private void playTurn(Player player, Card lead, String input) {
+    /**
+     * {@inheritDoc}
+     */
+@Override
+public void playTurn(Player player, Card lead, String input) {
         // cli.displayLead(lead.getSuit(), lead.getValue());
         int noOfTurns = 1;
             if (input.equals("d")) {
@@ -63,8 +67,11 @@ public class CLIControllerImpl implements CLIController {
             }
         gameService.refillDeckwithExcessCardsOnTable();
     }
-
-    private void confirmOrDenyMauMau(Player player, int index, String input){
+    /**
+     * {@inheritDoc}
+     */
+@Override
+public void confirmOrDenyMauMau(Player player, int index, String input){
         if ((player.getHand().size() == 2)) {
             cli.announceMauMau();
             gameService.setRememberedToSayMauMau(true);
@@ -75,8 +82,11 @@ public class CLIControllerImpl implements CLIController {
             cli.announceInvalidMauMauCall();
         }
     }
-
-    private void applySpecialRules(Card played){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void applySpecialRules(Card played){
         gameService.applySpecialRules(played);
         Map<String, Object> specialRules = gameService.getSpecialRules();
 
@@ -107,10 +117,12 @@ public class CLIControllerImpl implements CLIController {
 
 
     }
+    /**
+     * {@inheritDoc}
+     */
 
-
-
-    private void playCard(String input, Player player, Card lead, int noOfTurns){
+    @Override
+    public void playCard(String input, Player player, Card lead, int noOfTurns){
         int index = 0;
         try {
             if (input.contains("m")) {
@@ -139,8 +151,11 @@ public class CLIControllerImpl implements CLIController {
         }
 
     }
-
-    void placeCard(Player player, int index, int noOfTurns){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void placeCard(Player player, int index, int noOfTurns){
         Card played = gameService.playCard(player, index);
 
 
@@ -157,13 +172,20 @@ public class CLIControllerImpl implements CLIController {
         }
         gameService.setCurrentPlayer(noOfTurns);
     }
-    private void penaltyDraw(Player player, int noOfCardsToDraw){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void penaltyDraw(Player player, int noOfCardsToDraw){
         for (int i = 0; i<noOfCardsToDraw; i++){
             drawCard(player);
         }
     }
-
-    private void drawCard(Player player){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void drawCard(Player player){
         if(!gameService.hasCardsLeft()){
             cli.announceNoCardsLeft();
         }

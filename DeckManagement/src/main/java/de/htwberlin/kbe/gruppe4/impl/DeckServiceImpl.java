@@ -14,6 +14,9 @@ public class DeckServiceImpl implements DeckService {
 
     public DeckServiceImpl(){
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ArrayList<Card> dealHand(Deck deck) {
         ArrayList<Card> hand = new ArrayList<>();
@@ -23,7 +26,9 @@ public class DeckServiceImpl implements DeckService {
         
         return hand;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Card deal(Deck deck) {
         List<Card> cards = deck.getCards();
@@ -35,7 +40,9 @@ public class DeckServiceImpl implements DeckService {
         deck.setCards(cards);
         return card;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Deck createDeck() {
         List<Card> cards = new ArrayList<>();
@@ -49,7 +56,9 @@ public class DeckServiceImpl implements DeckService {
         deck.setCards(cards);
         return deck;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setDeck(Deck deck) {
 
