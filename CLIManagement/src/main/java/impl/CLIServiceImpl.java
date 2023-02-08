@@ -40,6 +40,7 @@ public class CLIServiceImpl implements CLIService {
             }
         }
     }
+
     /**
      * {@inheritDoc}
      */
@@ -104,6 +105,7 @@ public class CLIServiceImpl implements CLIService {
     /**
      * {@inheritDoc}
      */
+
     @Override
     public List<String> getPlayerNames() {
         while (true) {
