@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa5ea7c5-e870-475c-8853-f03a33856b86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DeckManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/VirtualPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/VirtualPlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/VirtualPlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/export/CLIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/export/CLIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/export/CLIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/export/CLIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/CardDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/DataAccessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/CardDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuration/src/main/java/de/htwberlin/kbe/gruppe4/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/src/main/java/de/htwberlin/kbe/gruppe4/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuration/src/main/java/de/htwberlin/kbe/gruppe4/MauMauModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/src/main/java/de/htwberlin/kbe/gruppe4/MauMauModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeckManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/DeckDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeckManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/DeckDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauMauLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/MauMauLog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerManagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/VirtualPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/VirtualPlayerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/PlayerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/PlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/VirtualPlayerServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VirtualPlayerManagement/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LSnNPjVnkEf2TsIYgIV8QZ79Gw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.App" />
+      <module name="Configuration" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa5ea7c5-e870-475c-8853-f03a33856b86" name="Changes" comment="" />
+      <created>1675873311763</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675873311763</updated>
+      <workItem from="1675873314656" duration="8272000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

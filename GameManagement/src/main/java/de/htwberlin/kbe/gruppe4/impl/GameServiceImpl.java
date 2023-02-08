@@ -41,12 +41,16 @@ public class GameServiceImpl implements GameService {
      * {@inheritDoc}
      */
     @Override
-    public void setPlayers(List<String> names) {
+    public void setPlayers(int noOfPlayers, List<String> names) {
         try {
+            for(int i =0; i<noOfPlayers;i++){
+                this.game.getPlayers().add(new VirtualPlayer(virtualPlayerService.generateBotName(i)));
+
+
+            }
             for (String name : names) {
                 this.game.getPlayers().add(new Player(name));
             }
-            this.game.getPlayers().add(new VirtualPlayer("bob"));
         } catch (Exception e) {
             logger.error("Error adding players: " + e.getMessage());
             throw new RuntimeException("Error adding players", e);
@@ -178,8 +182,21 @@ public Map<String, Object> getSpecialRules(){
     }
 
     @Override
-    public String getVirtualPlayerMove(Player player, Card lead) {
-        return virtualPlayerService.getVirtualMove(player, lead);
+    public Rules getRules() {
+        return game.getRules();
+    }
+
+    @Override
+    public Suit getVirtualPlayerSuitChoice(Player player) {
+        return virtualPlayerService.getVirtualPlayerChoice(player.getHand());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getVirtualPlayerMove(Player player, Card lead, Rules rules) {
+        return virtualPlayerService.getVirtualMove(player, lead, rules);
     }
 
     /**

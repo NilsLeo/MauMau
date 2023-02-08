@@ -64,7 +64,7 @@ public interface CLIService {
      *
      * @return a list of strings representing the names of the players
      */
-    List<String> getPlayerNames();
+    List<String> getPlayerNames(int noOfVirtualPlayers);
     /**
      * Displays the available suits.
      */
@@ -126,4 +126,6 @@ public interface CLIService {
      */
 
     void announceReversal();
+
+    int getNoOfVirtualPlayers();
 }

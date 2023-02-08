@@ -33,6 +33,14 @@ public interface GameService {
      * @return the lead card
      */
     Card getLeadCard();
+    /**
+     * Gets the card to be played by a player.
+     *
+     * @param player the player who is playing
+     * @param lead the lead Card on the table
+     * @return the card to be played
+     */
+    String getVirtualPlayerMove(Player player, Card lead, Rules rules);
 
     /**
      * Adds a card to the table.
@@ -125,7 +133,7 @@ public interface GameService {
      *
      * @param names a list of the names of the players
      */
-    void setPlayers(List<String> names);
+    void setPlayers(int noOfPlayers, List<String> names) ;
 
     /**
      * Checks if the deck still has cards left.
@@ -198,6 +206,15 @@ public interface GameService {
      * @return the card to be played
      */
     Card cardToPlay(Player player, int index);
-
-    String getVirtualPlayerMove(Player player, Card lead);
+    /**
+     * Gets the Rules of the game
+     * @return the Rules
+     *
+     */
+    Rules getRules();
+    /**
+     * Gets the Rules of the game
+     * @return the Suit that the virtual player chooses
+     */
+    Suit getVirtualPlayerSuitChoice(Player player);
 }

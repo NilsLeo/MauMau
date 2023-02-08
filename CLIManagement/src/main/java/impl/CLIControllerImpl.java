@@ -27,7 +27,8 @@ public class CLIControllerImpl implements CLIController {
      */
 @Override
     public void startGame() {
-        gameService.setPlayers(cli.getPlayerNames());
+    int noOfVirtualPlayers = cli.getNoOfVirtualPlayers();
+        gameService.setPlayers(noOfVirtualPlayers, cli.getPlayerNames(noOfVirtualPlayers));
         gameService.setRules(cli.getRule("draw two on seven"), cli.getRule("choose suit on jack"), cli.getRule("reverse on ace"));
         gameService.startGame();
         runGame();
@@ -46,18 +47,20 @@ public class CLIControllerImpl implements CLIController {
                     gameService.setNextPlayerDraws(0);
                 }
                 cli.displayHand(player.getName(), player.getHand());
-                cli.displayPlayOrDraw();
+                if(!(player instanceof VirtualPlayer)){
+                    cli.displayPlayOrDraw();
+                }
                 String input = null;
                 if (player instanceof VirtualPlayer) {
-                    input = gameService.getVirtualPlayerMove(player, gameService.getLeadCard());
+                    input = gameService.getVirtualPlayerMove(player, gameService.getLeadCard(), gameService.getRules());
                 }
                 else{
                     input = cli.getPlayOrDraw();
                 }
                 playTurn(player, gameService.getLeadCard(), input);
             } catch (Exception e) {
-                logger.error("An error occurred: " + e.getMessage());
-                e.printStackTrace();
+                logger.error("An error occurred: " + e.getMessage(), e);
+
             }
         }
         cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
@@ -108,7 +111,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void applySpecialRules(Card played){
+    public void applySpecialRules(Card played, Player player){
         gameService.applySpecialRules(played);
         Map<String, Object> specialRules = gameService.getSpecialRules();
 
@@ -121,7 +124,14 @@ public class CLIControllerImpl implements CLIController {
         if (Boolean.TRUE.equals(specialRules.get("chooseSuit"))) {
             cli.displaySuitChoice();
             cli.displaySuits();
-            Suit choice = cli.getSuitChoice();
+            Suit choice = null;
+            if (player instanceof VirtualPlayer) {
+                choice = gameService.getVirtualPlayerSuitChoice(player);
+            }
+            else{
+                choice = cli.getSuitChoice();
+
+            }
             gameService.setSuitChoice(choice);
             cli.announceChosenSuit(choice);
             logger.info("Suit has been chosen: " + choice);
@@ -188,7 +198,7 @@ public class CLIControllerImpl implements CLIController {
 
         cli.displayPlay(player, played.getSuit(), played.getValue());
         gameService.addCardToTable(played);
-        applySpecialRules(played);
+        applySpecialRules(played, player);
         if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
             cli.announceForgotToSayMauMau();
             penaltyDraw(player, 2);

@@ -45,7 +45,7 @@ public interface CLIController {
      *
      * @param played the card that was played
      */
-    void applySpecialRules(Card played);
+    void applySpecialRules(Card played, Player player);
 
     /**
      * Plays a card for a player, based on their input.

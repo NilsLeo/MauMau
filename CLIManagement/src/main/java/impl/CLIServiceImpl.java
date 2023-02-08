@@ -106,24 +106,39 @@ public class CLIServiceImpl implements CLIService {
      */
 
     @Override
-    public List<String> getPlayerNames() {
+    public List<String> getPlayerNames(int noOfVirtualPlayers) {
         while (true) {
-            System.out.print("Enter the number of players (2-5): ");
+            int totalPlayers = noOfVirtualPlayers;
+            String possiblePlayerOptions = "";
+
+            if(noOfVirtualPlayers==0){
+                possiblePlayerOptions = "(2-5): ";
+            }
+            if(noOfVirtualPlayers>=1){
+                possiblePlayerOptions = "(1-" + (5 - noOfVirtualPlayers) + "): ";
+
+            }
+            if(noOfVirtualPlayers==4){
+                possiblePlayerOptions = "(1): ";
+
+            }
+
+            System.out.print("Enter the number of real players " +  possiblePlayerOptions);
             try {
-                int numPlayers = Integer.parseInt(scanner.nextLine());
-                if (numPlayers >= 2 && numPlayers <= 5) {
+                int realPlayers = Integer.parseInt(scanner.nextLine());
+                totalPlayers += realPlayers;
+                if (totalPlayers >= 2 && totalPlayers <= 5) {
                     List<String> names = new ArrayList<>();
-                    for (int i = 1; i <= numPlayers; i++) {
+                    for (int i = 1; i <= realPlayers; i++) {
                         System.out.print("Enter the name of player " + i + ": ");
                         names.add(scanner.nextLine());
                     }
                     return names;
                 } else {
-                    System.out.println("Invalid input. Please enter a number between 2 and 5.");
+                    System.out.println("Invalid input. " + "Enter the number of real players" +  possiblePlayerOptions);
                 }
             } catch (NumberFormatException e) {
                 logger.error("Invalid input");
-
                 announceInvalid();
             }
         }
@@ -220,6 +235,22 @@ public class CLIServiceImpl implements CLIService {
     public void announceReversal() {
         System.out.println("You played an ACE! The Direction will be reversed!");
     }
+
+    @Override
+    public int getNoOfVirtualPlayers() {
+        System.out.print("Enter the number of virtual players (1-4): ");
+        int input = 0;
+        try {
+            input = Integer.parseInt(scanner.nextLine());
+            }
+         catch (NumberFormatException e) {
+            logger.error("Invalid input");
+            announceInvalid();
+
+        }
+        return input;
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -2,7 +2,6 @@ package de.htwberlin.kbe.gruppe4.impl;
 
 import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.Game;
-import de.htwberlin.kbe.gruppe4.export.DataAccessException;
 import de.htwberlin.kbe.gruppe4.export.GameDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceException;
