@@ -40,28 +40,26 @@ public class CLIControllerImpl implements CLIController {
             cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
             Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
             if (gameService.getNextPlayerDraws() != 0) {
-                for (int i = 0; i < gameService.getNextPlayerDraws(); i++) {
-                    drawCard(player);
+                penaltyDraw(player, gameService.getNextPlayerDraws());
+                gameService.setNextPlayerDraws(0);
 
-                }
-gameService.setNextPlayerDraws(0);
             }
             cli.displayHand(player.getName(), player.getHand());
             cli.displayPlayOrDraw();
             String input = cli.getPlayOrDraw();
-            playTurn(player, gameService.getLeadCard(), input, 0);
+            playTurn(player, gameService.getLeadCard(), input);
         }
         cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
     }
 
-    private void playTurn(Player player, Card lead, String input, int turns) {
+    private void playTurn(Player player, Card lead, String input) {
         // cli.displayLead(lead.getSuit(), lead.getValue());
         int noOfTurns = 1;
             if (input.equals("d")) {
                 drawCard(player);
                 gameService.setCurrentPlayer(noOfTurns);
             } else {
-                playCard(input, player, lead, turns, noOfTurns);
+                playCard(input, player, lead, noOfTurns);
             }
         gameService.refillDeckwithExcessCardsOnTable();
     }
@@ -112,7 +110,7 @@ gameService.setNextPlayerDraws(0);
 
 
 
-    private void playCard(String input, Player player, Card lead, int turns, int noOfTurns){
+    private void playCard(String input, Player player, Card lead, int noOfTurns){
         int index = 0;
         try {
             if (input.contains("m")) {
@@ -123,25 +121,12 @@ gameService.setNextPlayerDraws(0);
             }
             Card cardToBePlayed = gameService.cardToPlay(player, index);
 
-
             if (cardToBePlayed == null) {
                 System.out.println("Played=null");
             } else {
                 if (gameService.isCardValid(cardToBePlayed, lead)) {
-                    Card played = gameService.playCard(player, index);
+                    placeCard(player, index, noOfTurns);
 
-
-                    cli.displayPlay(played.getSuit(), played.getValue());
-                    gameService.addCardToTable(played);
-                    applySpecialRules(played);
-                    // 2 Karten Strafziehen
-                    if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
-                        penaltyDraw(player);
-                    }
-                    if (player.getHand().size() == 1) {
-                        noOfTurns = -1;
-                    }
-                    gameService.setCurrentPlayer(noOfTurns);
 
                 } else {
                     cli.announceInvalid();
@@ -155,16 +140,27 @@ gameService.setNextPlayerDraws(0);
 
     }
 
-    private String getPlayOrDraw() {
-        cli.displayPlayOrDraw();
-        return cli.getPlayOrDraw();
+    void placeCard(Player player, int index, int noOfTurns){
+        Card played = gameService.playCard(player, index);
+
+
+        cli.displayPlay(played.getSuit(), played.getValue());
+        gameService.addCardToTable(played);
+        applySpecialRules(played);
+        // 2 Karten Strafziehen
+        if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
+            cli.announceForgotToSayMauMau();
+            penaltyDraw(player, 2);
+        }
+        if (player.getHand().size() == 1) {
+            noOfTurns = -1;
+        }
+        gameService.setCurrentPlayer(noOfTurns);
     }
-
-    private void penaltyDraw(Player player){
-        cli.announceForgotToSayMauMau();
-        drawCard(player);
-
-        drawCard(player);
+    private void penaltyDraw(Player player, int noOfCardsToDraw){
+        for (int i = 0; i<noOfCardsToDraw; i++){
+            drawCard(player);
+        }
     }
 
     private void drawCard(Player player){
