@@ -103,7 +103,7 @@ public interface CLIService {
      * @param suit the suit of the played card
      * @param value the value of the played card
      */
-    void displayPlay(Suit suit, Value value);
+    void displayPlay(Player player, Suit suit, Value value);
     /**
      * Announces an invalid Mau Mau call.
      */

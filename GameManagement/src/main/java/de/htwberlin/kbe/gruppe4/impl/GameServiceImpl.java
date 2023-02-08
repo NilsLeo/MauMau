@@ -4,10 +4,7 @@ package de.htwberlin.kbe.gruppe4.impl;
 import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.entity.Game;
-import de.htwberlin.kbe.gruppe4.export.DeckService;
-import de.htwberlin.kbe.gruppe4.export.GameService;
-import de.htwberlin.kbe.gruppe4.export.PlayerService;
-import de.htwberlin.kbe.gruppe4.export.RulesService;
+import de.htwberlin.kbe.gruppe4.export.*;
 import org.apache.log4j.Logger;
 import java.util.*;
 
@@ -17,6 +14,7 @@ public class GameServiceImpl implements GameService {
     private DeckService deckService;
     private RulesService rulesService;
     private PlayerService playerService;
+    private VirtualPlayerService virtualPlayerService;
     private Game game;
 
 
@@ -29,10 +27,12 @@ public class GameServiceImpl implements GameService {
      */
     @Inject
     public GameServiceImpl(DeckService deckService, RulesService rulesService,
-                           PlayerService playerService) {
+                           PlayerService playerService, VirtualPlayerService virtualPlayerService) {
         this.deckService = deckService;
         this.rulesService = rulesService;
         this.playerService = playerService;
+        this.virtualPlayerService = virtualPlayerService;
+
         this.game = new Game();
     }
 
@@ -46,6 +46,7 @@ public class GameServiceImpl implements GameService {
             for (String name : names) {
                 this.game.getPlayers().add(new Player(name));
             }
+            this.game.getPlayers().add(new VirtualPlayer("bob"));
         } catch (Exception e) {
             logger.error("Error adding players: " + e.getMessage());
             throw new RuntimeException("Error adding players", e);
@@ -174,6 +175,11 @@ public Map<String, Object> getSpecialRules(){
     @Override
     public Card cardToPlay(Player player, int index) {
         return playerService.cardToPlay(player, index, getLeadSuit(), getLeadValue());
+    }
+
+    @Override
+    public String getVirtualPlayerMove(Player player, Card lead) {
+        return virtualPlayerService.getVirtualMove(player, lead);
     }
 
     /**

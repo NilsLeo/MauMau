@@ -1,10 +1,7 @@
 package impl;
 
 import com.google.inject.Inject;
-import de.htwberlin.kbe.gruppe4.entity.Card;
-import de.htwberlin.kbe.gruppe4.entity.Player;
-import de.htwberlin.kbe.gruppe4.entity.Suit;
-import de.htwberlin.kbe.gruppe4.entity.Value;
+import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.export.GameService;
 import export.CLIController;
 import export.CLIService;
@@ -50,7 +47,13 @@ public class CLIControllerImpl implements CLIController {
                 }
                 cli.displayHand(player.getName(), player.getHand());
                 cli.displayPlayOrDraw();
-                String input = cli.getPlayOrDraw();
+                String input = null;
+                if (player instanceof VirtualPlayer) {
+                    input = gameService.getVirtualPlayerMove(player, gameService.getLeadCard());
+                }
+                else{
+                    input = cli.getPlayOrDraw();
+                }
                 playTurn(player, gameService.getLeadCard(), input);
             } catch (Exception e) {
                 logger.error("An error occurred: " + e.getMessage());
@@ -64,8 +67,11 @@ public class CLIControllerImpl implements CLIController {
      */
     @Override
     public void playTurn(Player player, Card lead, String input) {
+
         try {
             int i = 1;
+
+
             if (input.equals("d")) {
                 drawCard(player);
                 gameService.setCurrentPlayer(i);
@@ -180,7 +186,7 @@ public class CLIControllerImpl implements CLIController {
         Card played = gameService.playCard(player, index);
 
 
-        cli.displayPlay(played.getSuit(), played.getValue());
+        cli.displayPlay(player, played.getSuit(), played.getValue());
         gameService.addCardToTable(played);
         applySpecialRules(played);
         if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {

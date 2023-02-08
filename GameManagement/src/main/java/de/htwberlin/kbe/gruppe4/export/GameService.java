@@ -199,4 +199,5 @@ public interface GameService {
      */
     Card cardToPlay(Player player, int index);
 
+    String getVirtualPlayerMove(Player player, Card lead);
 }

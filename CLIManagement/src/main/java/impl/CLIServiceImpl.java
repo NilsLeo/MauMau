@@ -4,7 +4,6 @@ import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
-import de.htwberlin.kbe.gruppe4.impl.GameServiceImpl;
 import export.CLIService;
 import org.apache.log4j.Logger;
 
@@ -84,8 +83,8 @@ public class CLIServiceImpl implements CLIService {
      * {@inheritDoc}
      */
     @Override
-    public void displayPlay(Suit suit, Value value) {
-        System.out.println("You played the " + value + " of " + suit + ".");
+    public void displayPlay(Player player, Suit suit, Value value) {
+        System.out.println(player.getName() + " played the " + value + " of " + suit + ".");
     }
     /**
      * {@inheritDoc}
