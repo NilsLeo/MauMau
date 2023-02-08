@@ -42,8 +42,13 @@ public class GameServiceImpl implements GameService {
      */
     @Override
     public void setPlayers(List<String> names) {
-        for (String name : names) {
-            this.game.getPlayers().add(new Player(name));
+        try {
+            for (String name : names) {
+                this.game.getPlayers().add(new Player(name));
+            }
+        } catch (Exception e) {
+            logger.error("Error adding players: " + e.getMessage());
+            throw new RuntimeException("Error adding players", e);
         }
     }
     /**
@@ -191,7 +196,7 @@ public Map<String, Object> getSpecialRules(){
         playerService.draw(player, card);
         player.setHand(playerService.sortHand(player));
 
-        logger.info(player + " drew a " + card.getValue() + " of " + card.getSuit());
+        logger.info(player.getName() + " drew a " + card.getValue() + " of " + card.getSuit());
 
         return card;
     }

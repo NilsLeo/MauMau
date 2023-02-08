@@ -18,7 +18,15 @@ public class RulesServiceImpl implements RulesService {
      */
     @Override
     public boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
-        return card.getSuit() == leadSuit || card.getValue() == leadValue;
+        boolean valid = card.getSuit() == leadSuit || card.getValue() == leadValue;
+        if(valid){
+            logger.info("Card is Valid");
+
+        }
+        else{
+            logger.info("Card is invalid");
+        }
+        return valid;
     }
     /**
      * {@inheritDoc}
@@ -28,13 +36,17 @@ public class RulesServiceImpl implements RulesService {
         boolean valid = false;
         if (rules.isChooseSuitOnJackEnabled()) {
             if (rules.getSuit() != null) {
+                logger.debug("Suit specified in Rules " + rules.getSuit());
+                logger.debug("Cards Suit " + card.getSuit());
 
                 if(rules.getSuit() == card.getSuit()){
                     valid = true;
                     rules.setSuit(null);
+                    logger.info("Suits concurr");
                 }
                 else {
                     valid = false;
+                    logger.error("Suits do not concurr");
                 }
             } else {
                valid =  isValidBasedOnLead(card, leadSuit, leadValue);
@@ -46,6 +58,7 @@ public class RulesServiceImpl implements RulesService {
         return valid;
 
     }
+
 
 
     /**
@@ -88,30 +101,33 @@ public class RulesServiceImpl implements RulesService {
      */
     @Override
     public Rules applySpecialRules(Card played, Rules rules) {
-        if (rules.isDrawTwoOnSevenEnabled() && played.getValue() == Value.SEVEN) {
-            rules.setDrawTwoOnSevenToggled(true);
-        }
-        else{
-            rules.setChooseSuitOnJackToggled(false);
+        try {
+            if (rules.isDrawTwoOnSevenEnabled() && played.getValue() == Value.SEVEN) {
+                rules.setDrawTwoOnSevenToggled(true);
+                logger.debug("Draw two on seven rule toggled");
+            } else {
+                rules.setChooseSuitOnJackToggled(false);
+            }
 
-        }
+            if (rules.isChooseSuitOnJackEnabled() && played.getValue() == Value.JACK) {
+                rules.setChooseSuitOnJackToggled(true);
+                logger.debug("Choose suit on jack rule toggled");
+            } else {
+                rules.setChooseSuitOnJackToggled(false);
+            }
 
-        if (rules.isChooseSuitOnJackEnabled() && played.getValue() == Value.JACK) {
-            rules.setChooseSuitOnJackToggled(true);
-        }
-        else{
-            rules.setChooseSuitOnJackToggled(false);
-        }
-
-        if (rules.isReverseOnAceEnabled() && played.getValue() == Value.ACE) {
-            rules.setDirectionClockwise(!rules.isDirectionClockwise());
-        }
-        else{
-            rules.setDirectionClockwise(false);
-
+            if (rules.isReverseOnAceEnabled() && played.getValue() == Value.ACE) {
+                rules.setDirectionClockwise(!rules.isDirectionClockwise());
+                logger.debug("Reverse on ace rule toggled");
+            } else {
+                rules.setDirectionClockwise(false);
+            }
+        } catch (Exception e) {
+            logger.debug("Error: " + e.getMessage());
         }
         return rules;
     }
+
 
     /**
      * {@inheritDoc}

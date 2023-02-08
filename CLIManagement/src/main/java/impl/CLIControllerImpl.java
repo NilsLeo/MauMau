@@ -8,6 +8,7 @@ import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.GameService;
 import export.CLIController;
 import export.CLIService;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import java.util.regex.Pattern;
 
 public class CLIControllerImpl implements CLIController {
     private final CLIService cli;
+    private static final Logger logger =  Logger.getLogger(CLIControllerImpl.class);
+
     private final GameService gameService;
     @Inject
     public CLIControllerImpl(CLIService cli, GameService gameService) {
@@ -35,53 +38,66 @@ public class CLIControllerImpl implements CLIController {
     /**
      * {@inheritDoc}
      */
-@Override
-public void runGame(){
+    @Override
+    public void runGame() {
         while (!gameService.isGameOver()) {
-            cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
-            Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
-            if (gameService.getNextPlayerDraws() != 0) {
-                penaltyDraw(player, gameService.getNextPlayerDraws());
-                gameService.setNextPlayerDraws(0);
-
+            try {
+                cli.displayLead(gameService.getLeadCard().getSuit(), gameService.getLeadCard().getValue());
+                Player player = gameService.getPlayers().get(gameService.getCurrentPlayer());
+                if (gameService.getNextPlayerDraws() != 0) {
+                    penaltyDraw(player, gameService.getNextPlayerDraws());
+                    gameService.setNextPlayerDraws(0);
+                }
+                cli.displayHand(player.getName(), player.getHand());
+                cli.displayPlayOrDraw();
+                String input = cli.getPlayOrDraw();
+                playTurn(player, gameService.getLeadCard(), input);
+            } catch (Exception e) {
+                logger.error("An error occurred: " + e.getMessage());
+                e.printStackTrace();
             }
-            cli.displayHand(player.getName(), player.getHand());
-            cli.displayPlayOrDraw();
-            String input = cli.getPlayOrDraw();
-            playTurn(player, gameService.getLeadCard(), input);
         }
         cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
     }
     /**
      * {@inheritDoc}
      */
-@Override
-public void playTurn(Player player, Card lead, String input) {
-        // cli.displayLead(lead.getSuit(), lead.getValue());
-        int noOfTurns = 1;
+    @Override
+    public void playTurn(Player player, Card lead, String input) {
+        try {
+            int noOfTurns = 1;
             if (input.equals("d")) {
                 drawCard(player);
                 gameService.setCurrentPlayer(noOfTurns);
             } else {
                 playCard(input, player, lead, noOfTurns);
             }
-        gameService.refillDeckwithExcessCardsOnTable();
+            gameService.refillDeckwithExcessCardsOnTable();
+        } catch (Exception e) {
+            logger.error("An error occurred while playing the turn: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     /**
      * {@inheritDoc}
      */
-@Override
-public void confirmOrDenyMauMau(Player player, int index, String input){
+    @Override
+    public void confirmOrDenyMauMau(Player player, int index, String input){
         if ((player.getHand().size() == 2)) {
             cli.announceMauMau();
             gameService.setRememberedToSayMauMau(true);
             Matcher matcher = Pattern.compile("\\d+").matcher(input);
             matcher.find();
-            index = Integer.valueOf(matcher.group())-1;
+            try {
+                index = Integer.valueOf(matcher.group())-1;
+            } catch (NumberFormatException e) {
+                logger.error("An error occurred while playing the turn: " + e.getMessage());
+            }
         } else {
             cli.announceInvalidMauMauCall();
         }
     }
+
     /**
      * {@inheritDoc}
      */
@@ -93,6 +109,7 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
         if (Boolean.TRUE.equals(specialRules.get("drawTwoOnSeven"))) {
             gameService.setNextPlayerDraws(gameService.getNextPlayerDraws()+2);
             cli.displayNextPlayer2Draws();
+            logger.info("Next player must draw 2 cards");
         }
 
         if (Boolean.TRUE.equals(specialRules.get("chooseSuit"))) {
@@ -101,22 +118,28 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
             Suit choice = cli.getSuitChoice();
             gameService.setSuitChoice(choice);
             cli.announceChosenSuit(choice);
+            logger.info("Suit has been chosen: " + choice);
         }
-            if (specialRules.get("direction")=="clockwise") {
-                gameService.setDirectionClockwise(true);
-            }
-            if (specialRules.get("direction")=="counterclockwise") {
-                gameService.setDirectionClockwise(false);
-            }
+        if (specialRules.get("direction")=="clockwise") {
+            gameService.setDirectionClockwise(true);
+            logger.info("Direction set to clockwise");
+        }
+        if (specialRules.get("direction")=="counterclockwise") {
+            gameService.setDirectionClockwise(false);
+            logger.info("Direction set to counterclockwise");
+        }
 
         if(played.getValue()==Value.ACE && Boolean.TRUE.equals(specialRules.get("reverseOnAce"))){
             cli.announceReversal();
+            logger.info("Direction has been reversed");
 
         }
-
-
-
     }
+
+
+
+
+
     /**
      * {@inheritDoc}
      */
@@ -132,10 +155,6 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
                 index = Integer.parseInt(input) - 1;
             }
             Card cardToBePlayed = gameService.cardToPlay(player, index);
-
-            if (cardToBePlayed == null) {
-                System.out.println("Played=null");
-            } else {
                 if (gameService.isCardValid(cardToBePlayed, lead)) {
                     placeCard(player, index, noOfTurns);
 
@@ -143,10 +162,12 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
                 } else {
                     cli.announceInvalid();
                 }
-            }
+
         }
         catch (NumberFormatException e){
             cli.announceInvalid();
+            logger.error("An error occurred while playing the turn: " + e.getMessage());
+
 
         }
 
@@ -162,7 +183,6 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
         cli.displayPlay(played.getSuit(), played.getValue());
         gameService.addCardToTable(played);
         applySpecialRules(played);
-        // 2 Karten Strafziehen
         if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
             cli.announceForgotToSayMauMau();
             penaltyDraw(player, 2);
@@ -179,6 +199,7 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
     public void penaltyDraw(Player player, int noOfCardsToDraw){
         for (int i = 0; i<noOfCardsToDraw; i++){
             drawCard(player);
+            logger.info("Player " + player.getName() + " drew a card.");
         }
     }
     /**
@@ -188,11 +209,13 @@ public void confirmOrDenyMauMau(Player player, int index, String input){
     public void drawCard(Player player){
         if(!gameService.hasCardsLeft()){
             cli.announceNoCardsLeft();
+            logger.debug("There are no cards left to draw");
         }
         else{
 
             Card drawnCard = gameService.drawCard(player);
             cli.displayDraw(player, drawnCard.getSuit(), drawnCard.getValue());
+
         }
     }
 }

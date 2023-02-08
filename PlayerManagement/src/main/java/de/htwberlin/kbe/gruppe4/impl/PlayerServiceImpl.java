@@ -28,22 +28,38 @@ public class PlayerServiceImpl implements PlayerService {
      */
     @Override
     public void dealHand(Player player, Deck deck) {
-        player.setHand(deckService.dealHand(deck));
+        try {
+            player.setHand(deckService.dealHand(deck));
+        } catch (Exception e) {
+            logger.error("Error while dealing hand to player: " + e.getMessage());
+            throw e;
+        }
     }
     /**
      * {@inheritDoc}
      */
     @Override
     public void draw(Player player, Card card) {
-        player.getHand().add(card);
+        try {
+            player.getHand().add(card);
+        } catch (Exception e) {
+            logger.error("Error while drawing card for player: " + e.getMessage());
+            throw e;
+        }
     }
     /**
      * {@inheritDoc}
      */
     @Override
     public Card play(Player player, int index, Suit leadSuit, Value leadValue) {
-        Card card = player.getHand().get(index);
-        player.getHand().remove(index);
+        Card card = null;
+        try {
+            card = player.getHand().get(index);
+            player.getHand().remove(index);
+        } catch (Exception e) {
+            logger.error("Error while playing card for player: " + e.getMessage());
+            throw e;
+        }
         return card;
     }
     /**
@@ -51,7 +67,13 @@ public class PlayerServiceImpl implements PlayerService {
      */
     @Override
     public Card cardToPlay(Player player, int index, Suit leadSuit, Value leadValue){
-        Card card = player.getHand().get(index);
+        Card card = null;
+        try {
+            card = player.getHand().get(index);
+        } catch (Exception e) {
+            logger.error("Error while retrieving card to play for player: " + e.getMessage());
+            throw e;
+        }
         return card;
     }
     /**

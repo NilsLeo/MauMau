@@ -16,32 +16,49 @@ public class DeckServiceImpl implements DeckService {
 
     public DeckServiceImpl(){
     }
+
     /**
      * {@inheritDoc}
      */
     @Override
     public ArrayList<Card> dealHand(Deck deck) {
+        if (deck == null) {
+            throw new IllegalArgumentException("Deck cannot be null");
+        }
+
         ArrayList<Card> hand = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            hand.add(deal(deck));
+            Card card = deal(deck);
+            if (card == null) {
+                logger.error("No more cards in the deck");
+                break;
+            }
+            hand.add(card);
         }
-        
+
         return hand;
     }
+
     /**
      * {@inheritDoc}
      */
     @Override
     public Card deal(Deck deck) {
+        if (deck == null) {
+            throw new IllegalArgumentException("Deck cannot be null");
+        }
+
         List<Card> cards = deck.getCards();
         if (cards.isEmpty()) {
             return null;
         }
+
         Card card = cards.get(0);
         cards.remove(0);
         deck.setCards(cards);
         return card;
     }
+
     /**
      * {@inheritDoc}
      */
@@ -54,16 +71,9 @@ public class DeckServiceImpl implements DeckService {
                 cards.add(new Card(suit, value));
             }
         }
-        Deck deck  = new Deck();
+
+        Deck deck = new Deck();
         deck.setCards(cards);
         return deck;
     }
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setDeck(Deck deck) {
-
-    }
-
 }

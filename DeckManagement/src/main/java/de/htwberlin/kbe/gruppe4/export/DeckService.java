@@ -34,11 +34,4 @@ public interface DeckService {
      * @return A new Deck
      */
     Deck createDeck();
-
-    /**
-     * Sets the deck of cards.
-     *
-     * @param deck The deck to set.
-     */
-    void setDeck(Deck deck);
 }

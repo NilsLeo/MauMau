@@ -26,9 +26,19 @@ public class CLIServiceImpl implements CLIService {
      */
     @Override
     public boolean getRule(String name) {
-        System.out.print("Enable " + name + "? (y/n): ");
-        String input = scanner.nextLine();
-        return input.equals("y");
+        while (true) {
+            System.out.print("Enable " + name + "? (y/n): ");
+            String input = scanner.nextLine();
+            if (input.equals("y")) {
+                return true;
+            } else if (input.equals("n")) {
+                return false;
+            } else {
+                logger.error("Invalid input");
+
+                announceInvalid();
+            }
+        }
     }
     /**
      * {@inheritDoc}
@@ -96,14 +106,26 @@ public class CLIServiceImpl implements CLIService {
      */
     @Override
     public List<String> getPlayerNames() {
-        System.out.print("Enter the number of players (2-5): ");
-        int numPlayers = Integer.parseInt(scanner.nextLine());
-        List<String> names = new ArrayList<>();
-        for (int i = 1; i <= numPlayers; i++) {
-            System.out.print("Enter the name of player " + i + ": ");
-            names.add(scanner.nextLine());
+        while (true) {
+            System.out.print("Enter the number of players (2-5): ");
+            try {
+                int numPlayers = Integer.parseInt(scanner.nextLine());
+                if (numPlayers >= 2 && numPlayers <= 5) {
+                    List<String> names = new ArrayList<>();
+                    for (int i = 1; i <= numPlayers; i++) {
+                        System.out.print("Enter the name of player " + i + ": ");
+                        names.add(scanner.nextLine());
+                    }
+                    return names;
+                } else {
+                    System.out.println("Invalid input. Please enter a number between 2 and 5.");
+                }
+            } catch (NumberFormatException e) {
+                logger.error("Invalid input");
+
+                announceInvalid();
+            }
         }
-        return names;
     }
 
     /**
@@ -130,20 +152,28 @@ public class CLIServiceImpl implements CLIService {
      */
     @Override
     public Suit getSuitChoice() {
-        System.out.print("Enter the number of the suit you want to choose: ");
-        int input = Integer.parseInt(scanner.nextLine());
-        switch (input) {
-            case 1:
-                return Suit.CLUBS;
-            case 2:
-                return Suit.SPADES;
-            case 3:
-                return Suit.HEARTS;
-            case 4:
-                return Suit.DIAMONDS;
-            default:
-                System.out.println("Invalid input. Try again.");
-                return getSuitChoice();
+        while (true) {
+            System.out.print("Enter the number of the suit you want to choose: ");
+            try {
+                int input = Integer.parseInt(scanner.nextLine());
+                switch (input) {
+                    case 1:
+                        return Suit.CLUBS;
+                    case 2:
+                        return Suit.SPADES;
+                    case 3:
+                        return Suit.HEARTS;
+                    case 4:
+                        return Suit.DIAMONDS;
+                    default:
+                        System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                logger.error("Invalid input");
+                announceInvalid();
+
+            }
         }
     }
     /**
