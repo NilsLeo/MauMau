@@ -66,9 +66,9 @@ public interface GameService {
     /**
      * Sets the current player.
      *
-     * @param noOfTurns the number of turns taken
+     * @param i the number of turns taken
      */
-    void setCurrentPlayer(int noOfTurns);
+    void setCurrentPlayer(int i);
 
     /**
      * Returns a list of all players.

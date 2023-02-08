@@ -65,12 +65,12 @@ public class CLIControllerImpl implements CLIController {
     @Override
     public void playTurn(Player player, Card lead, String input) {
         try {
-            int noOfTurns = 1;
+            int i = 1;
             if (input.equals("d")) {
                 drawCard(player);
-                gameService.setCurrentPlayer(noOfTurns);
+                gameService.setCurrentPlayer(i);
             } else {
-                playCard(input, player, lead, noOfTurns);
+                playCard(input, player, lead, i);
             }
             gameService.refillDeckwithExcessCardsOnTable();
         } catch (Exception e) {
@@ -145,7 +145,7 @@ public class CLIControllerImpl implements CLIController {
      */
 
     @Override
-    public void playCard(String input, Player player, Card lead, int noOfTurns){
+    public void playCard(String input, Player player, Card lead, int i){
         int index = 0;
         try {
             if (input.contains("m")) {
@@ -156,7 +156,7 @@ public class CLIControllerImpl implements CLIController {
             }
             Card cardToBePlayed = gameService.cardToPlay(player, index);
                 if (gameService.isCardValid(cardToBePlayed, lead)) {
-                    placeCard(player, index, noOfTurns);
+                    placeCard(player, index, i);
 
 
                 } else {
@@ -176,7 +176,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void placeCard(Player player, int index, int noOfTurns){
+    public void placeCard(Player player, int index, int i){
         Card played = gameService.playCard(player, index);
 
 
@@ -188,9 +188,9 @@ public class CLIControllerImpl implements CLIController {
             penaltyDraw(player, 2);
         }
         if (player.getHand().size() == 1) {
-            noOfTurns = -1;
+            i = -1;
         }
-        gameService.setCurrentPlayer(noOfTurns);
+        gameService.setCurrentPlayer(i);
     }
     /**
      * {@inheritDoc}

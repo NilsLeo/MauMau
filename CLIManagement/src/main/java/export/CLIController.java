@@ -54,7 +54,7 @@ public interface CLIController {
      * @param player the player who is playing the card
      * @param lead the lead card for the turn
      */
-    void playCard(String input, Player player, Card lead, int noOfTurns);
+    void playCard(String input, Player player, Card lead, int i);
 
     /**
      * Places a card for a player, based on their input.
@@ -62,7 +62,7 @@ public interface CLIController {
      * @param player the player who is placing the card
      * @param index the index of the card being placed
      */
-    void placeCard(Player player, int index, int noOfTurns);
+    void placeCard(Player player, int index, int i);
 
     /**
      * Applies a penalty draw for a player, forcing them to draw a specified number of cards.
