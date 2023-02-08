@@ -20,7 +20,18 @@ public interface RulesService {
      * @param card The card that is being played.
      * @param leadSuit The lead suit of the game.
      * @param leadValue The lead value of the game.
-     * @param rules The rules of the game.
+     *
+     * @return true if the card is valid, false otherwise.
+     */
+    boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue);
+
+    /**
+     * Determines if a card is valid based on the lead suit, lead value and the game rules.
+     *
+     * @param card The card that is being played.
+     * @param leadSuit The lead suit of the game.
+     * @param leadValue The lead value of the game.
+     * @param rules The rules of the game. Allows the method to check for special rules
      *
      * @return true if the card is valid, false otherwise.
      */

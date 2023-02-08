@@ -5,12 +5,14 @@ import de.htwberlin.kbe.gruppe4.entity.Deck;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.DeckService;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class DeckServiceImpl implements DeckService {
+    private static final Logger logger =  Logger.getLogger(DeckServiceImpl.class);
 
     public DeckServiceImpl(){
     }

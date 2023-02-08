@@ -4,7 +4,9 @@ import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
+import de.htwberlin.kbe.gruppe4.impl.GameServiceImpl;
 import export.CLIService;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,8 @@ import java.util.Scanner;
 
 public class CLIServiceImpl implements CLIService {
     private final Scanner scanner;
+    private static final Logger logger =  Logger.getLogger(CLIServiceImpl.class);
+
 
     public CLIServiceImpl() {
         this.scanner = new Scanner(System.in);

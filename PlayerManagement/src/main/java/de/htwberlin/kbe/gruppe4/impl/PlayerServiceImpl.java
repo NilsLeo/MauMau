@@ -5,6 +5,7 @@ import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.entity.Deck;
 import de.htwberlin.kbe.gruppe4.export.DeckService;
 import de.htwberlin.kbe.gruppe4.export.PlayerService;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class PlayerServiceImpl implements PlayerService {
+    private static final Logger logger =  Logger.getLogger(PlayerServiceImpl.class);
 
     private DeckService deckService;
     /**

@@ -6,12 +6,18 @@ import de.htwberlin.kbe.gruppe4.entity.Rules;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.RulesService;
+import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class RulesServiceImpl implements RulesService {
-    private boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
+    private static final Logger logger =  Logger.getLogger(RulesServiceImpl.class);
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
         return card.getSuit() == leadSuit || card.getValue() == leadValue;
     }
     /**
