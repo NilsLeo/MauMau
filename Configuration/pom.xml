@@ -20,9 +20,4 @@
         <artifactId>MauMauUebungsblatt4</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <build>
-        <plugins>
-        </plugins>
-    </build>
 </project>

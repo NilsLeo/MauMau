@@ -3,33 +3,25 @@ package de.htwberlin.kbe.gruppe4.entity;
 import jakarta.persistence.*;
 import java.util.List;
 
+
 @Entity
+@Table(name = "players")
 public class Player {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Basic
-    @Column(name = "name")
+
     private String name;
 
-    public Player(String name){
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "player_cards", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "card_id"))
+    private List<Card> cards;
+
+    public Player() {}
+
+    public Player(String name) {
         this.name = name;
     }
-    public List<Card> getHand() {
-        return cards;
-    }
-
-    public void setHand(List<Card> cards) {
-        this.cards = cards;
-    }
-
-    @OneToMany
-    @JoinTable(name = "CardPlayer",
-            joinColumns = {@JoinColumn(name = "player_id")},
-            inverseJoinColumns = {@JoinColumn(name = "card_id")}
-    )
-    private List<Card> cards;
 
     public int getId() {
         return id;
@@ -47,23 +39,11 @@ public class Player {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Player player = (Player) o;
-
-        if (id != player.id) return false;
-        if (name != null ? !name.equals(player.name) : player.name != null) return false;
-
-        return true;
+    public List<Card> getHand() {
+        return cards;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+    public void setHand(List<Card> cards) {
+        this.cards = cards;
     }
 }

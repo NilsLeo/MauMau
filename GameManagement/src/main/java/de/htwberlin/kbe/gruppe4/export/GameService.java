@@ -2,6 +2,7 @@ package de.htwberlin.kbe.gruppe4.export;
 
 
 import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.impl.InvalidGameException;
 
 import java.util.List;
 import java.util.Map;
@@ -127,6 +128,8 @@ public interface GameService {
      * @return a map of the special rules and their values as objects
      */
     Map<String, Object> getSpecialRules();
+
+    Game createGame() throws InvalidGameException;
 
     /**
      * Sets the players in the game.

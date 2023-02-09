@@ -5,15 +5,40 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
+@Table(name = "game")
 public class Game {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rules_id", referencedColumnName = "id")
     private Rules rules;
+
     private int currentPlayer;
 
     private int nextPlayerDraws;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "deck_id", referencedColumnName = "id")
     private Deck deck;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "game_player",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "player_id")
+    )
+    private List<Player> players;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "game_card",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "card_id")
+    )
+    private List<Card> table;
     public int getNextPlayerDraws() {
         return nextPlayerDraws;
     }
@@ -22,8 +47,7 @@ public class Game {
         this.nextPlayerDraws = nextPlayerDraws;
     }
 
-    private List<Player> players;
-    private List<Card> table;
+
 
 
     public List<Player> getPlayers() {
@@ -52,13 +76,6 @@ public class Game {
         this.table = table;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     public Deck getDeck() {
         return deck;
     }
@@ -92,3 +109,4 @@ public class Game {
         this.deck = deck;
     }
 }
+

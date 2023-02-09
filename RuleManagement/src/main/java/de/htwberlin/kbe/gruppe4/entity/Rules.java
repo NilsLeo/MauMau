@@ -2,11 +2,25 @@ package de.htwberlin.kbe.gruppe4.entity;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "rules")
 public class Rules {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private boolean drawTwoOnSevenToggled;
     private boolean chooseSuitOnJackToggled;
 
     private boolean directionClockwise;
+    private boolean drawTwoOnSevenEnabled;
+    private boolean chooseSuitOnJackEnabled;
+    private boolean reverseOnAceEnabled;
+    private boolean rememberedToSayMauMau;
+
+    @Enumerated(EnumType.STRING)
+    private Suit suit;
+
 
     public boolean isDirectionClockwise() {
         return directionClockwise;
@@ -20,11 +34,6 @@ public class Rules {
         this.directionClockwise = true;
     }
 
-    private boolean drawTwoOnSevenEnabled;
-    private boolean chooseSuitOnJackEnabled;
-    private boolean reverseOnAceEnabled;
-    private boolean rememberedToSayMauMau;
-
     public boolean isRememberedToSayMauMau() {
         return rememberedToSayMauMau;
     }
@@ -33,7 +42,6 @@ public class Rules {
         this.rememberedToSayMauMau = rememberedToSayMauMau;
     }
 
-    private Suit suit;
 
     public boolean isDrawTwoOnSevenEnabled() {
         return drawTwoOnSevenEnabled;

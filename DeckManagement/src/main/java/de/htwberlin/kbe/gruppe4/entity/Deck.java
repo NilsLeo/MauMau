@@ -4,26 +4,16 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "decks")
 public class Deck {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    public List<Card> getCards() {
-        return cards;
-    }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
-    }
-
-    @OneToMany
-    @JoinTable(name = "CardDeck",
-            joinColumns = {@JoinColumn(name = "player_id")},
-            inverseJoinColumns = {@JoinColumn(name = "deck_id")}
-    )
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "deck_id")
     private List<Card> cards;
+    public Deck() {}
 
     public int getId() {
         return id;
@@ -33,10 +23,11 @@ public class Deck {
         this.id = id;
     }
 
-
-    public void addAll(List<Card> newCards) {
-        // Adding all new cards to the existing cards list
-        cards.addAll(newCards);
+    public List<Card> getCards() {
+        return cards;
     }
 
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
 }

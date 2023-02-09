@@ -25,6 +25,8 @@ public class MauMauModule extends AbstractModule {
         bind(CLIService.class).to(CLIServiceImpl.class);
         bind(DeckService.class).to(DeckServiceImpl.class);
         bind(GameService.class).to(GameServiceImpl.class);
+        bind(GameDao.class).to(GameDaoImpl.class);
+
         bind(PlayerService.class).to(PlayerServiceImpl.class);
         bind(RulesService.class).to(RulesServiceImpl.class);
         bind(VirtualPlayerService.class).to(VirtualPlayerServiceImpl.class);

@@ -5,6 +5,7 @@ import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.entity.Game;
 import de.htwberlin.kbe.gruppe4.export.*;
+import jakarta.persistence.EntityTransaction;
 import org.apache.log4j.Logger;
 import java.util.*;
 
@@ -25,17 +26,27 @@ public class GameServiceImpl implements GameService {
      * @param rulesService - instance of {@link RulesService}
      * @param playerService - instance of {@link PlayerService}
      */
+    private GameDao gameDao;
+    private EntityTransaction entityTransaction;
     @Inject
     public GameServiceImpl(DeckService deckService, RulesService rulesService,
-                           PlayerService playerService, VirtualPlayerService virtualPlayerService) {
+                           PlayerService playerService, VirtualPlayerService virtualPlayerService, EntityTransaction entityTransaction, GameDao gameDao){
+        this.gameDao = gameDao;
+        this.entityTransaction = entityTransaction;
         this.deckService = deckService;
         this.rulesService = rulesService;
         this.playerService = playerService;
         this.virtualPlayerService = virtualPlayerService;
-
-        this.game = new Game();
+        this.game = createGame();
     }
-
+    @Override
+    public Game createGame(){
+        entityTransaction.begin();
+        Game game = new Game();
+        gameDao.createGame(game);
+        entityTransaction.commit();
+        return game;
+    }
 
     /**
      * {@inheritDoc}

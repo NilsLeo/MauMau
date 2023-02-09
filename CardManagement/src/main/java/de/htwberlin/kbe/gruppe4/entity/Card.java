@@ -2,30 +2,31 @@ package de.htwberlin.kbe.gruppe4.entity;
 
 import jakarta.persistence.*;
 @Entity
+@Table(name = "cards")
 public class Card {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Enumerated(EnumType.STRING)
-    @Column(name = "suit")
     private Suit suit;
+
     @Enumerated(EnumType.STRING)
-    @Column(name = "value")
     private Value value;
+
+    public Card() {}
 
     public Card(Suit suit, Value value) {
         this.suit = suit;
         this.value = value;
     }
 
-
-    public Card() {
-
-    }
-
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Suit getSuit() {
