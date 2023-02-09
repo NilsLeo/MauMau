@@ -5,7 +5,7 @@ import de.htwberlin.kbe.gruppe4.entity.Game;
 public interface GameDao {
     void createGame(Game game);
 
-    Game findGameById(Long id);
+    Game findGameById(int id);
 
 
 

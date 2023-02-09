@@ -19,7 +19,7 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public Game findGameById(Long id) {
+    public Game findGameById(int id) {
         try {
             Game game = entityManager.find(Game.class, id);
             return game;
@@ -32,6 +32,8 @@ public class GameDaoImpl implements GameDao {
     @Override
     public void createGame(Game game) {
         try {
+//            deletes all games before creating one to ensure that only one Game exists
+//            deleteAllGames();
             entityManager.persist(game);
         } catch (PersistenceException exp) {
             logger.error(exp);
