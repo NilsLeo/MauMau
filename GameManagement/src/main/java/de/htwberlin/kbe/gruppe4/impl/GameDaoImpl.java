@@ -32,8 +32,6 @@ public class GameDaoImpl implements GameDao {
     @Override
     public void createGame(Game game) {
         try {
-//            deletes all games before creating one to ensure that only one Game exists
-//            deleteAllGames();
             entityManager.persist(game);
         } catch (PersistenceException exp) {
             logger.error(exp);
@@ -45,16 +43,6 @@ public class GameDaoImpl implements GameDao {
     public void updateGame(Game game) {
         try {
             entityManager.merge(game);
-        } catch (PersistenceException exp) {
-            logger.error(exp);
-            throw new DataAccessException(exp.getMessage());
-        }
-    }
-
-    @Override
-    public void deleteGame(Game game) {
-        try {
-            entityManager.remove(game);
         } catch (PersistenceException exp) {
             logger.error(exp);
             throw new DataAccessException(exp.getMessage());

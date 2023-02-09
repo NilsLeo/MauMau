@@ -5,37 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa5ea7c5-e870-475c-8853-f03a33856b86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/InvalidGameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLIManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CardManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/CardManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardManagement/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configuration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configuration/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeckManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DeckManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeckManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeckManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeckManagement/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuration/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/src/main/resources/log4j.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/export/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManagement/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauMauLog.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauMauLog.log.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerManagement/src/main/resources/log4j.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RuleManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/RuleManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RuleManagement/src/main/resources/log4j.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualPlayerManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualPlayerManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/VirtualPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/entity/VirtualPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualPlayerManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,20 +55,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/nilst/OneDrive/Documents/HTW/5 WiSe 2022 23/Komponentenbasierte Entwicklung/Abgaben/MauMauMau",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="de.htwberlin.kbe.gruppe4.impl" />
@@ -127,6 +105,7 @@
       <updated>1675873311763</updated>
       <workItem from="1675873314656" duration="9752000" />
       <workItem from="1675960661366" duration="4507000" />
+      <workItem from="1675968045345" duration="2580000" />
     </task>
     <servers />
   </component>

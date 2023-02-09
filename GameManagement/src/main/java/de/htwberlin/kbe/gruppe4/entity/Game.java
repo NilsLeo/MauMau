@@ -12,6 +12,14 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "rules_id", referencedColumnName = "id")
     private Rules rules;

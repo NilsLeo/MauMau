@@ -16,6 +16,7 @@ public class GameServiceImpl implements GameService {
     private RulesService rulesService;
     private PlayerService playerService;
     private VirtualPlayerService virtualPlayerService;
+    int gameId;
 
 
     /**
@@ -36,7 +37,8 @@ public class GameServiceImpl implements GameService {
         this.rulesService = rulesService;
         this.playerService = playerService;
         this.virtualPlayerService = virtualPlayerService;
-        createGame();
+        Game game = createGame();
+        this.gameId = game.getId();
     }
     @Override
     public Game createGame(){
@@ -79,7 +81,7 @@ public class GameServiceImpl implements GameService {
         entityTransaction.commit();
     }
     private Game getGame() {
-        return gameDao.findGameById(1);
+        return gameDao.findGameById(this.gameId);
     }
 
     /**

@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!-- Appender for general logging -->
     <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="RootLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%p|%c|%C{1}] %m%n"></param>
+        </layout>
+    </appender>
+
+    <!-- Appender for logging all debug messages from package de.htwberlin.kbe.gruppe4 -->
+    <appender name="maumauAppender" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="MauMauLog.log" />
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d [%p|%c|%C{1}] %m%n"></param>
         </layout>
     </appender>
+
+    <!-- Root Logger with priority info -->
     <root>
-        <priority value="debug"></priority>
+        <priority value="info"></priority>
         <appender-ref ref="fileAppender"></appender-ref>
     </root>
+
+    <!-- Logger for package de.htwberlin.kbe.gruppe4 with priority debug -->
+    <logger name="de.htwberlin.kbe.gruppe4">
+        <priority value="info"></priority>
+        <appender-ref ref="maumauAppender"></appender-ref>
+    </logger>
 </log4j:configuration>

@@ -20,5 +20,7 @@ use maumau;
 "
 ``````
 3. Führen Sie den Befehl `mvn clean install` aus, um das Projekt zu bauen. 
-4. Führen Sie die [export.de.htwberlin.kbe.gruppe4.App](MauMauManagement\src\main\java\de\htwberlin\kbe\gruppe4\inter.de.htwberlin.kbe.gruppe4.App.java) aus um das Spiel zu starten. 
-5. Sehen sie sich bei Bedarf die Datensätze in mysql mit den Zugangsdaten in der [pom.xml](pom.xml) an.
+4. Führen Sie die [App.java](Configuration/src/main/java/de/htwberlin/kbe/gruppe4/App.java) aus um das Spiel zu starten. 
+5. Sehen sie sich bei Bedarf die Datensätze in mysql mit den Zugangsdaten in der [persistence.xml](Configuration/src/main/resources/META-INF/persistence.xml) an.
+6. Das allgemeine Logging kann im [RootLog.log](RootLog.log) angesehen werden
+7. Anwendungsfehler können im [MauMauLog.log](MauMauLog.log) angesehen werden

@@ -238,7 +238,7 @@ public class CLIServiceImpl implements CLIService {
 
     @Override
     public int getNoOfVirtualPlayers() {
-        System.out.print("Enter the number of virtual players (1-4): ");
+        System.out.print("Enter the number of virtual players (0-4): ");
         int input = 0;
         try {
             input = Integer.parseInt(scanner.nextLine());

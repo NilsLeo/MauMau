@@ -11,5 +11,4 @@ public interface GameDao {
 
     void updateGame(Game game);
 
-    void deleteGame(Game game);
 }
