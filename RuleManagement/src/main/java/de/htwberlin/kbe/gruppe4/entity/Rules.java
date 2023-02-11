@@ -21,7 +21,6 @@ public class Rules {
     @Enumerated(EnumType.STRING)
     private Suit suit;
 
-
     public boolean isDirectionClockwise() {
         return directionClockwise;
     }
@@ -32,6 +31,7 @@ public class Rules {
 
     public Rules() {
         this.directionClockwise = true;
+        this.drawTwoOnSevenToggled = false;
     }
 
     public boolean isRememberedToSayMauMau() {

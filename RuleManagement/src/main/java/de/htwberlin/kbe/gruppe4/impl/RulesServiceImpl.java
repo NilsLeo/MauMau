@@ -78,30 +78,45 @@ public class RulesServiceImpl implements RulesService {
     public Map<String, Object> getSpecialRules(Rules rules) {
         Map<String, Object> specialRules = new HashMap<>();
         if (rules.getChooseSuitOnJackToggled()) {
+            logger.info("ChooseSuitonJack activated");
             specialRules.put("chooseSuit", true);
 
         }
         else{
+            logger.info("ChooseSuitonJack disabled");
+
             specialRules.put("chooseSuit", false);
         }
         if (rules.isReverseOnAceEnabled()) {
+            logger.info("ReverseOnAce activated");
+
             specialRules.put("reverseOnAce", true);
 
         }
         else{
             specialRules.put("reverseOnAce", false);
+            logger.info("reverseOnAce disabled");
+
         }
         if (rules.isDrawTwoOnSevenToggled()) {
+            logger.info("drawTwoOnSeven activated");
+
             specialRules.put("drawTwoOnSeven", true);
         }
         else{
             specialRules.put("drawTwoOnSeven", false);
+            logger.info("drawTwoOnSeven deactivated");
+
         }
         if(rules.isDirectionClockwise()){
+            logger.info("direction: clockwise");
+
             specialRules.put("direction", "clockwise");
         }
         else{
             specialRules.put("direction", "counterclockwise");
+            logger.info("direction: ccounterclockwise");
+
         }
         return specialRules;
     }
@@ -111,11 +126,14 @@ public class RulesServiceImpl implements RulesService {
      */
     @Override
     public Rules applySpecialRules(Card played, Rules rules) {
-            if (rules.isDrawTwoOnSevenEnabled() && played.getValue() == Value.SEVEN) {
+
+            if (rules.isDrawTwoOnSevenEnabled() && played.getValue().equals(Value.SEVEN)) {
                 rules.setDrawTwoOnSevenToggled(true);
                 logger.debug("Draw two on seven rule toggled");
+
             } else {
-                rules.setChooseSuitOnJackToggled(false);
+                rules.setDrawTwoOnSevenToggled(false);
+                logger.debug("Draw two on seven rule untoggled");
             }
 
             if (rules.isChooseSuitOnJackEnabled() && played.getValue() == Value.JACK) {
@@ -123,6 +141,8 @@ public class RulesServiceImpl implements RulesService {
                 logger.debug("Choose suit on jack rule toggled");
             } else {
                 rules.setChooseSuitOnJackToggled(false);
+                logger.debug("Choose suit on jack rule untoggled");
+
             }
 
             if (rules.isReverseOnAceEnabled() && played.getValue() == Value.ACE) {
@@ -130,6 +150,7 @@ public class RulesServiceImpl implements RulesService {
                 logger.debug("Reverse on ace rule toggled");
             } else {
                 rules.setDirectionClockwise(false);
+                logger.debug("Reverse on ace rule untoggled");
             }
         return rules;
     }
@@ -141,8 +162,14 @@ public class RulesServiceImpl implements RulesService {
     @Override
     public Rules setupRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce, Rules rules) {
         rules.setDrawTwoOnSevenEnabled(drawTwoOnSeven);
+        logger.info("TwoOnSevenEnabled is set to: " + rules.isDrawTwoOnSevenEnabled());
+
         rules.setChooseSuitOnJackEnabled(chooseSuitOnJack);
+        logger.info("ChooseSuitOnJackEnabled is set to: " + rules.isChooseSuitOnJackEnabled());
+
+
         rules.setReverseOnAceEnabled(reverseOnAce);
+        logger.info("ReverseOnAceEnabled is set to: " + rules.isReverseOnAceEnabled());
 
         return rules;
     }

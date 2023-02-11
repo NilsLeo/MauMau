@@ -144,21 +144,27 @@ public class CLIControllerImpl implements CLIController {
     @Override
     public void playCard(String input, Player player, Card lead, int i) throws InvalidInputException, InvalidMauMauCallException, EmptyDeckException {
         int index = 0;
-            if (input.contains("m")) {
-                confirmOrDenyMauMau(player, index, input);
-            }
         if (input.equals("d")) {
             drawCard(player);
             gameService.setCurrentPlayer(gameService.getCurrentPlayer()+1);
         }
 
-        else{
-            index = Integer.parseInt(input);
+        else if (input.contains("m")) {
+                confirmOrDenyMauMau(player, index, input);
+                String numStr = input.substring(0, input.length() - 1);
+                index = Integer.parseInt(numStr);
                 placeCard(player, index, gameService.getCurrentPlayer()+1);
-                gameService.refillDeckwithExcessCardsOnTable();
+
+            }
+        else {
+            index = Integer.parseInt(input);
+            placeCard(player, index, gameService.getCurrentPlayer() + 1);
+            gameService.refillDeckwithExcessCardsOnTable();
+        }
 
 
-    }
+        gameService.refillDeckwithExcessCardsOnTable();
+
     }
 
     /**

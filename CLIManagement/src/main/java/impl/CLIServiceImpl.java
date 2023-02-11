@@ -92,8 +92,14 @@ public class CLIServiceImpl implements CLIService {
             if(userInput.matches("[1-"+ handSize + "]+")){
                 return "" + (input - 1) + "";
             }
-            if (userInput.contains("m")) {
-                return "m";
+            if (userInput.matches("^\\d+m$")) {
+                int number = Integer.parseInt(userInput.substring(0, userInput.length() - 1));
+                if (number >= 1 && number <= handSize) {
+                    logger.info("valid number followed by m");
+                } else {
+                    throw new InvalidInputException("number not in range");
+
+                }
             }
             if (userInput.contains("d")) {
                 return  "d";

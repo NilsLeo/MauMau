@@ -96,7 +96,7 @@ private Game game;
     @Override
     public void setRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce) {
         Game game = getGame();
-        game.setRules(rulesService.setupRules(drawTwoOnSeven, chooseSuitOnJack, reverseOnAce, game.getRules()));
+        game.setRules (rulesService.setupRules(drawTwoOnSeven, chooseSuitOnJack, reverseOnAce, game.getRules()));
         updateGame(game);
     }
     /**
@@ -189,7 +189,6 @@ private Game game;
     public void applySpecialRules(Card played) {
 
         Game game = getGame();
-
         rulesService.applySpecialRules(played, game.getRules());
     }
     /**
