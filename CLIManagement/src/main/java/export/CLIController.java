@@ -15,21 +15,12 @@ public interface CLIController {
     /**
      * Starts the game.
      */
-    public void startGame();
+    public void startGame() throws InvalidInputException;
 
     /**
      * Runs the game.
      */
     void runGame();
-
-    /**
-     * Plays a turn for a given player, with a given lead card and input.
-     *
-     * @param player the player who is taking their turn
-     * @param lead the lead card for the turn
-     * @param input the input provided by the player
-     */
-    void playTurn(Player player, Card lead, String input);
 
     /**
      * Confirms or denies a request to say MauMau from a player, based on their input.
@@ -45,7 +36,7 @@ public interface CLIController {
      *
      * @param played the card that was played
      */
-    void applySpecialRules(Card played, Player player);
+    void applySpecialRules(Card played, Player player) throws InvalidInputException;
 
     /**
      * Plays a card for a player, based on their input.
@@ -54,7 +45,7 @@ public interface CLIController {
      * @param player the player who is playing the card
      * @param lead the lead card for the turn
      */
-    void playCard(String input, Player player, Card lead, int i);
+    void playCard(String input, Player player, Card lead, int index) throws InvalidInputException;
 
     /**
      * Places a card for a player, based on their input.
@@ -62,7 +53,7 @@ public interface CLIController {
      * @param player the player who is placing the card
      * @param index the index of the card being placed
      */
-    void placeCard(Player player, int index, int i);
+    void placeCard(Player player, int index, int i) throws InvalidInputException;
 
     /**
      * Applies a penalty draw for a player, forcing them to draw a specified number of cards.

@@ -19,7 +19,7 @@ public interface CLIService {
      * @param name the name of the rule
      * @return boolean indicating whether the rule is true or false
      */
-    boolean getRule(String name);
+    boolean getRule(String name) throws InvalidInputException;
 
     /**
      * Displays the hand of the player with the specified name.
@@ -37,6 +37,8 @@ public interface CLIService {
      */
 
     void displayLead(Suit suit, Value value);
+
+    String getPlay(String userInput, int handSize) throws InvalidInputException;
     /**
      * Announces that there are no more cards left.
      */
@@ -47,12 +49,7 @@ public interface CLIService {
      * @return a string indicating the player's choice of "play" or "draw"
      */
 
-    String getPlayOrDraw();
-    /**
-     * Announces that the input is invalid.
-     */
-
-    void announceInvalid();
+    String getPlayOrDraw() throws InvalidInputException;
     /**
      * Announces the winner with the specified name.
      *
@@ -64,7 +61,7 @@ public interface CLIService {
      *
      * @return a list of strings representing the names of the players
      */
-    List<String> getPlayerNames(int noOfVirtualPlayers);
+    List<String> getPlayerNames(int noOfVirtualPlayers) throws InvalidInputException;
     /**
      * Displays the available suits.
      */
@@ -74,7 +71,7 @@ public interface CLIService {
      *
      * @return the suit that the player has chosen
      */
-    Suit getSuitChoice();
+    Suit getSuitChoice() throws InvalidInputException;
     /**
      * Announces the chosen suit.
      *
@@ -127,5 +124,5 @@ public interface CLIService {
 
     void announceReversal();
 
-    int getNoOfVirtualPlayers();
+    int getNoOfVirtualPlayers() throws InvalidInputException;
 }

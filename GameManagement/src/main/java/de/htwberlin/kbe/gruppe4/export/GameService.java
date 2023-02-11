@@ -220,4 +220,6 @@ public interface GameService {
      * @return the Suit that the virtual player chooses
      */
     Suit getVirtualPlayerSuitChoice(Player player);
+
+    boolean getMauMauCallValidity(Player player);
 }

@@ -96,4 +96,6 @@ public interface RulesService {
      * @return The next player in counterclockwise order.
      */
     int getNextCounterClockwisePlayer(int currentPlayer, int maxPlayer);
+
+    boolean getMauMauCallValidity(int size);
 }

@@ -5,6 +5,7 @@ import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.export.GameService;
 import export.CLIController;
 import export.CLIService;
+import export.InvalidInputException;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
 @Override
-    public void startGame() {
+    public void startGame() throws InvalidInputException {
     int noOfVirtualPlayers = cli.getNoOfVirtualPlayers();
         gameService.setPlayers(noOfVirtualPlayers, cli.getPlayerNames(noOfVirtualPlayers));
         gameService.setRules(cli.getRule("draw two on seven"), cli.getRule("choose suit on jack"), cli.getRule("reverse on ace"));
@@ -57,7 +58,7 @@ public class CLIControllerImpl implements CLIController {
                 else{
                     input = cli.getPlayOrDraw();
                 }
-                playTurn(player, gameService.getLeadCard(), input);
+                playCard(input, player, gameService.getLeadCard(), gameService.getCurrentPlayer());
             } catch (Exception e) {
                 logger.error("An error occurred: " + e.getMessage(), e);
 
@@ -69,30 +70,8 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void playTurn(Player player, Card lead, String input) {
-
-        try {
-            int i = 1;
-
-
-            if (input.equals("d")) {
-                drawCard(player);
-                gameService.setCurrentPlayer(i);
-            } else {
-                playCard(input, player, lead, i);
-            }
-            gameService.refillDeckwithExcessCardsOnTable();
-        } catch (Exception e) {
-            logger.error("An error occurred while playing the turn: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public void confirmOrDenyMauMau(Player player, int index, String input){
-        if ((player.getHand().size() == 2)) {
+        if ((gameService.getMauMauCallValidity(player))) {
             cli.announceMauMau();
             gameService.setRememberedToSayMauMau(true);
             Matcher matcher = Pattern.compile("\\d+").matcher(input);
@@ -111,7 +90,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void applySpecialRules(Card played, Player player){
+    public void applySpecialRules(Card played, Player player) throws InvalidInputException {
         gameService.applySpecialRules(played);
         Map<String, Object> specialRules = gameService.getSpecialRules();
 
@@ -161,41 +140,32 @@ public class CLIControllerImpl implements CLIController {
      */
 
     @Override
-    public void playCard(String input, Player player, Card lead, int i){
+    public void playCard(String input, Player player, Card lead, int i) throws InvalidInputException {
         int index = 0;
-        try {
             if (input.contains("m")) {
                 confirmOrDenyMauMau(player, index, input);
-            } else {
-
-                index = Integer.parseInt(input) - 1;
             }
-            Card cardToBePlayed = gameService.cardToPlay(player, index);
-                if (gameService.isCardValid(cardToBePlayed, lead)) {
-                    placeCard(player, index, i);
-
-
-                } else {
-                    cli.announceInvalid();
-                }
-
+        if (input.equals("d")) {
+            drawCard(player);
+            gameService.setCurrentPlayer(gameService.getCurrentPlayer()+1);
         }
-        catch (NumberFormatException e){
-            cli.announceInvalid();
-            logger.error("An error occurred while playing the turn: " + e.getMessage());
 
+        else{
+            index = Integer.parseInt(input);
+        Card cardToBePlayed = gameService.cardToPlay(player, index);
+                placeCard(player, index, gameService.getCurrentPlayer()+1);
+                gameService.refillDeckwithExcessCardsOnTable();
 
-        }
 
     }
+    }
+
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void placeCard(Player player, int index, int i){
+    public void placeCard(Player player, int index, int i) throws InvalidInputException {
+        System.out.println("reached placeCard");
         Card played = gameService.playCard(player, index);
-
-
         cli.displayPlay(player, played.getSuit(), played.getValue());
         gameService.addCardToTable(played);
         applySpecialRules(played, player);

@@ -4,6 +4,6 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin_123
-      MYSQL_DATABASE: MAUMAU
+      MYSQL_DATABASE: maumau
     ports:
       - "3306:3306"

@@ -19,9 +19,11 @@ public class MauMauModule extends AbstractModule {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
+
         bind(EntityManagerFactory.class).toInstance(emf);
         bind(EntityManager.class).toInstance(em);
         bind(EntityTransaction.class).toInstance(et);
+
         bind(CLIService.class).to(CLIServiceImpl.class);
         bind(DeckService.class).to(DeckServiceImpl.class);
         bind(GameService.class).to(GameServiceImpl.class);

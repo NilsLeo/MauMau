@@ -46,7 +46,7 @@ public class RulesServiceImpl implements RulesService {
                 }
                 else {
                     valid = false;
-                    logger.error("Suits do not concurr");
+                    logger.warn("Suits do not concurr");
                 }
             } else {
                valid =  isValidBasedOnLead(card, leadSuit, leadValue);
@@ -176,6 +176,15 @@ public class RulesServiceImpl implements RulesService {
         return nextPlayer;
     }
 
+    @Override
+    public boolean getMauMauCallValidity(int size) {
+        if ((size == 2)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
 }
