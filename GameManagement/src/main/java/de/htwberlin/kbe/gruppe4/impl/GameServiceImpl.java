@@ -25,6 +25,8 @@ private Game game;
      * @param deckService - instance of {@link DeckService}
      * @param rulesService - instance of {@link RulesService}
      * @param playerService - instance of {@link PlayerService}
+     * @param virtualPlayerService - instance of {@link VirtualPlayerService}
+     *
      */
     private GameDao gameDao;
     private EntityTransaction entityTransaction;
