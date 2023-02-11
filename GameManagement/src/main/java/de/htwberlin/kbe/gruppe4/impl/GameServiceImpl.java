@@ -16,7 +16,7 @@ public class GameServiceImpl implements GameService {
     private RulesService rulesService;
     private PlayerService playerService;
     private VirtualPlayerService virtualPlayerService;
-    int gameId;
+private Game game;
 
 
     /**
@@ -30,15 +30,14 @@ public class GameServiceImpl implements GameService {
     private EntityTransaction entityTransaction;
     @Inject
     public GameServiceImpl(DeckService deckService, RulesService rulesService,
-                           PlayerService playerService, VirtualPlayerService virtualPlayerService, EntityTransaction entityTransaction, GameDao gameDao){
+                           PlayerService playerService, VirtualPlayerService virtualPlayerService, EntityTransaction entityTransaction, GameDao gameDao, Game game){
         this.gameDao = gameDao;
         this.entityTransaction = entityTransaction;
         this.deckService = deckService;
         this.rulesService = rulesService;
         this.playerService = playerService;
         this.virtualPlayerService = virtualPlayerService;
-        Game game = createGame();
-        this.gameId = game.getId();
+        this.game = createGame();
     }
     @Override
     public Game createGame(){
@@ -81,7 +80,7 @@ public class GameServiceImpl implements GameService {
         entityTransaction.commit();
     }
     private Game getGame() {
-        return gameDao.findGameById(this.gameId);
+        return gameDao.findGameById(this.game.getId());
     }
 
     /**
@@ -239,7 +238,9 @@ public class GameServiceImpl implements GameService {
     public Card cardToPlay(Player player, int index) {
         return playerService.cardToPlay(player, index, getLeadSuit(), getLeadValue());
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Rules getRules() {
         Game game = getGame();
@@ -250,6 +251,12 @@ public class GameServiceImpl implements GameService {
     @Override
     public Suit getVirtualPlayerSuitChoice(Player player) {
         return virtualPlayerService.getVirtualPlayerChoice(player.getHand());
+    }
+
+    @Override
+    public boolean getMauMauCallValidity(Player player) {
+        return rulesService.getMauMauCallValidity(player.getHand().size());
+
     }
 
     /**

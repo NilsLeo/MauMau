@@ -5,6 +5,7 @@ import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import export.CLIService;
+import export.InvalidInputException;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -23,23 +24,33 @@ public class CLIServiceImpl implements CLIService {
     /**
      * {@inheritDoc}
      */
-    @Override
-    public boolean getRule(String name) {
-        while (true) {
+    public boolean getRule(String name) throws InvalidInputException {
+
+
+            String errorMessage = "Invalid input. Please enter y for yes or n for no";
             System.out.print("Enable " + name + "? (y/n): ");
             String input = scanner.nextLine();
-            if (input.equals("y")) {
-                return true;
-            } else if (input.equals("n")) {
-                return false;
-            } else {
-                logger.error("Invalid input");
+            boolean ruleEnabled = false;
+            try {
+                while (true) {
+                if (input.equals("y")) {
+                    ruleEnabled = true;
+                } else if (input.equals("n")) {
+                    ruleEnabled = false;
 
-                announceInvalid();
+                } else {
+                    throw new InvalidInputException(errorMessage);
+                }
+                return ruleEnabled;
+                }
+
+
+            } catch (InvalidInputException e) {
+                System.out.println(errorMessage);
+                return getRule(name);
             }
-        }
-    }
 
+    }
     /**
      * {@inheritDoc}
      */
@@ -72,12 +83,44 @@ public class CLIServiceImpl implements CLIService {
     public void displayLead(Suit suit, Value value) {
         System.out.println("Top card on the table: " + value + " of " + suit);
     }
+
+    @Override
+    public String getPlay(String userInput, int handSize) throws InvalidInputException {
+        System.out.println("reaced handSize: " + handSize);
+        String errorMessage = "Invalid input. Please give a Valid Card. 1 - " + handSize+", draw a Card or Call MauMau!";
+        int input = 0;
+        try {
+            if(userInput.matches("[1-"+ handSize + "]+")){
+                return "" + (input - 1) + "";
+            }
+            if (userInput.contains("m")) {
+                return "m";
+            }
+            if (userInput.contains("d")) {
+                return  "d";
+            }
+
+            else{
+                throw new InvalidInputException(errorMessage);
+            }
+
+        } catch (InvalidInputException e){
+            System.out.println(errorMessage);
+            return getPlay(scanner.nextLine(), handSize);
+        }
+    }
+
+    private void announceInvalid() {
+        System.out.println("Please Enter Valid Input!");
+    }
+
     /**
      * {@inheritDoc}
      */
     @Override
-    public String getPlayOrDraw() {
-        return scanner.nextLine();
+    public String getPlayOrDraw(){
+        String input = scanner.nextLine();
+        return input;
     }
     /**
      * {@inheritDoc}
@@ -86,13 +129,7 @@ public class CLIServiceImpl implements CLIService {
     public void displayPlay(Player player, Suit suit, Value value) {
         System.out.println(player.getName() + " played the " + value + " of " + suit + ".");
     }
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void announceInvalid() {
-        System.out.println("Invalid input. Try again.");
-    }
+
 
     /**
      * {@inheritDoc}
@@ -106,42 +143,45 @@ public class CLIServiceImpl implements CLIService {
      */
 
     @Override
-    public List<String> getPlayerNames(int noOfVirtualPlayers) {
-        while (true) {
+    public List<String> getPlayerNames(int noOfVirtualPlayers) throws InvalidInputException {
+        int input = 0;
+            int maxPlayers = 5-noOfVirtualPlayers;
             int totalPlayers = noOfVirtualPlayers;
             String possiblePlayerOptions = "";
 
-            if(noOfVirtualPlayers==0){
+            if (maxPlayers == 5) {
                 possiblePlayerOptions = "(2-5): ";
             }
-            if(noOfVirtualPlayers>=1){
-                possiblePlayerOptions = "(1-" + (5 - noOfVirtualPlayers) + "): ";
-
+            if (maxPlayers >= 1 && 4 >= maxPlayers ) {
+                possiblePlayerOptions = "(1-" + maxPlayers + "): ";
             }
-            if(noOfVirtualPlayers==4){
+            if (maxPlayers == 1) {
                 possiblePlayerOptions = "(1): ";
-
             }
+            String errorMessage="Invalid input. " + "Enter the number of real players " + possiblePlayerOptions;
 
-            System.out.print("Enter the number of real players " +  possiblePlayerOptions);
+            System.out.print("Enter the number of real players " + possiblePlayerOptions);
             try {
-                int realPlayers = Integer.parseInt(scanner.nextLine());
-                totalPlayers += realPlayers;
-                if (totalPlayers >= 2 && totalPlayers <= 5) {
-                    List<String> names = new ArrayList<>();
-                    for (int i = 1; i <= realPlayers; i++) {
-                        System.out.print("Enter the name of player " + i + ": ");
-                        names.add(scanner.nextLine());
+                String userInput = scanner.nextLine();
+                if(userInput.matches("[1-" + maxPlayers + "]")){
+                    input = Integer.parseInt(userInput);
+                        List<String> names = new ArrayList<>();
+                        for (int i = 1; i <= input; i++) {
+                            System.out.print("Enter the name of player " + i + ": ");
+                            names.add(scanner.nextLine());
+                        }
+                        return names;
+
                     }
-                    return names;
-                } else {
-                    System.out.println("Invalid input. " + "Enter the number of real players" +  possiblePlayerOptions);
+                else {
+                    throw new InvalidInputException(errorMessage);
                 }
-            } catch (NumberFormatException e) {
-                logger.error("Invalid input");
-                announceInvalid();
+            } catch (InvalidInputException e) {
+                System.out.println(errorMessage);
+                return getPlayerNames(noOfVirtualPlayers);
             }
-        }
+
+
     }
 
     /**
@@ -167,11 +207,16 @@ public class CLIServiceImpl implements CLIService {
      * {@inheritDoc}
      */
     @Override
-    public Suit getSuitChoice() {
+    public Suit getSuitChoice() throws InvalidInputException {
         while (true) {
+
+            String errorMessage="Invalid input. Please enter a number between 1 and 4.";
             System.out.print("Enter the number of the suit you want to choose: ");
+        int input = 0;
             try {
-                int input = Integer.parseInt(scanner.nextLine());
+                String userInput = scanner.nextLine();
+                if(userInput.matches("[1-4]+")){
+                input = Integer.parseInt(scanner.nextLine());
                 switch (input) {
                     case 1:
                         return Suit.CLUBS;
@@ -182,15 +227,20 @@ public class CLIServiceImpl implements CLIService {
                     case 4:
                         return Suit.DIAMONDS;
                     default:
-                        System.out.println("Invalid input. Please enter a number between 1 and 4.");
-                        break;
-                }
-            } catch (NumberFormatException e) {
-                logger.error("Invalid input");
-                announceInvalid();
+                        throw new InvalidInputException(errorMessage);
 
+                }
+                }
+                else{
+                    throw new InvalidInputException(errorMessage);
+                }
+
+            } catch (InvalidInputException e) {
+                System.out.println(errorMessage);
+                return getSuitChoice();
             }
         }
+
     }
     /**
      * {@inheritDoc}
@@ -237,19 +287,27 @@ public class CLIServiceImpl implements CLIService {
     }
 
     @Override
-    public int getNoOfVirtualPlayers() {
+    public int getNoOfVirtualPlayers() throws InvalidInputException {
+        String errorMessage="Invalid input. Number of virtual players should be between 0 and 4.";
         System.out.print("Enter the number of virtual players (0-4): ");
         int input = 0;
         try {
-            input = Integer.parseInt(scanner.nextLine());
+            String userInput = scanner.nextLine();
+            if(userInput.matches("[0-4]+")){
+                input = Integer.parseInt(userInput);
             }
-         catch (NumberFormatException e) {
-            logger.error("Invalid input");
-            announceInvalid();
+            else{
+                throw new InvalidInputException(errorMessage);
 
+            }
+
+        } catch (InvalidInputException e) {
+            System.out.println(errorMessage);
+            return getNoOfVirtualPlayers();
         }
         return input;
     }
+
 
     /**
      * {@inheritDoc}

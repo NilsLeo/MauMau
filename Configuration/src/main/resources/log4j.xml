@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
-<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+<log4j:configuration debug="false">
+
     <!-- Appender for general logging -->
     <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="RootLog.log" />
@@ -17,15 +18,17 @@
         </layout>
     </appender>
 
+
+
+    <!-- Logger for package de.htwberlin.kbe.gruppe4 with priority info -->
+    <logger name="de.htwberlin.kbe.gruppe4">
+        <level value="info"></level>
+        <appender-ref ref="maumauAppender"></appender-ref>
+    </logger>
     <!-- Root Logger with priority info -->
     <root>
-        <priority value="info"></priority>
+        <level value="info"></level>
         <appender-ref ref="fileAppender"></appender-ref>
     </root>
 
-    <!-- Logger for package de.htwberlin.kbe.gruppe4 with priority debug -->
-    <logger name="de.htwberlin.kbe.gruppe4">
-        <priority value="info"></priority>
-        <appender-ref ref="maumauAppender"></appender-ref>
-    </logger>
 </log4j:configuration>
