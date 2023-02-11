@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa5ea7c5-e870-475c-8853-f03a33856b86" name="Changes" comment="">
+    <list default="true" id="fa5ea7c5-e870-475c-8853-f03a33856b86" name="Changes" comment="added rootlogger (CLI Service - major incomplete changes)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CLIManagement/src/main/java/impl/CLIServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Configuration/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration/src/main/resources/log4j.xml" afterDir="false" />
@@ -113,11 +113,23 @@
       <workItem from="1675960661366" duration="4507000" />
       <workItem from="1675968045345" duration="2580000" />
       <workItem from="1675973528651" duration="8068000" />
-      <workItem from="1676129096991" duration="10496000" />
+      <workItem from="1676129096991" duration="11573000" />
     </task>
+    <task id="LOCAL-00001" summary="added rootlogger (CLI Service - major incomplete changes)">
+      <created>1676139911694</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676139911694</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added rootlogger (CLI Service - major incomplete changes)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added rootlogger (CLI Service - major incomplete changes)" />
   </component>
 </project>

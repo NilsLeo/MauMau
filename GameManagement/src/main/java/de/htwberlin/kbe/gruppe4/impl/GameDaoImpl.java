@@ -18,6 +18,9 @@ public class GameDaoImpl implements GameDao {
         this.entityManager = entityManager;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Game findGameById(int id) {
         try {
@@ -28,7 +31,9 @@ public class GameDaoImpl implements GameDao {
             throw new DataAccessException(exp.getMessage());
         }
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createGame(Game game) {
         try {
@@ -39,6 +44,9 @@ public class GameDaoImpl implements GameDao {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateGame(Game game) {
         try {

@@ -175,7 +175,9 @@ public class RulesServiceImpl implements RulesService {
         }
         return nextPlayer;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean getMauMauCallValidity(int size) {
         if ((size == 2)) {

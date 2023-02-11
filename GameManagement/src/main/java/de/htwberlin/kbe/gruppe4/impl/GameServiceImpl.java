@@ -39,6 +39,9 @@ private Game game;
         this.virtualPlayerService = virtualPlayerService;
         this.game = createGame();
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Game createGame(){
         entityTransaction.begin();
@@ -51,7 +54,6 @@ private Game game;
     /**
      * {@inheritDoc}
      */
-
     @Override
     public void setPlayers(int noOfPlayers, List<String> names) {
 
@@ -73,8 +75,11 @@ private Game game;
             throw new RuntimeException("Error adding players", e);
         }
     }
-
-    private void updateGame(Game game){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void updateGame(Game game){
         entityTransaction.begin();
         gameDao.updateGame(game);
         entityTransaction.commit();
@@ -205,14 +210,7 @@ private Game game;
         game.getRules().setDirectionClockwise(directionClockwise);
         updateGame(game);
     }
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public boolean isDirectionClockwise() {
-        Game game = getGame();
-        return game.getRules().isDirectionClockwise();
-    }
+
     /**
      * {@inheritDoc}
      */
@@ -248,11 +246,17 @@ private Game game;
         return game.getRules();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Suit getVirtualPlayerSuitChoice(Player player) {
         return virtualPlayerService.getVirtualPlayerChoice(player.getHand());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean getMauMauCallValidity(Player player) {
         return rulesService.getMauMauCallValidity(player.getHand().size());

@@ -96,6 +96,10 @@ public interface RulesService {
      * @return The next player in counterclockwise order.
      */
     int getNextCounterClockwisePlayer(int currentPlayer, int maxPlayer);
-
+    /**
+     * Determines the Validity of the MauMauCall
+     * @param size the size of the players Hand
+     * @return The validity
+     */
     boolean getMauMauCallValidity(int size);
 }

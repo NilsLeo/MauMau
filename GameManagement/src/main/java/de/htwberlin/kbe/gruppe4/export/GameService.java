@@ -2,7 +2,6 @@ package de.htwberlin.kbe.gruppe4.export;
 
 
 import de.htwberlin.kbe.gruppe4.entity.*;
-import de.htwberlin.kbe.gruppe4.impl.InvalidGameException;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +12,8 @@ import java.util.Map;
  * @author Group 4, HTW Berlin
  */
 public interface GameService {
+
+    void updateGame(Game game);
 
     /**
      * Sets the rules of the game.
@@ -128,8 +129,12 @@ public interface GameService {
      * @return a map of the special rules and their values as objects
      */
     Map<String, Object> getSpecialRules();
-
-    Game createGame() throws InvalidGameException;
+    /**
+     * Gets the special rules for the game.
+     *
+     * @return the created Game
+     */
+    Game createGame();
 
     /**
      * Sets the players in the game.
@@ -181,13 +186,6 @@ public interface GameService {
     void setDirectionClockwise(boolean directionClockwise);
 
     /**
-     * Gets the direction of play in the game.
-     *
-     * @return true for clockwise, false for counterclockwise
-     */
-    boolean isDirectionClockwise();
-
-    /**
      * Sets whether or not the current player remembered to say "Mau Mau" before playing their card.
      *
      * @param b true if the player remembered to say "Mau Mau", false otherwise
@@ -220,6 +218,9 @@ public interface GameService {
      * @return the Suit that the virtual player chooses
      */
     Suit getVirtualPlayerSuitChoice(Player player);
-
+    /**
+     * Checks the Validity of the MauMau Call
+     * @return the Validity
+     */
     boolean getMauMauCallValidity(Player player);
 }

@@ -16,8 +16,8 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
     /**
      * {@inheritDoc}
      */
-
-    String getIndexOfCardToPlay(Player player, Card card){
+    @Override
+    public String getIndexOfCardToPlay(Player player, Card card){
         int index = 0;
         for(int i=0; i<player.getHand().size(); i++){
             if(player.getHand().get(i).equals(card)){
@@ -27,6 +27,9 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
         }
         return Integer.toString(index + 1);
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getVirtualMove(Player player, Card lead, Rules rules) {
         List<Card> validCards = getValidCards(player, lead, rules);
@@ -45,7 +48,11 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
         }
         return input;
     }
-    private Card calculateBestMove(List<Card> validCards, Rules rules, Card lead){
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Card calculateBestMove(List<Card> validCards, Rules rules, Card lead){
         Card bestCard = new Card();
         for (Card card : validCards) {
             if (card.getValue() == lead.getValue() || card.getSuit() == lead.getSuit()) {
@@ -58,7 +65,11 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
 //        }
         return bestCard;
     }
-    private Card calculateBestMoveBasedOnSpecialRules(List<Card> validCards, Rules rules) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Card calculateBestMoveBasedOnSpecialRules(List<Card> validCards, Rules rules) {
         Card bestCard = new Card();
 //        Reverse on Ace (least helpful of the special Rules)
         if (rules.isReverseOnAceEnabled()) {
@@ -110,19 +121,27 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
         }
         return validCards;
     }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Suit getVirtualPlayerChoice(List<Card> validCards) {
         return findMostCommonSuit(validCards);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String generateBotName(int noOfExistingBots) {
         String[] availableBotNames = {"Bob", "Frank", "Jim", "Tom"};
         return availableBotNames[noOfExistingBots] + " the BOT";
     }
-
-    private Suit findMostCommonSuit(List<Card> validCards) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Suit findMostCommonSuit(List<Card> validCards) {
         Map<Suit, Integer> suitCounts = new HashMap<>();
         for (Card card : validCards) {
             Suit suit = card.getSuit();
