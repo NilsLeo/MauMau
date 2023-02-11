@@ -15,7 +15,6 @@
         <module>PlayerManagement</module>
         <module>RuleManagement</module>
         <module>Configuration</module>
-        <module>CardManagement</module>
 
     </modules>
     <properties>

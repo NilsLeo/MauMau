@@ -27,7 +27,7 @@ public class RulesServiceImpl implements RulesService {
 
             }
             else{
-                throw new InvalidCardException("Card Is Invalid");
+                throw new InvalidCardException("Card "  +  card.getValue() + " of "+ card.getSuit() + "Is Invalid");
             }
         }
         catch (InvalidCardException e){

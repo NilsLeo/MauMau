@@ -376,7 +376,6 @@ private Game game;
     @Override
     public boolean isCardValid(Card card, Card lead) throws InvalidCardException {
         Game game = getGame();
-
         return rulesService.isCardValid(card, getLeadSuit(), getLeadValue(), game.getRules());
     }
 }

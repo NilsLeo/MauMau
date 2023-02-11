@@ -86,7 +86,6 @@ public class CLIServiceImpl implements CLIService {
 
     @Override
     public String getPlay(String userInput, int handSize) throws InvalidInputException {
-        System.out.println("reaced handSize: " + handSize);
         String errorMessage = "Invalid input. Please give a Valid Card. 1 - " + handSize+", draw a Card or Call MauMau!";
         int input = 0;
         try {

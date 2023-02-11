@@ -154,7 +154,6 @@ public class CLIControllerImpl implements CLIController {
 
         else{
             index = Integer.parseInt(input);
-        Card cardToBePlayed = gameService.cardToPlay(player, index);
                 placeCard(player, index, gameService.getCurrentPlayer()+1);
                 gameService.refillDeckwithExcessCardsOnTable();
 
@@ -166,8 +165,8 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     public void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException {
-        System.out.println("reached placeCard");
-        Card played = gameService.playCard(player, index);
+        Card played = gameService.playCard(player, index-1);
+
         cli.displayPlay(player, played.getSuit(), played.getValue());
         gameService.addCardToTable(played);
         applySpecialRules(played, player);

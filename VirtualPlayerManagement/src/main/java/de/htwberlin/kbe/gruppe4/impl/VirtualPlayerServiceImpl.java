@@ -5,6 +5,7 @@ import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.export.InvalidCardException;
 import de.htwberlin.kbe.gruppe4.export.RulesService;
 import de.htwberlin.kbe.gruppe4.export.VirtualPlayerService;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +15,8 @@ import java.util.Map;
 public class VirtualPlayerServiceImpl implements VirtualPlayerService {
     @Inject
     RulesService rulesService;
+    private static final Logger logger =  Logger.getLogger(VirtualPlayerServiceImpl.class);
+
     /**
      * {@inheritDoc}
      */
@@ -47,6 +50,7 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
         else{
             input = "d";
         }
+        logger.info("Virtual Players Move: " + input);
         return input;
     }
     /**

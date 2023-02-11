@@ -6,15 +6,6 @@
     <artifactId>DeckManagement</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>DeckManagement</name>
-    <dependencies>
-        <dependency>
-            <groupId>de.htwberlin.kbe.gruppe4</groupId>
-            <artifactId>CardManagement</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
     <parent>
         <groupId>de.htwberlin.kbe.gruppe4</groupId>
         <artifactId>MauMauUebungsblatt4</artifactId>

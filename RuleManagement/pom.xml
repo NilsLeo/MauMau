@@ -9,7 +9,7 @@
     <dependencies>
         <dependency>
             <groupId>de.htwberlin.kbe.gruppe4</groupId>
-            <artifactId>CardManagement</artifactId>
+            <artifactId>DeckManagement</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
