@@ -67,6 +67,8 @@ public interface RulesService {
      */
     Rules setupRules(boolean drawTwoOnSeven, boolean chooseSuitOnJack, boolean reverseOnAce, Rules rules);
 
+    int getNextPlayer(Rules rules, int currentPlayer, int maxPlayer);
+
     /**
      * Sets the current player of the game.
      *

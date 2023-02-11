@@ -177,6 +177,20 @@ public class RulesServiceImpl implements RulesService {
      * {@inheritDoc}
      */
     @Override
+    public int getNextPlayer(Rules rules, int currentPlayer, int maxPlayer) {
+        int nextPlayer = currentPlayer;
+        if (rules.isDirectionClockwise()) {
+            nextPlayer = getNextClockwisePlayer(currentPlayer, maxPlayer) + 1;
+        } else {
+            nextPlayer = getNextCounterClockwisePlayer(currentPlayer, maxPlayer) -1;
+        }
+        return nextPlayer;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public int setCurrentPlayer(Rules rules, int currentPlayer, int maxPlayer) {
         int nextPlayer = currentPlayer;
         if (rules.isDirectionClockwise()) {

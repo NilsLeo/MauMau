@@ -125,4 +125,6 @@ public interface CLIService {
     void announceReversal();
 
     int getNoOfVirtualPlayers() throws InvalidInputException;
+
+    void announceInvalid();
 }

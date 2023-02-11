@@ -114,8 +114,8 @@ public class CLIServiceImpl implements CLIService {
             return getPlay(scanner.nextLine(), handSize);
         }
     }
-
-    private void announceInvalid() {
+    @Override
+    public void announceInvalid() {
         System.out.println("Please Enter Valid Input!");
     }
 
@@ -214,26 +214,31 @@ public class CLIServiceImpl implements CLIService {
     @Override
     public Suit getSuitChoice() throws InvalidInputException {
         while (true) {
-
             String errorMessage="Invalid input. Please enter a number between 1 and 4.";
             System.out.print("Enter the number of the suit you want to choose: ");
         int input = 0;
+        Suit chosenSuit = Suit.SPADES;
             try {
-                String userInput = scanner.nextLine();
                 input = Integer.parseInt(scanner.nextLine());
-                switch (input) {
-                    case 1:
-                        return Suit.CLUBS;
-                    case 2:
-                        return Suit.SPADES;
-                    case 3:
-                        return Suit.HEARTS;
-                    case 4:
-                        return Suit.DIAMONDS;
-                    default:
-                        throw new InvalidInputException(errorMessage);
+                if (input == 1){
+                   chosenSuit =  Suit.CLUBS;
+                }
+                else if (input == 2){
+                    chosenSuit =  Suit.SPADES;
 
                 }
+                else if (input == 3){
+                    chosenSuit =  Suit.HEARTS;
+                }
+                else if (input == 4){
+                    chosenSuit =  Suit.DIAMONDS;
+
+                }
+                else{
+                    throw new InvalidInputException(errorMessage);
+
+                }
+                return chosenSuit;
 
             } catch (InvalidInputException e) {
                 System.out.println(errorMessage);
@@ -293,7 +298,7 @@ public class CLIServiceImpl implements CLIService {
         int input = 0;
         try {
             String userInput = scanner.nextLine();
-            if(userInput.matches("[0-4]+")){
+            if(userInput.matches("[0-4]+") && userInput.length() == 1){
                 input = Integer.parseInt(userInput);
             }
             else{

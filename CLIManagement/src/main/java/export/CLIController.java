@@ -2,6 +2,7 @@ package export;
 import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Player;
 import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
+import de.htwberlin.kbe.gruppe4.export.InvalidCardException;
 import de.htwberlin.kbe.gruppe4.export.InvalidMauMauCallException;
 
 import java.util.List;
@@ -55,7 +56,7 @@ public interface CLIController {
      * @param player the player who is placing the card
      * @param index the index of the card being placed
      */
-    void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException;
+    void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException, InvalidCardException;
 
     /**
      * Applies a penalty draw for a player, forcing them to draw a specified number of cards.
@@ -70,4 +71,10 @@ public interface CLIController {
      * @param player the player who is drawing the card
      */
     void drawCard(Player player) throws EmptyDeckException;
+    /**
+     * returns the next player
+     * @return the next player
+     */
+    int getNextPlayer();
+
 }

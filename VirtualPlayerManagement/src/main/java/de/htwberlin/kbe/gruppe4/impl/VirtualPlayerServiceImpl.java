@@ -65,9 +65,9 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
 
             }
         }
-//        if (rules.isDrawTwoOnSevenToggled() || rules.isChooseSuitOnJackEnabled() || rules.isReverseOnAceEnabled()){
-//            bestCard = calculateBestMoveBasedOnSpecialRules(validCards, rules);
-//        }
+        if (rules.isDrawTwoOnSevenToggled() || rules.isChooseSuitOnJackEnabled() || rules.isReverseOnAceEnabled()){
+            bestCard = calculateBestMoveBasedOnSpecialRules(validCards, rules);
+        }
         return bestCard;
     }
     /**

@@ -869,3 +869,833 @@
 2023-02-11 23:15:43,319 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
 2023-02-11 23:15:43,320 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
 2023-02-11 23:15:43,320 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a QUEEN of DIAMONDS
+2023-02-11 23:20:52,388 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-11 23:20:52,425 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-11 23:20:52,646 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-11 23:20:52,650 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-11 23:20:52,650 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-11 23:20:52,651 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-11 23:20:52,651 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-11 23:20:52,653 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-11 23:20:52,853 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-11 23:20:52,980 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-11 23:20:53,367 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-11 23:20:53,419 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-11 23:20:58,412 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-11 23:20:58,412 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-11 23:20:58,412 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-11 23:20:58,446 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-11 23:20:58,448 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:20:58,448 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of CLUBSIs Invalid
+2023-02-11 23:20:58,448 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-11 23:20:58,448 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:20:58,448 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-11 23:20:58,448 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 4
+2023-02-11 23:20:58,448 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of HEARTS was placed on table.
+2023-02-11 23:20:58,454 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:20:58,455 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:20:58,455 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:20:58,455 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:20:58,459 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:21:01,370 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a NINE of DIAMONDS
+2023-02-11 23:21:01,393 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:21:01,393 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of CLUBSIs Invalid
+2023-02-11 23:21:01,393 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-11 23:21:01,393 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-11 23:21:01,393 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-11 23:21:01,393 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of HEARTS was placed on table.
+2023-02-11 23:21:01,400 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:21:01,400 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:21:01,400 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:21:01,400 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:21:01,401 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:21:03,090 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a NINE of CLUBS
+2023-02-11 23:21:03,113 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of CLUBSIs Invalid
+2023-02-11 23:21:03,113 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-11 23:21:03,113 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-11 23:21:03,113 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:21:03,113 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a JACK of CLUBS
+2023-02-11 23:21:04,549 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a JACK of HEARTS
+2023-02-11 23:21:04,571 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-11 23:21:04,572 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-11 23:21:04,572 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:21:04,572 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of CLUBSIs Invalid
+2023-02-11 23:21:04,572 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:21:04,572 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a EIGHT of DIAMONDS
+2023-02-11 23:21:08,465 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of HEARTS was placed on table.
+2023-02-11 23:21:08,481 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-11 23:21:08,481 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:21:08,481 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:21:08,481 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:21:10,749 [ERROR|impl.CLIControllerImpl|CLIControllerImpl] An error occurred: For input string: ""
+java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:675)
+	at java.base/java.lang.Integer.parseInt(Integer.java:781)
+	at impl.CLIServiceImpl.getSuitChoice(CLIServiceImpl.java:223)
+	at impl.CLIControllerImpl.applySpecialRules(CLIControllerImpl.java:113)
+	at impl.CLIControllerImpl.placeCard(CLIControllerImpl.java:178)
+	at impl.CLIControllerImpl.playCard(CLIControllerImpl.java:161)
+	at impl.CLIControllerImpl.runGame(CLIControllerImpl.java:63)
+	at impl.CLIControllerImpl.startGame(CLIControllerImpl.java:37)
+	at de.htwberlin.kbe.gruppe4.App.main(App.java:21)
+2023-02-11 23:28:30,196 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-11 23:28:30,233 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-11 23:28:30,452 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-11 23:28:30,456 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-11 23:28:30,456 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-11 23:28:30,457 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-11 23:28:30,457 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-11 23:28:30,459 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-11 23:28:30,656 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-11 23:28:30,776 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-11 23:28:31,166 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-11 23:28:31,217 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-11 23:28:34,583 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-11 23:28:34,583 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-11 23:28:34,583 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-11 23:28:34,620 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-11 23:28:34,622 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:28:34,622 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:28:34,622 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of SPADESIs Invalid
+2023-02-11 23:28:34,622 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:28:34,622 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:28:34,622 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 5
+2023-02-11 23:28:34,622 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] KING of DIAMONDS was placed on table.
+2023-02-11 23:28:34,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:28:34,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:28:34,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:28:34,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:28:34,634 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:28:38,899 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of DIAMONDS was placed on table.
+2023-02-11 23:28:38,916 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-11 23:28:38,916 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:28:38,916 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:28:38,916 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:28:40,318 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: CLUBS
+2023-02-11 23:28:40,319 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:28:40,331 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-11 23:28:40,331 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:28:40,331 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of SPADESIs Invalid
+2023-02-11 23:28:40,331 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of CLUBSIs Invalid
+2023-02-11 23:28:40,331 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-11 23:28:40,331 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of CLUBS was placed on table.
+2023-02-11 23:28:40,336 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:28:40,336 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:28:40,336 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:28:40,336 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:28:40,340 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:06:42,743 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:06:42,781 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:06:42,999 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:06:43,003 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:06:43,003 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:06:43,004 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:06:43,004 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:06:43,006 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:06:43,211 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:06:43,331 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:06:43,741 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:06:43,807 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:06:46,752 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Enter the number of real players (1-4): 
+2023-02-12 00:06:52,635 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:06:52,635 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:06:52,635 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:06:52,680 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:06:52,682 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:06:52,682 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-12 00:06:52,682 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of SPADESIs Invalid
+2023-02-12 00:06:52,682 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:06:52,682 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-12 00:06:52,682 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:06:52,683 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a SEVEN of CLUBS
+2023-02-12 00:07:01,643 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:07:01,681 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:07:01,891 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:07:01,895 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:07:01,895 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:07:01,895 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:07:01,895 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:07:01,897 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:07:02,090 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:07:02,214 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:07:02,629 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:07:02,687 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:07:13,551 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:07:13,589 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:07:13,810 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:07:13,815 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:07:13,815 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:07:13,816 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:07:13,816 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:07:13,818 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:07:14,015 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:07:14,137 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:07:14,543 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:07:14,595 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:07:23,131 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Please enter y for yes or n for no
+2023-02-12 00:07:24,650 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:07:24,650 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:07:24,651 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:07:24,685 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:07:24,687 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:07:24,687 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-12 00:07:24,687 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:07:24,687 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:07:24,687 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of DIAMONDSIs Invalid
+2023-02-12 00:07:24,687 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 4
+2023-02-12 00:07:24,688 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] KING of CLUBS was placed on table.
+2023-02-12 00:07:24,693 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:07:24,694 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:07:24,694 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:07:24,694 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:07:24,699 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:07:57,163 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of CLUBS was placed on table.
+2023-02-12 00:07:57,181 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:07:57,181 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:07:57,181 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 00:07:57,181 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:07:57,185 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 00:07:57,187 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:07:57,197 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] c drew a KING of SPADES
+2023-02-12 00:07:57,204 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player c drew a card.
+2023-02-12 00:07:57,204 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] c drew a SEVEN of SPADES
+2023-02-12 00:07:57,210 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player c drew a card.
+2023-02-12 00:08:02,184 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] c drew a JACK of CLUBS
+2023-02-12 00:08:03,110 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] b drew a EIGHT of HEARTS
+2023-02-12 00:08:05,854 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a EIGHT of CLUBS
+2023-02-12 00:08:05,865 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-12 00:08:05,865 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-12 00:08:05,865 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:08:05,865 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of DIAMONDSIs Invalid
+2023-02-12 00:08:05,866 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:08:05,866 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a ACE of CLUBS
+2023-02-12 00:08:16,837 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] d drew a TEN of CLUBS
+2023-02-12 00:08:22,792 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:08:22,826 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:08:23,034 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:08:23,043 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:08:23,043 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:08:23,043 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:08:23,044 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:08:23,046 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:08:23,239 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:08:23,364 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:08:23,773 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:08:23,826 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:08:43,525 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:08:43,559 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:08:43,783 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:08:43,787 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:08:43,787 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:08:43,787 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:08:43,787 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:08:43,790 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:08:43,980 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:08:44,101 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:08:44,506 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:08:44,559 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:09:00,669 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:09:00,669 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:09:00,669 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:09:00,713 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:09:00,715 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:09:00,715 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of HEARTSIs Invalid
+2023-02-12 00:09:00,715 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-12 00:09:00,715 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:09:00,715 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of CLUBSIs Invalid
+2023-02-12 00:09:00,715 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 4
+2023-02-12 00:09:00,716 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of DIAMONDS was placed on table.
+2023-02-12 00:09:00,721 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:09:00,721 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:09:00,721 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 00:09:00,721 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:09:00,726 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 00:09:00,728 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:09:00,737 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a QUEEN of SPADES
+2023-02-12 00:09:00,744 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:09:00,744 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a TEN of CLUBS
+2023-02-12 00:09:00,750 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:09:09,707 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of DIAMONDS was placed on table.
+2023-02-12 00:09:09,724 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:09:09,724 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:09:09,724 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:09:09,725 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:09:09,728 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:09:09,740 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:09:09,740 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of HEARTSIs Invalid
+2023-02-12 00:09:09,740 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-12 00:09:09,740 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of CLUBSIs Invalid
+2023-02-12 00:09:09,740 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:09:09,741 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] ACE of DIAMONDS was placed on table.
+2023-02-12 00:09:09,746 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:09:09,746 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:09:09,746 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:09:09,746 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: clockwise
+2023-02-12 00:09:09,749 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to clockwise
+2023-02-12 00:09:09,749 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction has been reversed
+2023-02-12 00:09:25,205 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] NINE of HEARTS was placed on table.
+2023-02-12 00:09:25,221 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:09:25,222 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:09:25,222 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:09:25,222 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:09:25,226 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:09:25,235 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:09:25,235 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:09:25,235 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of CLUBSIs Invalid
+2023-02-12 00:09:25,235 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 2
+2023-02-12 00:09:25,236 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of HEARTS was placed on table.
+2023-02-12 00:09:25,241 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:09:25,241 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:09:25,241 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:09:25,241 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:09:25,242 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:39:57,703 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:39:57,739 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:39:57,952 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:39:57,960 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:39:57,960 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:39:57,961 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:39:57,961 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:39:57,964 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:39:58,156 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:39:58,277 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:39:58,672 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:39:58,725 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:40:04,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:40:04,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:40:04,045 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:40:04,081 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:40:04,083 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of CLUBSIs Invalid
+2023-02-12 00:40:04,083 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of HEARTSIs Invalid
+2023-02-12 00:40:04,083 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-12 00:40:04,083 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of HEARTSIs Invalid
+2023-02-12 00:40:04,083 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of CLUBSIs Invalid
+2023-02-12 00:40:04,084 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:40:04,084 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a SEVEN of SPADES
+2023-02-12 00:40:07,680 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of CLUBSIs Invalid
+2023-02-12 00:41:14,564 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:41:14,604 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:41:14,822 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:41:14,825 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:41:14,826 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:41:14,826 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:41:14,826 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:41:14,828 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:41:15,018 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:41:15,137 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:41:15,533 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:41:15,584 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:41:18,197 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Enter the number of real players (1-4): 
+2023-02-12 00:41:24,317 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Please enter y for yes or n for no
+2023-02-12 00:41:25,098 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:41:25,098 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:41:25,098 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:41:25,135 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:41:25,136 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:41:25,137 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:41:25,137 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of SPADESIs Invalid
+2023-02-12 00:41:25,137 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:41:25,137 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:41:25,137 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 5
+2023-02-12 00:41:25,137 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:41:25,138 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] NINE of CLUBS was placed on table.
+2023-02-12 00:41:25,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:41:25,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:41:25,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:41:25,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:41:25,149 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:41:33,597 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-12 00:42:57,479 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:42:57,528 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:42:57,746 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:42:57,750 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:42:57,750 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:42:57,751 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:42:57,751 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:42:57,754 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:42:57,954 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:42:58,073 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:42:58,472 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:42:58,527 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:43:04,812 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Please enter y for yes or n for no
+2023-02-12 00:43:05,510 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:43:05,510 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:43:05,510 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:43:05,555 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:43:05,556 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:05,556 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:05,557 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of SPADESIs Invalid
+2023-02-12 00:43:05,557 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:43:05,557 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of SPADESIs Invalid
+2023-02-12 00:43:05,557 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 2
+2023-02-12 00:43:05,557 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:05,557 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of CLUBS was placed on table.
+2023-02-12 00:43:05,563 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:43:05,563 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:43:05,563 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:43:05,563 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:43:05,568 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:43:14,136 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-12 00:43:25,535 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:25,535 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of DIAMONDS was placed on table.
+2023-02-12 00:43:25,553 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:43:25,553 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:43:25,553 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:43:25,553 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:43:25,555 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:43:25,565 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:43:25,566 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of SPADESIs Invalid
+2023-02-12 00:43:25,566 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:25,566 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of SPADESIs Invalid
+2023-02-12 00:43:25,566 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 3
+2023-02-12 00:43:25,566 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:43:25,566 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of SPADES was placed on table.
+2023-02-12 00:43:25,572 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:43:25,572 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:43:25,572 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:43:25,572 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:43:25,573 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:50:53,785 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:50:53,820 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:50:54,043 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:50:54,047 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:50:54,047 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:50:54,047 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:50:54,047 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:50:54,050 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:50:54,249 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:50:54,369 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:50:54,765 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:50:54,813 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:50:57,298 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Number of virtual players should be between 0 and 4.
+2023-02-12 00:51:03,110 [WARN|export.InvalidInputException|InvalidInputException] Invalid input. Enter the number of real players (1-2): 
+2023-02-12 00:53:02,223 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:53:02,260 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:53:02,477 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:53:02,481 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:53:02,481 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:53:02,481 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:53:02,481 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:53:02,483 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:53:02,678 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:53:02,805 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:53:03,204 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:53:03,261 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:53:20,555 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:53:20,632 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:53:20,867 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:53:20,870 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:53:20,870 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:53:20,871 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:53:20,871 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:53:20,873 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:53:21,072 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:53:21,198 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:53:21,603 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:53:21,660 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:53:36,278 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:53:36,279 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:53:36,279 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:53:36,324 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:53:36,327 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:53:36,327 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:53:36,327 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:53:36,327 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:53:36,327 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-12 00:53:36,327 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:53:36,328 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:53:36,328 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of CLUBS was placed on table.
+2023-02-12 00:53:36,334 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:53:36,334 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:53:36,334 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:53:36,334 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:53:36,340 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:53:43,931 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card NINE of HEARTSIs Invalid
+2023-02-12 00:53:54,856 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:53:54,856 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] KING of CLUBS was placed on table.
+2023-02-12 00:53:54,865 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:53:54,866 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:53:54,866 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:53:54,866 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:53:54,867 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:53:54,877 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:53:54,877 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:53:54,877 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:53:54,877 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-12 00:53:54,877 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:53:54,877 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a EIGHT of CLUBS
+2023-02-12 00:54:12,096 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a SEVEN of SPADES
+2023-02-12 00:54:12,120 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:54:12,120 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-12 00:54:12,120 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:54:12,120 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:54:12,120 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:54:12,120 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 4
+2023-02-12 00:54:12,121 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:54:12,121 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of CLUBS was placed on table.
+2023-02-12 00:54:12,127 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:54:12,127 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:54:12,127 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:54:12,127 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:54:12,129 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:54:26,961 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:54:26,961 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of CLUBS was placed on table.
+2023-02-12 00:54:26,978 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 00:54:26,978 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:54:26,978 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:54:26,978 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:54:29,825 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: HEARTS
+2023-02-12 00:54:29,827 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:54:29,835 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Suits do not concurr
+2023-02-12 00:54:29,835 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-12 00:54:29,836 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:54:29,836 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:54:29,836 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:54:29,836 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:54:29,841 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of DIAMONDSIs Invalid
+2023-02-12 00:54:29,841 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-12 00:54:29,841 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-12 00:54:29,841 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-12 00:54:29,841 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:54:29,841 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a KING of DIAMONDS
+2023-02-12 00:55:56,792 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:55:56,826 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:55:57,050 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:55:57,054 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:55:57,054 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:55:57,054 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:55:57,054 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:55:57,057 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:55:57,253 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:55:57,377 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:55:57,778 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:55:57,829 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:56:12,250 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:56:12,250 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:56:12,251 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:56:12,288 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:56:12,290 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:12,290 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:56:12,290 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:56:12,290 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of SPADESIs Invalid
+2023-02-12 00:56:12,290 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:12,290 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 5
+2023-02-12 00:56:12,290 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:12,290 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of SPADES was placed on table.
+2023-02-12 00:56:12,298 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:56:12,298 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:56:12,298 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 00:56:12,298 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:56:12,303 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 00:56:12,304 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:56:12,312 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a EIGHT of CLUBS
+2023-02-12 00:56:12,319 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:56:12,319 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a TEN of HEARTS
+2023-02-12 00:56:12,325 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:56:32,348 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a KING of CLUBS
+2023-02-12 00:56:32,362 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of HEARTSIs Invalid
+2023-02-12 00:56:32,362 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:56:32,362 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:56:32,362 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:32,362 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 4
+2023-02-12 00:56:32,362 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:32,362 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] ACE of SPADES was placed on table.
+2023-02-12 00:56:32,368 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:56:32,368 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:56:32,368 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:56:32,368 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: clockwise
+2023-02-12 00:56:32,371 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to clockwise
+2023-02-12 00:56:32,371 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction has been reversed
+2023-02-12 00:56:42,125 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a NINE of SPADES
+2023-02-12 00:56:42,140 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:42,140 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:56:42,140 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:56:42,140 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:56:42,141 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:56:42,141 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] ACE of HEARTS was placed on table.
+2023-02-12 00:56:42,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:56:42,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:56:42,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:56:42,144 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:56:42,149 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:56:42,149 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction has been reversed
+2023-02-12 00:56:49,121 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a EIGHT of SPADES
+2023-02-12 00:56:49,145 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:56:49,146 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:56:49,146 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:56:49,146 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a JACK of DIAMONDS
+2023-02-12 00:56:51,165 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a QUEEN of HEARTS
+2023-02-12 00:56:51,179 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:56:51,179 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-12 00:56:51,179 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:56:51,179 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:56:51,179 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a SEVEN of HEARTS
+2023-02-12 00:56:56,635 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of CLUBSIs Invalid
+2023-02-12 00:57:12,129 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-12 00:57:22,012 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:22,012 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of HEARTS was placed on table.
+2023-02-12 00:57:22,029 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:57:22,029 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:57:22,029 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:57:22,030 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:57:22,031 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:57:22,040 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:22,040 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:57:22,040 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-12 00:57:22,040 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:57:22,040 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:57:22,040 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:22,040 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of HEARTS was placed on table.
+2023-02-12 00:57:22,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:57:22,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:57:22,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 00:57:22,044 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:57:22,047 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 00:57:22,048 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:57:22,054 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a ACE of HEARTS
+2023-02-12 00:57:22,060 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:57:22,060 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a KING of HEARTS
+2023-02-12 00:57:22,068 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-12 00:57:40,157 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:40,157 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of HEARTS was placed on table.
+2023-02-12 00:57:40,165 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:57:40,165 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:57:40,165 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:57:40,165 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:57:40,169 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:57:40,176 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of CLUBSIs Invalid
+2023-02-12 00:57:40,176 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-12 00:57:40,176 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:57:40,176 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-12 00:57:40,176 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a TEN of DIAMONDS
+2023-02-12 00:57:49,605 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:49,605 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of HEARTS was placed on table.
+2023-02-12 00:57:49,620 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:57:49,620 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:57:49,621 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:57:49,621 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:57:49,622 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:57:49,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:49,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:49,629 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-12 00:57:49,629 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:57:49,629 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-12 00:57:49,629 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:57:49,629 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of CLUBS was placed on table.
+2023-02-12 00:57:49,634 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:57:49,634 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:57:49,634 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:57:49,634 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:57:49,634 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:58:03,255 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:03,255 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of CLUBS was placed on table.
+2023-02-12 00:58:03,272 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 00:58:03,272 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:58:03,272 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:58:03,272 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:58:05,748 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: DIAMONDS
+2023-02-12 00:58:05,749 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:58:05,757 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-12 00:58:05,757 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:05,757 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:58:05,757 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 2
+2023-02-12 00:58:05,757 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:05,757 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of DIAMONDS was placed on table.
+2023-02-12 00:58:05,761 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 00:58:05,761 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:58:05,761 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:58:05,761 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:58:05,764 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: DIAMONDS
+2023-02-12 00:58:05,765 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:58:31,910 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-12 00:58:31,910 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] NINE of DIAMONDS was placed on table.
+2023-02-12 00:58:31,927 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:58:31,927 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:58:31,927 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:58:31,927 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:58:31,931 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:58:31,939 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:31,939 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:31,939 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1m
+2023-02-12 00:58:31,942 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:58:31,942 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of DIAMONDS was placed on table.
+2023-02-12 00:58:31,946 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 00:58:31,946 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:58:31,946 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:58:31,946 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:58:31,946 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:58:53,769 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:58:53,817 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:58:54,048 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:58:54,052 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:58:54,052 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:58:54,052 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:58:54,052 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:58:54,054 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:58:54,251 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:58:54,376 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:58:54,779 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:58:54,833 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:59:02,136 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:59:02,136 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:59:02,136 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:59:02,180 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:59:02,182 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-12 00:59:02,182 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card NINE of DIAMONDSIs Invalid
+2023-02-12 00:59:02,182 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card NINE of CLUBSIs Invalid
+2023-02-12 00:59:02,182 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card NINE of HEARTSIs Invalid
+2023-02-12 00:59:02,182 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:59:02,182 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 5
+2023-02-12 00:59:02,182 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 00:59:02,183 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of SPADES was placed on table.
+2023-02-12 00:59:02,188 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 00:59:02,188 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 00:59:02,188 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 00:59:02,188 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 00:59:02,193 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: DIAMONDS
+2023-02-12 00:59:02,194 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 00:59:09,694 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:59:09,742 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:59:09,974 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:59:09,978 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:59:09,978 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:59:09,979 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:59:09,979 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:59:09,981 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:59:10,171 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:59:10,295 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:59:10,701 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:59:10,753 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:59:22,766 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:59:22,825 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:59:23,051 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:59:23,055 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:59:23,055 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:59:23,055 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:59:23,055 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:59:23,057 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:59:23,275 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:59:23,402 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:59:23,824 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:59:23,878 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:59:35,602 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12 00:59:35,644 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-12 00:59:35,867 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-12 00:59:35,871 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-12 00:59:35,871 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-12 00:59:35,871 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-12 00:59:35,872 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-12 00:59:35,874 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-12 00:59:36,077 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-12 00:59:36,195 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-12 00:59:36,618 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78307a56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-12 00:59:36,671 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12 00:59:45,770 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-12 00:59:45,770 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-12 00:59:45,770 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-12 00:59:45,812 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-12 00:59:53,332 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a TEN of DIAMONDS
+2023-02-12 01:00:31,620 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Janis drew a JACK of HEARTS
+2023-02-12 01:00:37,721 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a NINE of CLUBS
+2023-02-12 01:01:07,589 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:01:07,590 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] ACE of HEARTS was placed on table.
+2023-02-12 01:01:07,597 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:01:07,597 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:01:07,597 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:01:07,597 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:01:07,601 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:01:07,601 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction has been reversed
+2023-02-12 01:01:21,001 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a JACK of DIAMONDS
+2023-02-12 01:01:27,267 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:01:27,268 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of HEARTS was placed on table.
+2023-02-12 01:01:27,286 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 01:01:27,286 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:01:27,286 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:01:27,286 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:01:29,461 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: DIAMONDS
+2023-02-12 01:01:29,462 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:01:37,134 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-12 01:01:37,134 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of DIAMONDS was placed on table.
+2023-02-12 01:01:37,143 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:01:37,143 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:01:37,143 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 01:01:37,143 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:01:37,147 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 01:01:37,148 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:01:37,155 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Janis drew a SEVEN of HEARTS
+2023-02-12 01:01:37,160 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Janis drew a card.
+2023-02-12 01:01:37,160 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Janis drew a JACK of SPADES
+2023-02-12 01:01:37,164 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Janis drew a card.
+2023-02-12 01:01:42,525 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:01:42,525 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of DIAMONDS was placed on table.
+2023-02-12 01:01:42,533 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:01:42,533 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:01:42,533 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:01:42,533 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:01:42,537 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:01:59,798 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card ACE of CLUBSIs Invalid
+2023-02-12 01:02:05,314 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:02:05,314 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of DIAMONDS was placed on table.
+2023-02-12 01:02:05,331 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 01:02:05,332 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:02:05,332 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:02:05,332 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:02:09,160 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: DIAMONDS
+2023-02-12 01:02:09,161 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:02:15,994 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Suits concurr
+2023-02-12 01:02:15,995 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] ACE of DIAMONDS was placed on table.
+2023-02-12 01:02:16,012 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:02:16,013 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:02:16,013 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:02:16,013 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: clockwise
+2023-02-12 01:02:16,017 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to clockwise
+2023-02-12 01:02:16,017 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction has been reversed
+2023-02-12 01:02:19,129 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:02:19,130 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of DIAMONDS was placed on table.
+2023-02-12 01:02:19,147 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:02:19,148 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:02:19,148 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:02:19,148 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:02:19,152 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:02:44,682 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:02:44,682 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of HEARTS was placed on table.
+2023-02-12 01:02:44,700 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:02:44,700 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:02:44,700 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:02:44,700 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:02:44,701 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:02:50,846 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a QUEEN of SPADES
+2023-02-12 01:03:02,600 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:03:02,600 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of HEARTS was placed on table.
+2023-02-12 01:03:02,615 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-12 01:03:02,615 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:03:02,615 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-12 01:03:02,616 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:03:02,620 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-12 01:03:02,621 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:03:02,627 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a KING of SPADES
+2023-02-12 01:03:02,631 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Nils drew a card.
+2023-02-12 01:03:02,631 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a JACK of HEARTS
+2023-02-12 01:03:02,636 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Nils drew a card.
+2023-02-12 01:03:20,639 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:03:20,639 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of HEARTS was placed on table.
+2023-02-12 01:03:20,655 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 01:03:20,655 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:03:20,655 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:03:20,655 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:03:20,655 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of SPADESIs Invalid
+2023-02-12 01:04:14,011 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a KING of DIAMONDS
+2023-02-12 01:04:19,930 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-12 01:04:19,930 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of SPADES was placed on table.
+2023-02-12 01:04:19,947 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-12 01:04:19,947 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-12 01:04:19,947 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-12 01:04:19,947 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-12 01:04:23,364 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Suit has been chosen: HEARTS
+2023-02-12 01:04:23,365 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-12 01:04:23,365 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Janis drew a QUEEN of CLUBS
+2023-02-12 01:04:23,370 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Janis drew a card.
+2023-02-12 01:04:23,370 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Janis drew a NINE of HEARTS
+2023-02-12 01:04:23,373 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Janis drew a card.
+2023-02-12 01:04:34,136 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Nils drew a ACE of DIAMONDS

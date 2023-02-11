@@ -24,6 +24,7 @@
       <list>
         <option value="package-info" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -55,49 +56,126 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nilst/OneDrive/Documents/HTW/5 WiSe 2022 23/Komponentenbasierte Entwicklung/Abgaben/MauMauMau&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/nilst/OneDrive/Documents/HTW/5 WiSe 2022 23/Komponentenbasierte Entwicklung/Abgaben/MauMauMau",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="de.htwberlin.kbe.gruppe4.impl" />
       <recent name="impl" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="de.htwberlin.kbe.gruppe4.impl" />
       <recent name="export" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="de.htwberlin.kbe.gruppe4.impl" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.App" />
-      <module name="Configuration" />
+  <component name="RunManager" selected="JUnit.GameServiceImplTest">
+    <configuration name="GameServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameManagement" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.*" />
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.kbe.gruppe4.impl" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.impl.GameServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServiceImplTest.testAddCardToTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.kbe.gruppe4.impl" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.impl.GameServiceImplTest" />
+      <option name="METHOD_NAME" value="testAddCardToTable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServiceImplTest.testIsGameOver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.kbe.gruppe4.impl" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.impl.GameServiceImplTest" />
+      <option name="METHOD_NAME" value="testIsGameOver" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServiceImplTest.testSetRules" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.kbe.gruppe4.impl" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.impl.GameServiceImplTest" />
+      <option name="METHOD_NAME" value="testSetRules" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RulesServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RuleManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.kbe.gruppe4.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.kbe.gruppe4.impl" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.kbe.gruppe4.impl.RulesServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.GameServiceImplTest" />
+        <item itemvalue="JUnit.RulesServiceImplTest" />
+        <item itemvalue="JUnit.GameServiceImplTest.testSetRules" />
+        <item itemvalue="JUnit.GameServiceImplTest.testAddCardToTable" />
+        <item itemvalue="JUnit.GameServiceImplTest.testIsGameOver" />
       </list>
     </recent_temporary>
   </component>
@@ -131,5 +209,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added rootlogger (CLI Service - major incomplete changes)" />
     <option name="LAST_COMMIT_MESSAGE" value="added rootlogger (CLI Service - major incomplete changes)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/VirtualPlayerManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/VirtualPlayerServiceImpl.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/VirtualPlayerManagement/src/test/java/de/htwberlin/kbe/gruppe4/impl/VirtualPlayerServiceImplTest.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GameManagement/src/main/java/de/htwberlin/kbe/gruppe4/impl/GameServiceImpl.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

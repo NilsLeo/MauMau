@@ -18,7 +18,7 @@ create database maumau;
 use maumau;
 "
 ``````
-### Für MySQL mit Docker
+### Für MySQL mit Docker (Linux/Mac OS/ WSL Backend)
 #### Erstellen/ NeuErstellen des Schemas
 `sudo docker compose up -d`
 #### Auf die CLI zugreifen

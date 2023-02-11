@@ -4,13 +4,14 @@ import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
 import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
 import de.htwberlin.kbe.gruppe4.export.GameService;
+import de.htwberlin.kbe.gruppe4.export.InvalidCardException;
 import de.htwberlin.kbe.gruppe4.export.InvalidMauMauCallException;
 import export.CLIController;
 import export.CLIService;
 import export.InvalidInputException;
 import org.apache.log4j.Logger;
 
-import java.util.List;
+import java.security.cert.Extension;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -66,7 +67,7 @@ public class CLIControllerImpl implements CLIController {
 
             }
         }
-        cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()+1).getName());
+        cli.announceWinner(gameService.getPlayers().get(getNextPlayer()).getName());
     }
     /**
      * {@inheritDoc}
@@ -83,8 +84,6 @@ public class CLIControllerImpl implements CLIController {
             } catch (NumberFormatException e) {
                 logger.error("An error occurred while playing the turn: " + e.getMessage());
             }
-        } else {
-            cli.announceInvalidMauMauCall();
         }
     }
 
@@ -146,19 +145,27 @@ public class CLIControllerImpl implements CLIController {
         int index = 0;
         if (input.equals("d")) {
             drawCard(player);
-            gameService.setCurrentPlayer(gameService.getCurrentPlayer()+1);
+            gameService.setCurrentPlayer(getNextPlayer());
         }
 
         else if (input.contains("m")) {
                 confirmOrDenyMauMau(player, index, input);
                 String numStr = input.substring(0, input.length() - 1);
                 index = Integer.parseInt(numStr);
-                placeCard(player, index, gameService.getCurrentPlayer()+1);
-
+            try {
+                placeCard(player, index, getNextPlayer());
+            } catch (InvalidCardException e) {
+                throw new RuntimeException(e);
             }
+
+        }
         else {
             index = Integer.parseInt(input);
-            placeCard(player, index, gameService.getCurrentPlayer() + 1);
+            try {
+                placeCard(player, index, getNextPlayer());
+            } catch (InvalidCardException e) {
+                throw new RuntimeException(e);
+            }
             gameService.refillDeckwithExcessCardsOnTable();
         }
 
@@ -170,20 +177,34 @@ public class CLIControllerImpl implements CLIController {
     /**
      * {@inheritDoc}
      */
-    public void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException {
-        Card played = gameService.playCard(player, index-1);
+    public void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException, InvalidCardException {
+        try{
+            if(gameService.isCardValid(player.getHand().get(index-1), gameService.getLeadCard())){
+                Card played = gameService.playCard(player, index-1);
+                cli.displayPlay(player, played.getSuit(), played.getValue());
+                gameService.addCardToTable(played);
+                applySpecialRules(played, player);
+                if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
+                    cli.announceForgotToSayMauMau();
+                    penaltyDraw(player, 2);
+                }
+                if (player.getHand().size() == 1) {
+                    i = -1;
+                }
+                gameService.setCurrentPlayer(i);
+            }
+            else{
+                cli.announceInvalid();
 
-        cli.displayPlay(player, played.getSuit(), played.getValue());
-        gameService.addCardToTable(played);
-        applySpecialRules(played, player);
-        if (player.getHand().size() == 1 && !gameService.getRememberedToSayMauMau()) {
-            cli.announceForgotToSayMauMau();
-            penaltyDraw(player, 2);
+            }
+
         }
-        if (player.getHand().size() == 1) {
-            i = -1;
+        catch(Exception e){
+            placeCard(player, index, i);
+
         }
-        gameService.setCurrentPlayer(i);
+
+
     }
     /**
      * {@inheritDoc}
@@ -210,5 +231,10 @@ public class CLIControllerImpl implements CLIController {
             cli.displayDraw(player, drawnCard.getSuit(), drawnCard.getValue());
 
         }
+    }
+
+    @Override
+    public int getNextPlayer(){
+        return gameService.getNextPlayer(gameService.getRules(), gameService.getCurrentPlayer(), gameService.getPlayers().size());
     }
 }

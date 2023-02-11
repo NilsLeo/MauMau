@@ -13,6 +13,19 @@ import java.util.Map;
  */
 public interface GameService {
 
+    /**
+     * Sets the rules of the game.
+     *
+     * @param currentPlayer the current player
+     * @return the next player
+     */
+
+    int getNextPlayer(Rules rules, int currentPlayer, int maxPlayer);
+
+    /**
+     * Updates the game
+     * @param game the game
+     */
     void updateGame(Game game);
 
     /**

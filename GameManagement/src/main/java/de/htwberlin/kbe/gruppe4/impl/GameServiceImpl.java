@@ -81,12 +81,20 @@ private Game game;
      * {@inheritDoc}
      */
     @Override
+    public int getNextPlayer(Rules rules, int currentPlayer, int maxPlayer){
+        return rulesService.getNextPlayer(rules, currentPlayer, maxPlayer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void updateGame(Game game){
         entityTransaction.begin();
         gameDao.updateGame(game);
         entityTransaction.commit();
     }
-    private Game getGame() {
+    public Game getGame() {
         return gameDao.findGameById(this.game.getId());
     }
 
@@ -126,12 +134,16 @@ private Game game;
     public Card getLeadCard() {
         return getGame().getTable().get(getGame().getTable().size() - 1);
     }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
     /**
      * {@inheritDoc}
      */
     @Override
     public void refillDeckwithExcessCardsOnTable(){
-        Game game = getGame();
         if(game.getTable().size()>1){
             Deck deck = game.getDeck();
             for(int i = 0; i<game.getTable().size()-2;i++){
@@ -319,6 +331,7 @@ private Game game;
         Game game = getGame();
 
         game.setCurrentPlayer(rulesService.setCurrentPlayer(game.getRules(), game.getCurrentPlayer(), game.getPlayers().size()-1));
+
         updateGame(game);
     }
     /**
