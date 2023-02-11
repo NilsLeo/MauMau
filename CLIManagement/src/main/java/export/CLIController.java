@@ -1,6 +1,8 @@
 package export;
 import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Player;
+import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
+import de.htwberlin.kbe.gruppe4.export.InvalidMauMauCallException;
 
 import java.util.List;
 /**
@@ -29,7 +31,7 @@ public interface CLIController {
      * @param index the index
      * @param input the input provided by the player
      */
-    void confirmOrDenyMauMau(Player player, int index, String input);
+    void confirmOrDenyMauMau(Player player, int index, String input) throws InvalidMauMauCallException;
 
     /**
      * Applies any special rules for a played card.
@@ -45,7 +47,7 @@ public interface CLIController {
      * @param player the player who is playing the card
      * @param lead the lead card for the turn
      */
-    void playCard(String input, Player player, Card lead, int index) throws InvalidInputException;
+    void playCard(String input, Player player, Card lead, int index) throws InvalidInputException, InvalidMauMauCallException, EmptyDeckException;
 
     /**
      * Places a card for a player, based on their input.
@@ -53,7 +55,7 @@ public interface CLIController {
      * @param player the player who is placing the card
      * @param index the index of the card being placed
      */
-    void placeCard(Player player, int index, int i) throws InvalidInputException;
+    void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException;
 
     /**
      * Applies a penalty draw for a player, forcing them to draw a specified number of cards.
@@ -61,11 +63,11 @@ public interface CLIController {
      * @param player the player who is receiving the penalty draw
      * @param noOfCardsToDraw the number of cards that the player must draw
      */
-    void penaltyDraw(Player player, int noOfCardsToDraw);
+    void penaltyDraw(Player player, int noOfCardsToDraw) throws EmptyDeckException;
 
     /**
      * Draws a card for a player.
      * @param player the player who is drawing the card
      */
-    void drawCard(Player player);
+    void drawCard(Player player) throws EmptyDeckException;
 }

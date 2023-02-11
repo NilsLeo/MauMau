@@ -42,7 +42,7 @@ public interface GameService {
      * @param lead the lead Card on the table
      * @return the card to be played
      */
-    String getVirtualPlayerMove(Player player, Card lead, Rules rules);
+    String getVirtualPlayerMove(Player player, Card lead, Rules rules) throws InvalidCardException;
 
     /**
      * Adds a card to the table.
@@ -57,7 +57,7 @@ public interface GameService {
      * @param player the player who draws the card
      * @return the drawn card
      */
-    Card drawCard(Player player);
+    Card drawCard(Player player) throws EmptyDeckException;
 
     /**
      * Refills the deck with the excess cards on the table.
@@ -122,7 +122,7 @@ public interface GameService {
      * @param lead the lead card
      * @return true if the card is valid, false otherwise
      */
-    boolean isCardValid(Card card, Card lead);
+    boolean isCardValid(Card card, Card lead) throws InvalidCardException;
     /**
      * Gets the special rules for the game.
      *
@@ -222,5 +222,5 @@ public interface GameService {
      * Checks the Validity of the MauMau Call
      * @return the Validity
      */
-    boolean getMauMauCallValidity(Player player);
+    boolean getMauMauCallValidity(Player player) throws InvalidMauMauCallException;
 }

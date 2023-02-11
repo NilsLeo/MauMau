@@ -32,7 +32,6 @@ public class PlayerServiceImpl implements PlayerService {
             player.setHand(deckService.dealHand(deck));
         } catch (Exception e) {
             logger.error("Error while dealing hand to player: " + e.getMessage());
-            throw e;
         }
     }
     /**

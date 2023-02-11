@@ -23,7 +23,7 @@ public interface RulesService {
      *
      * @return true if the card is valid, false otherwise.
      */
-    boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue);
+    boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) throws InvalidCardException;
 
     /**
      * Determines if a card is valid based on the lead suit, lead value and the game rules.
@@ -35,7 +35,7 @@ public interface RulesService {
      *
      * @return true if the card is valid, false otherwise.
      */
-    boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules);
+    boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) throws InvalidCardException;
 
     /**
      * Returns a map containing the special rules of the game.
@@ -101,5 +101,5 @@ public interface RulesService {
      * @param size the size of the players Hand
      * @return The validity
      */
-    boolean getMauMauCallValidity(int size);
+    boolean getMauMauCallValidity(int size) throws InvalidMauMauCallException;
 }

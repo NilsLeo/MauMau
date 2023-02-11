@@ -2,6 +2,7 @@ package de.htwberlin.kbe.gruppe4.impl;
 
 import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.export.InvalidCardException;
 import de.htwberlin.kbe.gruppe4.export.RulesService;
 import de.htwberlin.kbe.gruppe4.export.VirtualPlayerService;
 
@@ -31,7 +32,7 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
      * {@inheritDoc}
      */
     @Override
-    public String getVirtualMove(Player player, Card lead, Rules rules) {
+    public String getVirtualMove(Player player, Card lead, Rules rules) throws InvalidCardException {
         List<Card> validCards = getValidCards(player, lead, rules);
         String input = null;
         if(!validCards.isEmpty()){
@@ -109,7 +110,7 @@ public class VirtualPlayerServiceImpl implements VirtualPlayerService {
      * {@inheritDoc}
      */
     @Override
-    public List<Card> getValidCards(Player player, Card lead, Rules rules) {
+    public List<Card> getValidCards(Player player, Card lead, Rules rules) throws InvalidCardException {
 
         List<Card> validCards = new ArrayList<>();
 

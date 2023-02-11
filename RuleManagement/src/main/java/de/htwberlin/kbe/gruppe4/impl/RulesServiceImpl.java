@@ -5,6 +5,8 @@ import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Rules;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
+import de.htwberlin.kbe.gruppe4.export.InvalidCardException;
+import de.htwberlin.kbe.gruppe4.export.InvalidMauMauCallException;
 import de.htwberlin.kbe.gruppe4.export.RulesService;
 import org.apache.log4j.Logger;
 
@@ -17,14 +19,19 @@ public class RulesServiceImpl implements RulesService {
      * {@inheritDoc}
      */
     @Override
-    public boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) {
+    public boolean isValidBasedOnLead(Card card, Suit leadSuit, Value leadValue) throws InvalidCardException {
         boolean valid = card.getSuit() == leadSuit || card.getValue() == leadValue;
-        if(valid){
-            logger.info("Card is Valid");
+        try{
+            if(valid){
+                logger.info("Card is Valid");
 
+            }
+            else{
+                throw new InvalidCardException("Card Is Invalid");
+            }
         }
-        else{
-            logger.info("Card is invalid");
+        catch (InvalidCardException e){
+            valid = false;
         }
         return valid;
     }
@@ -32,31 +39,34 @@ public class RulesServiceImpl implements RulesService {
      * {@inheritDoc}
      */
     @Override
-    public boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) {
+    public boolean isCardValid(Card card, Suit leadSuit, Value leadValue, Rules rules) throws InvalidCardException {
         boolean valid = false;
-        if (rules.isChooseSuitOnJackEnabled()) {
-            if (rules.getSuit() != null) {
-                logger.debug("Suit specified in Rules " + rules.getSuit());
-                logger.debug("Cards Suit " + card.getSuit());
+        try {
 
-                if(rules.getSuit() == card.getSuit()){
-                    valid = true;
-                    rules.setSuit(null);
-                    logger.info("Suits concurr");
-                }
-                else {
-                    valid = false;
-                    logger.warn("Suits do not concurr");
+            if (rules.isChooseSuitOnJackEnabled()) {
+                if (rules.getSuit() != null) {
+                    logger.debug("Suit specified in Rules " + rules.getSuit());
+                    logger.debug("Cards Suit " + card.getSuit());
+
+                    if (rules.getSuit() == card.getSuit()) {
+                        valid = true;
+                        rules.setSuit(null);
+                        logger.info("Suits concurr");
+                    } else{
+                        throw new InvalidCardException("Suits do not concurr");
+                    }
+                } else {
+                    valid = isValidBasedOnLead(card, leadSuit, leadValue);
                 }
             } else {
-               valid =  isValidBasedOnLead(card, leadSuit, leadValue);
-            }
-        } else {
 
-            valid =  isValidBasedOnLead(card, leadSuit, leadValue);
+                valid = isValidBasedOnLead(card, leadSuit, leadValue);
+            }
+
+        } catch (InvalidCardException e) {
+            valid = false;
         }
         return valid;
-
     }
 
 
@@ -101,7 +111,6 @@ public class RulesServiceImpl implements RulesService {
      */
     @Override
     public Rules applySpecialRules(Card played, Rules rules) {
-        try {
             if (rules.isDrawTwoOnSevenEnabled() && played.getValue() == Value.SEVEN) {
                 rules.setDrawTwoOnSevenToggled(true);
                 logger.debug("Draw two on seven rule toggled");
@@ -122,9 +131,6 @@ public class RulesServiceImpl implements RulesService {
             } else {
                 rules.setDirectionClockwise(false);
             }
-        } catch (Exception e) {
-            logger.debug("Error: " + e.getMessage());
-        }
         return rules;
     }
 
@@ -179,11 +185,17 @@ public class RulesServiceImpl implements RulesService {
      * {@inheritDoc}
      */
     @Override
-    public boolean getMauMauCallValidity(int size) {
-        if ((size == 2)) {
-            return true;
+    public boolean getMauMauCallValidity(int size) throws InvalidMauMauCallException {
+        try{
+            if ((size == 2)) {
+                return true;
+            }
+            else{
+                throw new InvalidMauMauCallException("More than 2 Cards. Invalid MauMauCall.");
+            }
         }
-        else {
+
+        catch(InvalidMauMauCallException e){
             return false;
         }
     }

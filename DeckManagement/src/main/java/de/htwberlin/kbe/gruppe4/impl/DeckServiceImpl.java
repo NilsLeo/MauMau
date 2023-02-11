@@ -5,10 +5,10 @@ import de.htwberlin.kbe.gruppe4.entity.Deck;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
 import de.htwberlin.kbe.gruppe4.export.DeckService;
+import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DeckServiceImpl implements DeckService {
@@ -21,33 +21,41 @@ public class DeckServiceImpl implements DeckService {
      * {@inheritDoc}
      */
     @Override
-    public ArrayList<Card> dealHand(Deck deck) {
-        if (deck == null) {
-            throw new IllegalArgumentException("Deck cannot be null");
-        }
-
-        ArrayList<Card> hand = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            Card card = deal(deck);
-            if (card == null) {
-                logger.error("No more cards in the deck");
-                break;
+    public ArrayList<Card> dealHand(Deck deck) throws EmptyDeckException {
+        try{
+            String errorMessage = "The deck is empty";
+            if (deck == null) {
+                throw new EmptyDeckException(errorMessage);
             }
-            hand.add(card);
+
+            ArrayList<Card> hand = new ArrayList<>();
+            for (int i = 0; i < 5; i++) {
+                Card card = deal(deck);
+                if (card == null) {
+                    throw new EmptyDeckException(errorMessage);
+                }
+                hand.add(card);
+            }
+
+            return hand;
+        }
+        catch(EmptyDeckException e){
+            return dealHand(deck);
         }
 
-        return hand;
     }
+
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Card deal(Deck deck) {
-        if (deck == null) {
-            throw new IllegalArgumentException("Deck cannot be null");
-        }
-
+    public Card deal(Deck deck) throws EmptyDeckException {
+        try{
+            String errorMessage = "The deck is empty";
+            if (deck == null) {
+                throw new EmptyDeckException(errorMessage);
+            }
         List<Card> cards = deck.getCards();
         if (cards.isEmpty()) {
             return null;
@@ -57,6 +65,10 @@ public class DeckServiceImpl implements DeckService {
         cards.remove(0);
         deck.setCards(cards);
         return card;
+    }
+        catch(EmptyDeckException e){
+            return deal(deck);
+        }
     }
 
     /**

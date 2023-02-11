@@ -18,7 +18,7 @@ public interface DeckService {
      * @param deck The deck to deal cards from.
      * @return An ArrayList of Card objects representing the hand.
      */
-    ArrayList<Card> dealHand(Deck deck);
+    ArrayList<Card> dealHand(Deck deck) throws EmptyDeckException;
 
     /**
      * Deals a single card from the deck.
@@ -26,7 +26,7 @@ public interface DeckService {
      * @param deck The deck to deal a card from.
      * @return the dealt Card
      */
-    Card deal(Deck deck);
+    Card deal(Deck deck) throws EmptyDeckException;
 
     /**
      * Creates a new deck of cards.

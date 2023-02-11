@@ -4,10 +4,10 @@ import de.htwberlin.kbe.gruppe4.entity.Card;
 import de.htwberlin.kbe.gruppe4.entity.Deck;
 import de.htwberlin.kbe.gruppe4.entity.Suit;
 import de.htwberlin.kbe.gruppe4.entity.Value;
+import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ class DeckServiceImplTest {
     }
 
     @Test
-    public void testDealHand() {
+    public void testDealHand() throws EmptyDeckException {
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Suit.CLUBS, Value.SEVEN));
         cards.add(new Card(Suit.DIAMONDS, Value.EIGHT));
@@ -43,7 +43,7 @@ class DeckServiceImplTest {
     }
 
     @Test
-    void testDeal() {
+    void testDeal() throws EmptyDeckException {
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Suit.CLUBS, Value.ACE));
         cards.add(new Card(Suit.DIAMONDS, Value.QUEEN));

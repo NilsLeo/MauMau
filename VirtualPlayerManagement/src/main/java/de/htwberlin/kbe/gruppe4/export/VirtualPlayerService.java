@@ -18,7 +18,7 @@ public interface VirtualPlayerService {
      * @param lead the lead Card
      * @return The user input of the Virtual Player
      */
-    String getVirtualMove(Player player, Card lead, Rules rules);
+    String getVirtualMove(Player player, Card lead, Rules rules) throws InvalidCardException;
     /**
      * determines the best move for the virtual player
      * @param validCards the valid Cards
@@ -42,7 +42,7 @@ public interface VirtualPlayerService {
      * @param rules the rules
      * @return the list of valid cards
      */
-    List<Card> getValidCards(Player player, Card lead, Rules rules);
+    List<Card> getValidCards(Player player, Card lead, Rules rules) throws InvalidCardException;
     /**
      * Retrieves the players chosen Suit
      * @param cards the players Cards

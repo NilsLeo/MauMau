@@ -1,4 +1,4 @@
-package de.htwberlin.kbe.gruppe4.impl;
+package de.htwberlin.kbe.gruppe4.export;
 
 public class DataAccessException extends RuntimeException {
 

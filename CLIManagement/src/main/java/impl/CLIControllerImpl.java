@@ -2,7 +2,9 @@ package impl;
 
 import com.google.inject.Inject;
 import de.htwberlin.kbe.gruppe4.entity.*;
+import de.htwberlin.kbe.gruppe4.export.EmptyDeckException;
 import de.htwberlin.kbe.gruppe4.export.GameService;
+import de.htwberlin.kbe.gruppe4.export.InvalidMauMauCallException;
 import export.CLIController;
 import export.CLIService;
 import export.InvalidInputException;
@@ -70,7 +72,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void confirmOrDenyMauMau(Player player, int index, String input){
+    public void confirmOrDenyMauMau(Player player, int index, String input) throws InvalidMauMauCallException {
         if ((gameService.getMauMauCallValidity(player))) {
             cli.announceMauMau();
             gameService.setRememberedToSayMauMau(true);
@@ -140,7 +142,7 @@ public class CLIControllerImpl implements CLIController {
      */
 
     @Override
-    public void playCard(String input, Player player, Card lead, int i) throws InvalidInputException {
+    public void playCard(String input, Player player, Card lead, int i) throws InvalidInputException, InvalidMauMauCallException, EmptyDeckException {
         int index = 0;
             if (input.contains("m")) {
                 confirmOrDenyMauMau(player, index, input);
@@ -163,7 +165,7 @@ public class CLIControllerImpl implements CLIController {
     /**
      * {@inheritDoc}
      */
-    public void placeCard(Player player, int index, int i) throws InvalidInputException {
+    public void placeCard(Player player, int index, int i) throws InvalidInputException, EmptyDeckException {
         System.out.println("reached placeCard");
         Card played = gameService.playCard(player, index);
         cli.displayPlay(player, played.getSuit(), played.getValue());
@@ -182,7 +184,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void penaltyDraw(Player player, int noOfCardsToDraw){
+    public void penaltyDraw(Player player, int noOfCardsToDraw) throws EmptyDeckException {
         for (int i = 0; i<noOfCardsToDraw; i++){
             drawCard(player);
             logger.info("Player " + player.getName() + " drew a card.");
@@ -192,7 +194,7 @@ public class CLIControllerImpl implements CLIController {
      * {@inheritDoc}
      */
     @Override
-    public void drawCard(Player player){
+    public void drawCard(Player player) throws EmptyDeckException {
         if(!gameService.hasCardsLeft()){
             cli.announceNoCardsLeft();
             logger.debug("There are no cards left to draw");

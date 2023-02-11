@@ -258,7 +258,7 @@ private Game game;
      * {@inheritDoc}
      */
     @Override
-    public boolean getMauMauCallValidity(Player player) {
+    public boolean getMauMauCallValidity(Player player) throws InvalidMauMauCallException {
         return rulesService.getMauMauCallValidity(player.getHand().size());
 
     }
@@ -267,7 +267,7 @@ private Game game;
      * {@inheritDoc}
      */
     @Override
-    public String getVirtualPlayerMove(Player player, Card lead, Rules rules) {
+    public String getVirtualPlayerMove(Player player, Card lead, Rules rules) throws InvalidCardException {
         return virtualPlayerService.getVirtualMove(player, lead, rules);
     }
 
@@ -289,7 +289,7 @@ private Game game;
      */
 
     @Override
-    public Card drawCard(Player player) {
+    public Card drawCard(Player player) throws EmptyDeckException {
         Game game = getGame();
 
         Card card = deckService.deal(game.getDeck());
@@ -374,7 +374,7 @@ private Game game;
      * {@inheritDoc}
      */
     @Override
-    public boolean isCardValid(Card card, Card lead) {
+    public boolean isCardValid(Card card, Card lead) throws InvalidCardException {
         Game game = getGame();
 
         return rulesService.isCardValid(card, getLeadSuit(), getLeadValue(), game.getRules());
