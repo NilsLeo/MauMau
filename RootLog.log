@@ -23,3 +23,15 @@
 2023-02-11 19:33:03,369 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
 2023-02-11 19:33:03,790 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2023-02-11 19:33:03,850 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-11 19:40:57,599 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-11 19:40:57,638 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-11 19:40:57,874 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-11 19:40:57,877 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-11 19:40:57,878 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-11 19:40:57,878 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-11 19:40:57,878 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-11 19:40:57,881 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-11 19:40:58,081 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-11 19:40:58,206 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-11 19:40:58,647 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-11 19:40:58,705 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
