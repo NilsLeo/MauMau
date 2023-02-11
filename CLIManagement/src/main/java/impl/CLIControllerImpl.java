@@ -66,7 +66,7 @@ public class CLIControllerImpl implements CLIController {
 
             }
         }
-        cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()).getName());
+        cli.announceWinner(gameService.getPlayers().get(gameService.getCurrentPlayer()+1).getName());
     }
     /**
      * {@inheritDoc}

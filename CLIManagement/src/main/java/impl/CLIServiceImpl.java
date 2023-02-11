@@ -220,7 +220,6 @@ public class CLIServiceImpl implements CLIService {
         int input = 0;
             try {
                 String userInput = scanner.nextLine();
-                if(userInput.matches("[1-4]+")){
                 input = Integer.parseInt(scanner.nextLine());
                 switch (input) {
                     case 1:
@@ -234,10 +233,6 @@ public class CLIServiceImpl implements CLIService {
                     default:
                         throw new InvalidInputException(errorMessage);
 
-                }
-                }
-                else{
-                    throw new InvalidInputException(errorMessage);
                 }
 
             } catch (InvalidInputException e) {

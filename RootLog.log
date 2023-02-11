@@ -678,3 +678,194 @@
 2023-02-11 23:05:12,466 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of CLUBSIs Invalid
 2023-02-11 23:05:12,466 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
 2023-02-11 23:05:12,466 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a NINE of DIAMONDS
+2023-02-11 23:13:44,900 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-11 23:13:44,934 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-11 23:13:45,154 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-11 23:13:45,157 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-11 23:13:45,158 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-11 23:13:45,158 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-11 23:13:45,158 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-11 23:13:45,161 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-11 23:13:45,353 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-11 23:13:45,471 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-11 23:13:45,860 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-11 23:13:45,911 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-11 23:13:51,973 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-11 23:13:51,975 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-11 23:13:51,975 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-11 23:13:52,018 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-11 23:13:52,020 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:13:52,020 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:13:52,020 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-11 23:13:52,020 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of SPADESIs Invalid
+2023-02-11 23:13:52,020 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-11 23:13:52,020 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1
+2023-02-11 23:13:52,020 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] QUEEN of CLUBS was placed on table.
+2023-02-11 23:13:52,026 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:13:52,026 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:13:52,026 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:13:52,026 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:13:52,030 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:14:03,114 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a SEVEN of CLUBS
+2023-02-11 23:14:03,141 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:14:03,141 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-11 23:14:03,141 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of SPADESIs Invalid
+2023-02-11 23:14:03,141 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-11 23:14:03,141 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:14:03,141 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a KING of HEARTS
+2023-02-11 23:14:08,512 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of CLUBS was placed on table.
+2023-02-11 23:14:08,532 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:14:08,532 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:14:08,532 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-11 23:14:08,532 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:14:08,538 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-11 23:14:08,539 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:14:08,547 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a QUEEN of HEARTS
+2023-02-11 23:14:08,554 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Bob the BOT drew a card.
+2023-02-11 23:14:08,554 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a EIGHT of SPADES
+2023-02-11 23:14:08,559 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player Bob the BOT drew a card.
+2023-02-11 23:14:08,566 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-11 23:14:08,566 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-11 23:14:08,566 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:14:08,567 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-11 23:14:08,567 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of HEARTSIs Invalid
+2023-02-11 23:14:08,567 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of SPADESIs Invalid
+2023-02-11 23:14:08,567 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of HEARTSIs Invalid
+2023-02-11 23:14:08,567 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:14:08,567 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a EIGHT of CLUBS
+2023-02-11 23:14:21,530 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a JACK of CLUBS
+2023-02-11 23:14:21,552 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of DIAMONDSIs Invalid
+2023-02-11 23:14:21,552 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of SPADESIs Invalid
+2023-02-11 23:14:21,552 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:14:21,552 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:14:21,553 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of HEARTSIs Invalid
+2023-02-11 23:14:21,553 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card QUEEN of HEARTSIs Invalid
+2023-02-11 23:14:21,553 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of SPADESIs Invalid
+2023-02-11 23:14:21,553 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of HEARTSIs Invalid
+2023-02-11 23:14:21,553 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 3
+2023-02-11 23:14:21,553 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of CLUBS was placed on table.
+2023-02-11 23:14:21,559 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:14:21,559 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:14:21,559 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:14:21,559 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:14:21,562 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:14:30,072 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] JACK of CLUBS was placed on table.
+2023-02-11 23:14:30,078 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack activated
+2023-02-11 23:14:30,079 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:14:30,079 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:14:30,079 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:20,211 [INFO|org.hibernate.jpa.internal.util.LogHelper|LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-11 23:15:20,244 [INFO|org.hibernate.Version|Version] HHH000412: Hibernate ORM core version 6.0.2.Final
+2023-02-11 23:15:20,459 [WARN|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001002: Using built-in connection pool (not intended for production use)
+2023-02-11 23:15:20,463 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2023-02-11 23:15:20,463 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/maumau]
+2023-02-11 23:15:20,463 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001001: Connection properties: {password=****, user=root}
+2023-02-11 23:15:20,463 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl] HHH10001003: Autocommit mode: false
+2023-02-11 23:15:20,466 [INFO|org.hibernate.orm.connections.pooling|DriverManagerConnectionProviderImpl$PooledConnections] HHH10001115: Connection pool size: 20 (min=1)
+2023-02-11 23:15:20,657 [INFO|SQL dialect|DialectFactoryImpl] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-11 23:15:20,781 [WARN|org.hibernate.cfg.AnnotationBinder|AnnotationBinder] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: de.htwberlin.kbe.gruppe4.entity.VirtualPlayer
+2023-02-11 23:15:21,181 [INFO|org.hibernate.orm.connections.access|DdlTransactionIsolatorNonJtaImpl] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c6a30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-02-11 23:15:21,231 [INFO|org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator|JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-11 23:15:26,305 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] TwoOnSevenEnabled is set to: true
+2023-02-11 23:15:26,305 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitOnJackEnabled is set to: true
+2023-02-11 23:15:26,306 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAceEnabled is set to: true
+2023-02-11 23:15:26,340 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Game started
+2023-02-11 23:15:26,342 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:26,342 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:15:26,342 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-11 23:15:26,342 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:26,342 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:26,342 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:15:26,342 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a NINE of DIAMONDS
+2023-02-11 23:15:28,748 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a TEN of HEARTS
+2023-02-11 23:15:28,772 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:28,772 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:28,772 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:28,772 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card TEN of DIAMONDSIs Invalid
+2023-02-11 23:15:28,772 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:28,772 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card KING of DIAMONDSIs Invalid
+2023-02-11 23:15:28,772 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 3
+2023-02-11 23:15:28,773 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] NINE of DIAMONDS was placed on table.
+2023-02-11 23:15:28,780 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:28,780 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:28,780 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:15:28,780 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:28,784 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:30,199 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a ACE of SPADES
+2023-02-11 23:15:30,221 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:30,221 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:30,221 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:30,221 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:30,221 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:30,221 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 5
+2023-02-11 23:15:30,221 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] KING of DIAMONDS was placed on table.
+2023-02-11 23:15:30,227 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:30,227 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:30,227 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:15:30,227 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:30,228 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:32,033 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a NINE of CLUBS
+2023-02-11 23:15:32,055 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:32,055 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:32,056 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:32,056 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:32,056 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 3
+2023-02-11 23:15:32,056 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] TEN of DIAMONDS was placed on table.
+2023-02-11 23:15:32,061 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:32,061 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:32,061 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:15:32,061 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:32,062 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:33,329 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a SEVEN of CLUBS
+2023-02-11 23:15:33,353 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:33,353 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:33,353 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:33,353 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:15:33,353 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a EIGHT of DIAMONDS
+2023-02-11 23:15:36,519 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a KING of HEARTS
+2023-02-11 23:15:36,543 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:36,543 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card EIGHT of HEARTSIs Invalid
+2023-02-11 23:15:36,543 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:36,543 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:36,543 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 3
+2023-02-11 23:15:36,545 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of DIAMONDS was placed on table.
+2023-02-11 23:15:36,549 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:36,549 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:36,549 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:15:36,549 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:36,550 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:37,882 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a ACE of CLUBS
+2023-02-11 23:15:37,906 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card SEVEN of HEARTSIs Invalid
+2023-02-11 23:15:37,906 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:37,906 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:37,906 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 2
+2023-02-11 23:15:37,907 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] EIGHT of HEARTS was placed on table.
+2023-02-11 23:15:37,911 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:37,911 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:37,911 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven deactivated
+2023-02-11 23:15:37,911 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:37,912 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:39,307 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a QUEEN of SPADES
+2023-02-11 23:15:39,320 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] Card is Valid
+2023-02-11 23:15:39,320 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:39,320 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: 1m
+2023-02-11 23:15:39,324 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] SEVEN of HEARTS was placed on table.
+2023-02-11 23:15:39,328 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ChooseSuitonJack disabled
+2023-02-11 23:15:39,328 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] ReverseOnAce activated
+2023-02-11 23:15:39,328 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] drawTwoOnSeven activated
+2023-02-11 23:15:39,328 [INFO|de.htwberlin.kbe.gruppe4.impl.RulesServiceImpl|RulesServiceImpl] direction: ccounterclockwise
+2023-02-11 23:15:39,331 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Next player must draw 2 cards
+2023-02-11 23:15:39,332 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Direction set to counterclockwise
+2023-02-11 23:15:39,337 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a KING of DIAMONDS
+2023-02-11 23:15:39,343 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-11 23:15:39,343 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a NINE of SPADES
+2023-02-11 23:15:39,347 [INFO|impl.CLIControllerImpl|CLIControllerImpl] Player a drew a card.
+2023-02-11 23:15:41,159 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a ACE of DIAMONDS
+2023-02-11 23:15:41,179 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:41,179 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:15:41,179 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a JACK of DIAMONDS
+2023-02-11 23:15:43,298 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] a drew a EIGHT of CLUBS
+2023-02-11 23:15:43,319 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of CLUBSIs Invalid
+2023-02-11 23:15:43,319 [WARN|de.htwberlin.kbe.gruppe4.export.InvalidCardException|InvalidCardException] Card JACK of DIAMONDSIs Invalid
+2023-02-11 23:15:43,320 [INFO|de.htwberlin.kbe.gruppe4.impl.VirtualPlayerServiceImpl|VirtualPlayerServiceImpl] Virtual Players Move: d
+2023-02-11 23:15:43,320 [INFO|de.htwberlin.kbe.gruppe4.impl.GameServiceImpl|GameServiceImpl] Bob the BOT drew a QUEEN of DIAMONDS
